@@ -43,7 +43,7 @@ website:
         href: https://www.youtube.com/@mbacou/playlists
 
   page-footer:
-    background: white
+    background: light
     left: |
       &copy; Copyright 2024 &mdash; BACOU, Melanie.
       Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
@@ -54,7 +54,7 @@ website:
         href: license.qmd
       - text: RSS
         href: index.xml
-    right: "Built with [Quarto^®^](https://quarto.org/)"
+    right: "Built with [Quarto](https://quarto.org/)^®^"
 
 bibliography: references.bib
 
@@ -80,7 +80,7 @@ format:
     citation-location: document
 
     theme: www/theme-notebook.scss
-    fontsize: 16px
+    fontsize: 14px
     title-block-banner: transparent
     grid:
       sidebar-width: 180px

@@ -6,10 +6,10 @@
 /*-- scss:defaults --*/
 
 $white:     #ffffff;
-$black:     #333333;
+$black:     #181818;
 
 $dark:      #222e32;
-$light:     #f2efed;
+$light:     #F4F1EA;
 $primary:   #445e64;
 $secondary: #789494;
 
@@ -36,11 +36,12 @@ $gray-800:  darken($gray, 28%);
 $gray-900:  darken($gray, 32%);
 
 $min-contrast-ratio: 2.6;
+$line-height-base: 26/14;
 
 $body-color: $black;
 $body-bg: $gray;
 $shaded: darken($body-bg, 3%);
-$link-color: mix($primary, $blue);
+$link-color: mix($indigo, $blue);
 $text-muted: rgba($body-color, 70%);
 $secondary-color: $text-muted;
 $code-color: $text-muted;
@@ -53,9 +54,10 @@ $border-radius-lg: 0.50rem;
 $enable-rounded: true;
 $hr-border-color: $border-color;
 
-$navbar-bg: rgba($light, 10%);
+$navbar-bg: rgba($white, 70%);
 $nav-link-padding-x: 0.50rem;
 $nav-link-padding-y: 0.15rem;
+$nav-link-font-size: 1.25rem;
 
 $table-cell-padding: .25rem;
 $table-cell-padding-sm: .25rem;
@@ -93,13 +95,13 @@ $pagination-disabled-bg: $input-disabled-bg;
 $pagination-hover-color: $white;
 $progress-bg: $input-bg;
 
-$card-bg: transparent;
+$card-bg: $white;
 $card-cap-bg: rgba($border-color, 20%);
 $card-border-width: 0;
 $card-border-color: $border-color;
 $card-border-radius: $border-radius;
 
-$font-family-sans-serif: "Inter";
+$font-family-sans-serif: "Merriweather";
 $font-monospace: "Roboto Mono";
 $headings-font-family: "Roboto Condensed";
 $font-weight-bold: 600;
@@ -107,7 +109,7 @@ $headings-font-weight: 400;
 
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Condensed:wght@400;500;600&family=Roboto+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&family=Roboto+Condensed:wght@400;500;600&family=Roboto+Mono:wght@400&display=swap');
 b, strong {
   font-weight: 600;
 }
@@ -150,12 +152,14 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
   margin-bottom: .5rem;
 }
 h1.title {
+  font-family: $font-family-sans-serif;
+  font-size: 2.25rem;
   color: rgba($body-color, 90%);
 }
 p.subtitle {
   font-family: $headings-font-family;
-  color: rgba($text-muted, 40%);
-  margin: 0.25rem 0 1rem 0;
+  color: rgba($text-muted, 50%);
+  margin: 0;
 }
 .abstract {
   color: $text-muted;
@@ -164,7 +168,7 @@ p.subtitle {
 #title-block-header.quarto-title-block.default .abstract .block-title,
 #quarto-appendix.default .quarto-appendix-heading, #toc-title, details>summary {
   font-family: $headings-font-family;
-  font-size: .85em;
+  font-size: .85rem;
   font-weight: 500;
   text-transform: uppercase;
   color: $purple;
@@ -179,6 +183,9 @@ div.quarto-post .metadata {
 }
 .nav-footer {
   font-family: $headings-font-family;
+}
+.nav-footer .nav-footer-left, .nav-footer .nav-footer-right, .nav-footer .nav-footer-center {
+  font-size: unset;
 }
 .quarto-grid-item .card-attribution, .listing-author, .date, .date-modified {
   color: $text-muted;
@@ -224,11 +231,12 @@ h5.quarto-listing-category-title,
 }
 div.sourceCode, pre.sourceCode {
   background-color: $shaded;
+  line-height: 20px;
 }
 #quarto-appendix.default .quarto-appendix-bibtex, .sourceCode .bibtex,
 #quarto-appendix.default .quarto-appendix-citeas {
   font-family: $font-monospace;
-  font-size: .7rem;
+  font-size: .8rem;
   color: $text-muted;
   border: none;
   background: transparent;
@@ -240,10 +248,10 @@ div.quarto-post .listing-categories .listing-category {
   font-size: .85rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: $dark;
-  border: none;
+  border: solid 1px $border-color;
   line-height: 1.15rem;
-  background-color: lighten($secondary, 28%);
+  color: lighten($black, 8%);
+  background-color: darken($light, 2%);
   opacity: 1;
 }
 .table {
@@ -270,8 +278,9 @@ caption, .panel-caption, .figure-caption, .subfigure-caption, .table-caption,
 figcaption, .column-margin figcaption,
 .margin-caption, div.aside, aside, .column-margin {
   font-family: $headings-font-family;
-  font-size: .95rem;
+  font-size: 1rem;
   color: $text-muted;
+  line-height: 22px;
 }
 caption, .table-caption {
   padding: 0.5rem 0;
@@ -325,32 +334,18 @@ nav.sidebar.sidebar-navigation:not(.rollup) {
 }
 
 // Quarto layout fixes
-body {
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
-
-  background-image: linear-gradient(180deg,
-  rgba($body-bg, 0.01), rgba($body-bg, 1) 85%),
-  radial-gradient(ellipse at top left,
-  rgba($white, 0.5), transparent 50%),
-  radial-gradient(ellipse at top right,
-  rgba($gray-700, 0.4), transparent 50%),
-  radial-gradient(ellipse at center right,
-  rgba($light, 0.8), transparent 50%),
-  radial-gradient(ellipse at center left,
-  rgba($white, 0.5), transparent 50%);
-}
 .navbar {
   backdrop-filter: blur(20px);
 }
 .navbar .nav-item .nav-link {
-  font-weight: 600;
+  font-family: $headings-font-family;
+  font-weight: 400;
+  color: lighten($black, 8%);
   border-radius: $border-radius;
-  line-height: 1.5rem;
   margin-right: 0.25em;
 }
 .navbar .nav-link:hover {
-  color: $dark;
+  color: $black;
   background-color: lighten($link-color, 28%);
 }
 .navbar .nav-link.active {
@@ -362,7 +357,8 @@ body {
   margin-left: 1em;
   margin-right: 3em;
   font-weight: 500;
-  color: $purple;
+  color: $black;
+  font-size: 1.5rem;
 }
 #title-block-header {
   padding-bottom: 2rem;
@@ -380,11 +376,6 @@ body {
 #quarto-content>* {
   padding-top: 0;
   margin-top: 0;
-}
-#quarto-content {
-  background-size: 100vw 150vh;
-  background-repeat: repeat-y;
-  background-image: linear-gradient(180deg, transparent 5%, $white 20%, $body-bg 100%);
 }
 .sidebar-navigation {
   padding-left: unset;
