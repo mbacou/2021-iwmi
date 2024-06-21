@@ -1,0 +1,26 @@
+---
+title: Delivery Model
+description: |
+  Shared knowledge base for WorldCover Research team. All posts have been archived 
+  as of April 2021.
+author:
+  - name: Melanie Bacou 
+    url: https://linkedin.com/in/mbacou
+    affiliation: WorldCover PBC
+    affiliation_url: https://worldcovr.com/
+date: 2021-04-03
+categories:
+  - infrastructure
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Legacy WorldCover delivery Model in AWS (as of 2021-04-28).
+
+```{r, dev="ragg_png"}
+
+knitr::include_graphics("wc-delivery-model.png")
+
+```
+

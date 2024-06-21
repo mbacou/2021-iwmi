@@ -21,7 +21,8 @@ website:
 
   navbar:
     title: "{{< fa regular compass-drafting >}}   Mel's Labs"
-    foreground: black
+    foreground: dark
+    background: white
     pinned: false
     toggle-position: right
 
@@ -43,7 +44,8 @@ website:
         href: https://www.youtube.com/@mbacou/playlists
 
   page-footer:
-    background: light
+    foreground: light
+    background: dark
     left: |
       &copy; Copyright 2024 &mdash; BACOU, Melanie.
       Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
@@ -83,7 +85,7 @@ format:
     fontsize: 14px
     title-block-banner: transparent
     grid:
-      sidebar-width: 180px
+      sidebar-width: 160px
       body-width: 880px
-      margin-width: 240px
+      margin-width: 260px
       gutter-width: 2em
