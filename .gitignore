@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 _data
+_extensions
 _drafts
 .quarto/
 
