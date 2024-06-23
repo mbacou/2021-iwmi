@@ -6,11 +6,11 @@
 \usage{
 theme_labs_on(
   bg = "transparent",
-  fg = "#333333",
-  accent = pal12[["teal"]],
+  fg = "#090909",
+  accent = pal[["teal"]],
   font = "Roboto Condensed",
   sequential = sequential_gradient(fg_weight = 0.5, bg_weight = 0.5, fg_low = FALSE),
-  qualitative = alpha(pal(12), 0.9),
+  qualitative = mblabs.colors(12, alpha = 0.9),
   ...
 )
 }

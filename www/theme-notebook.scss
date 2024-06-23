@@ -8,11 +8,6 @@
 $white:     #ffffff;
 $black:     #090909;
 
-$dark:      #222e32;
-$light:     #f9f9f9;
-$primary:   #445e64;
-$secondary: #789494;
-
 $blue:      #3daee9;
 $indigo:    #9b59b6;
 $purple:    #98796f;
@@ -21,10 +16,13 @@ $red:       #da4453;
 $orange:    #f67400;
 $yellow:    #edcd37;
 $green:     #27ae60;
-$teal:      $primary;
-$cyan:      $secondary;
+$teal:      #445e64;
+$cyan:      #789494;
 
-$gray:      #f9f9f9;
+$dark:      #222e32;
+$light:     #f9f9f9;
+
+$gray:      #d6d6d7;
 $gray-100:  #f9f9f9;
 $gray-200:  #d6d6d7;
 $gray-300:  #bdbdbd;
@@ -35,11 +33,14 @@ $gray-700:  #717171;
 $gray-800:  #3d3d3d;
 $gray-900:  #242424;
 
+$primary:   $teal;
+$secondary: $cyan;
+
 $min-contrast-ratio: 2.6;
 $line-height-base: 24/14;
 
 $body-color: $black;
-$body-bg: darken($gray-100, 4%);
+$body-bg: darken($light, 4%);
 $shaded: $light;
 $link-color: mix($indigo, $blue);
 $text-muted: rgba($body-color, 70%);
@@ -95,7 +96,7 @@ $pagination-hover-color: $white;
 $progress-bg: $input-bg;
 
 $card-bg: $white;
-$card-cap-bg: rgba($border-color, 20%);
+$card-cap-bg: rgba($border-color, 10%);
 $card-border-width: 0;
 $card-border-color: $border-color;
 $card-border-radius: $border-radius;
@@ -105,6 +106,8 @@ $font-monospace: "Roboto Mono";
 $headings-font-family: "Roboto Condensed";
 $font-weight-bold: 600;
 $headings-font-weight: 400;
+$small-font-size: .9rem;
+
 
 /*-- scss:rules --*/
 
@@ -139,6 +142,9 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
   color: $body-color;
   background-color: transparent;
 }
+.code-with-filename .code-with-filename-file {
+  background-color: $border-color;
+}
 .quarto-title-banner .quarto-title .title {
   font-weight: normal;
 }
@@ -151,9 +157,13 @@ h1.title {
   color: rgba($body-color, 90%);
   margin-top: 1rem;
 }
+h5.card-title {
+  font-size: 1.75rem;
+}
 .lead {
   font-family: $headings-font-family;
   color: rgba($body-color, 40%);
+  font-size: 1.3rem;
 }
 .abstract {
   color: $text-muted;
@@ -163,7 +173,7 @@ h1.title {
 #title-block-header.quarto-title-block.default .abstract .block-title,
 #quarto-appendix.default .quarto-appendix-heading, #toc-title, details>summary {
   font-family: $headings-font-family;
-  font-size: .85rem;
+  font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
   color: $purple;
@@ -182,8 +192,7 @@ div.quarto-post .metadata {
 .nav-footer .nav-footer-left, .nav-footer .nav-footer-right, .nav-footer .nav-footer-center {
   font-size: unset;
 }
-.quarto-grid-item .card-attribution, .listing-author,
-.date, .date-modified {
+.quarto-grid-item .card-attribution, .listing-author, .date, .date-modified {
   color: $text-muted;
 }
 .action-links {
@@ -211,10 +220,17 @@ h5.quarto-listing-category-title,
   border-radius: $border-radius;
 }
 .quarto-grid-item .card-text {
+  font-size: unset;
   margin-top: .5rem;
+}
+.quarto-grid-item .card-text-small {
+  font-size: .9rem;
 }
 .quarto-grid-item .card-title {
   margin-bottom: 1rem;
+}
+.quarto-grid-item .card-attribution {
+  font-weight: unset;
 }
 .listing-date {
   font-family: $headings-font-family;
@@ -225,6 +241,10 @@ h5.quarto-listing-category-title,
   font-family: $headings-font-family;
   color: $text-muted;
 }
+.listing-author {
+  font-family: $headings-font-family;
+  color: $text-muted;
+}
 div.sourceCode, pre.sourceCode {
   background-color: $input-bg;
   line-height: 20px;
@@ -232,7 +252,7 @@ div.sourceCode, pre.sourceCode {
 #quarto-appendix.default .quarto-appendix-bibtex, .sourceCode .bibtex,
 #quarto-appendix.default .quarto-appendix-citeas {
   font-family: $font-monospace;
-  font-size: .8rem;
+  font-size: .85rem;
   color: $text-muted;
   border: none;
   background: transparent;
@@ -245,13 +265,13 @@ div.sourceCode, pre.sourceCode {
 .quarto-grid-item .listing-categories .listing-category,
 div.quarto-post .listing-categories .listing-category {
   font-family: $headings-font-family;
-  font-size: .85rem;
-  font-weight: 400;
+  font-size: .9rem;
+  font-weight: 500;
   text-transform: uppercase;
   border: none;
   line-height: 1.15rem;
-  color: rgba($black, 80%);
-  background-color: rgba($light, 90%);
+  color: $gray-500;
+  background-color: $light;
   opacity: 1;
 }
 .table {
@@ -288,7 +308,6 @@ caption, .table-caption {
 }
 .callout.callout-style-default, .callout.callout-style-simple {
   border: none;
-  border-radius: 0;
   border-left: 3px solid $primary;
   background-color: $input-bg;
 }
@@ -299,14 +318,21 @@ caption, .table-caption {
 .quarto-sidebar-toggle {
   background: none;
   border: none;
-  border-radius: 0;
 }
 .quarto-sidebar-toggle-title {
-  background: $white;
-  padding: 0.25rem;
+  background: $light;
+  padding: 0.5rem;
 }
 nav.sidebar.sidebar-navigation:not(.rollup) {
   background-color: transparent;
+}
+.nav-link {
+  font-family: $headings-font-family;
+}
+.sidebar nav[role=doc-toc]>ul li a {
+  font-size: 1rem;
+  line-height: 19px;
+  color: $text-muted;
 }
 .sidebar nav[role=doc-toc] ul>li>a.active,
 .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
@@ -378,5 +404,5 @@ nav.sidebar.sidebar-navigation:not(.rollup) {
   padding-left: unset;
 }
 .column-margin {
-  padding-left: 3em;
+  padding-left: 2em;
 }

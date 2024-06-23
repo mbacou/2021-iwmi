@@ -1,33 +1,35 @@
 ---
 title: Merge Ground and Satellite Observations with RFMerge
-description: |
-  Recalibrate ERA5 hourly temperatures to CIMIS network ground observations.
+subtitle: Recalibrate ERA5 hourly temperatures to CIMIS network ground observations.
 date: 2021-01-16
 draft: false
 freeze: true
-image: index_files/figure-html/preview-1.svg
+fig-format: png
 categories:
   - meteo
   - risk modeling
 ---
 
-We want to recalibrate [ERA5-LAND](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land) hourly temperatures to [CIMIS](https://cimis.water.ca.gov/) ground network observations to address ERA5-LAND model biases noted in California:
+----------
+
+While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by ERA5-LAND reanalysis dataset and ground observations. These biases impact the calculation of daily **Frost-Degree-Day** index (FDD) used to price insurance coverage.
+
+Here we want to recalibrate [ERA5-LAND](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land) hourly temperatures to [CIMIS](https://cimis.water.ca.gov/) ground network observations in order to address ERA5-LAND model biases reported over central California. The procedure involves the following steps:
 
 * Build CIMIS time-series across OLAM portfolio extent  
-* Build DEM covariate using ERA5-LAND extent and spatial resolution  
-* Use RFMerge procedure[^1] to produce calibrated hourly raster stacks over the past 10 years (limit calibration from Jan-01 to Apr-30 every year)  
+* Build DEM covariate (using ERA5-LAND extent and spatial resolution)
+* Use RFMerge procedure[^1] to produce calibrated hourly raster stacks over the past 10 years (we limit this calibration from Jan-01 to Apr-30 every year)  
 
-This work was initially performed for WorldCover PBC and OLAM US, redacted here to omit confidential details.
+This work was initially performed for **WorldCover PBC** and **OLAM US** in early 2021, and redacted here to omit confidential details.
 
 [^1]: See Baez-Villanueva, O. M., Zambrano-Bigiarini, M., Diego, J., Osorio, G.-, & Mcnamara, I. (2020). *Tutorial for merging satellite-based precipitation datasets with ground observations using RFmerge*.
 
 
 ```{r load}
 
-library(rmarkdown)
+library(here)
 library(lattice)
 library(raster)
-library(tmap)
 library(scales)
 library(data.table)
 library(zoo)
@@ -35,19 +37,20 @@ library(cimir)
 library(sf)
 library(RFmerge)
 
-dir <- "."
-load(file.path(dir, "./tmp/2020-burn_olam_usa_06.RData"))
+pal <- mblabs::pal
+mblabs::theme_labs_on()
 
-# Default color palette
-pal <- readRDS("../../_assets/pal_iwmi.rds")
+load(here("_data/2020-burn_olam_usa_06.RData"))
 
 my.settings <- list(
   superpose.polygon=list(col=alpha(pal, .6), border="transparent"),
   strip.background=list(col=pal["light"])
 )
-#trellis.par.set(my.settings) 
 
 ```
+
+
+# Covariate Layers
 
 Define zone of interest and load covariate layers.
 
@@ -55,14 +58,14 @@ Define zone of interest and load covariate layers.
 #| eval: false
 
 # Clear workspace, keep portfolio details
-load(file.path(dir, "./tmp/2020-burn_olam_usa_04.RData"))
+load(here("./tmp/2020-burn_olam_usa_04.RData"))
 rm(list=setdiff(ls(), c("dir", "pts.dt")))
 
 pts <- SpatialPointsDataFrame(pts.dt[, .(X,Y)], data.frame(pts.dt), 
   proj4string=CRS("+init=epsg:4326"))
 
 usa <- getData("GADM", country="USA", level=2)
-# Limit to OLAM counties
+# Limit ZOI to OLAM counties
 usa <- usa[usa$NAME_2 %in% pts.dt[, unique(adm2_nm)],]
 zoi <- extent(usa)
 zoi
@@ -73,7 +76,8 @@ zoi
 # ymax       : 38.07786 
 
 # Catalog hourly ERA5 tmean
-f <- list.files(file.path(dir, "../maps/ERA5LAND/2m_temperature/hourly/usa.ca"), ".nc", 
+f <- list.files(
+  here("../maps/ERA5LAND/2m_temperature/hourly/usa.ca"), ".nc", 
   recursive=T, full.names=T)
 
 # Verify data archive
@@ -103,7 +107,9 @@ bad <- N[sapply(N, `!=`, integer(0))]
 
 ```
 
-Obtain long-term weather station records from CIMIS API.
+We note that **6 days** on records do not include 24 hourly series.
+
+Next we obtain long-term weather station records from CIMIS API.
 
 ```{r cimis}
 #| eval: false
@@ -153,14 +159,14 @@ obs.gis <- crop(obs.gis, zoi)
 # Plot maps
 plot(crop(raster(r, layer=2), zoi), main=basename(f[2]))
 plot(pts, add=T, pch="*")
-plot(obs.gis, add=T, col=c("red", "green")[1+(obs.gis$IsActive=="True")], pch="x")
+plot(obs.gis, add=T, col=pal[c("red", "green")][1+(obs.gis$IsActive=="True")], pch="x")
 
 obs.lst <- obs.gis@data[, "StationNbr"]
 length(obs.lst)
 
 obs.gis <- setDT(obs.gis@data)
 
-# API limit at 1,750 records so batch it
+# API request limit at 1,750 records, so let's batch it
 drange <- c("2017-01-01", "2017-04-30")
 obs <- lapply(obs.lst, function(x) {
   date_start = obs.gis[StationNbr==x, date_start]
@@ -183,7 +189,7 @@ obs <- lapply(obs, rbindlist)
 names(obs) <- obs.lst
 obs <- rbindlist(obs, fill=T, idcol="StationNbr")
 
-# Clean up
+# Clean up resulting dataset
 obs[, `:=`(
   Name = NULL,
   Type = NULL,
@@ -203,19 +209,19 @@ obs[, `:=`(
   Scope = NULL
 )]
 
-# Tally
+# Tally ground observations
 obs[, .(.N, min(Date), max(Date)), keyby=.(StationNbr)]
 # => "232" station missing records 2160/2880
 obs[, .(.N, sum(is.na(Value)), min(Date), max(Date)), keyby=.(StationNbr)]
 24*(as.Date(drange[2])-as.Date(drange[1])+1)
 
-# Nearest to OLAM3 portfolio
+# Keep stations nearest to OLAM3 site portfolio
 ids <- c(168, 206, 145, 188, 148)
-fwrite(obs[StationNbr %in% as.character(ids)], "./out/CIMIA_OLAM3_2017.csv")
+fwrite(obs[StationNbr %in% as.character(ids)], here("./out/CIMIA_OLAM3_2017.csv"))
 
 ```
 
-Prepare DEM at ERA5 layers.
+Prepare DEM over ERA5 extent.
 
 ```{r dem}
 #| eval: false
@@ -229,7 +235,7 @@ dem <- merge(dem1, dem2, dem3, dem4, ext=zoi)
 
 ```
 
-Format station time-series to Zoo wide arrays.
+Convert station time-series to `zoo` wide arrays.
 
 ```{r ts}
 #| eval: false
@@ -251,6 +257,8 @@ obs.ts <- zoo(
 
 ```
 
+# Recalibrate Hourly Temperature Estimates using Randon Forest
+
 Implement Random Forest merge algorithm.
 
 ```{r rfmerge}
@@ -265,16 +273,16 @@ f[1]
 
 # Limit ERA5 covariate
 era <- brick(as.list(f))
-era <- crop(era, zoi, filename="./out/ERA5_2m_temperature_2017.grd", overwrite=T)
-era <- brick("./out/ERA5_2m_temperature_2017.grd")
+era <- crop(era, zoi, filename=here("./out/ERA5_2m_temperature_2017.grd"), overwrite=T)
+era <- brick(here("./out/ERA5_2m_temperature_2017.grd"))
 
 # Align DEM to ERA5
-dem <- resample(dem, era[[1]], filename="./out/SRTM_ERA5.grd")
+dem <- resample(dem, era[[1]], filename=here("./out/SRTM_ERA5.grd"))
 identical(res(dem), res(era))
 identical(extent(dem), extent(era))
 identical(nlayers(era), nrow(obs.ts))
 
-# ZOI require SF
+# ZOI requires `sf`
 stations <- sf::st_as_sf(obs.gis, coords=c("X", "Y"), crs=4326)
 zoi <- st_as_sfc(st_bbox(usa))
 zoi <- st_sf(data.frame(ID=1), geom=zoi)
@@ -300,7 +308,7 @@ covariates <- list(era=era, dem=dem)
 obs.meta <- obs.gis[StationNbr %in% names(obs.ts), .(StationNbr, Lon, Lat)]
 
 # RFmerge
-dir.create("./out/2017_RFmerge_proj")
+dir.create(here("./out/2017_RFmerge_proj"))
 mc.cores <- parallel::detectCores()-2
 
 rfmep <- RFmerge(
@@ -308,7 +316,7 @@ rfmep <- RFmerge(
   metadata = obs.meta, 
   cov = covariates, 
   id="StationNbr", lat="Lat", lon="Lon", ED=TRUE,
-  mask=zoi, training=0.9, write2disk=TRUE, drty.out="./out/2017_RFmerge_proj",
+  mask=zoi, training=0.9, write2disk=TRUE, drty.out=here("./out/2017_RFmerge_proj"),
   parallel="parallel", par.nnodes=mc.cores)
 
 names(rfmep)[c(1:2, nlayers(rfmep))]
@@ -358,7 +366,7 @@ dt.era[, `:=`(
 )]
 
 # Impute ERA5 hourly time-series with output of RFmerge
-dt <- readRDS(file.path(dir, "./tmp/2020-tmean-hourly_olam_ca_almd.rds"))
+dt <- readRDS(here("./tmp/2020-tmean-hourly_olam_ca_almd.rds"))
 dt.imp[dt, on=.(loc_id, date, time), era := i.value
 ][dt.era, on=.(loc_id, date, time), era_valid := i.value]
 
@@ -366,7 +374,7 @@ dt.imp[dt, on=.(loc_id, date, time), era := i.value
 dt <- dt[!dt.imp, on=.(loc_id, date, time)]
 dt <- rbind(dt, dt.imp[, .SD, .SDcols=names(dt)])
 setorder(dt, loc_id, date, time)
-saveRDS(dt, file.path(dir, "./tmp/2020-tmean-hourly_olam_ca_almd_imputed.rds"))
+saveRDS(dt, here("./tmp/2020-tmean-hourly_olam_ca_almd_imputed.rds"))
 
 ```
 
@@ -374,43 +382,54 @@ saveRDS(dt, file.path(dir, "./tmp/2020-tmean-hourly_olam_ca_almd_imputed.rds"))
 #| eval: false
 
 rm(x, i, j, t, tmp, dem1, dem2, dem3, dem4, n, x1, x2, dt, dtc)
-save.image(file.path(dir, "./tmp/2020-burn_olam_usa_06.RData"))
+save.image(here("./tmp/2020-burn_olam_usa_06.RData"))
 
 ```
 
+# Explore Results
 
 Validate ZOI, DEM, and ERA5 covariates.
 
 ```{r}
 #| column: screen
-
-era <- brick("./out/ERA5_2m_temperature_2017.grd")
-era <- raster(era, 1)
-
-tmap_mode("view")
-tm_shape(era) + 
-  tm_raster(title="ERA5-LAND<br/>Temperature<br/>2020-02-01 00:00<br/>°C", alpha=.6) +
-  tm_shape(stations) + tm_dots("black", title="CIMIS WS") + 
-  tm_shape(pts) + tm_dots("blue", title="OLAM Site") + 
-  tm_shape(pts[pts$loc_id %in% c(25, 82, 83), ]) + 
-  tm_dots("red")
-
-```
-
-DEM at ERA5 extent and resolution.
-
-```{r}
+#| layout-ncol: 2
 #| fig-height: 5
 
-pts <- spTransform(pts, CRS("+init=epsg:3310"))
+# Plot with package `terra` (instead of deprecated `raster`)
+library(terra)
+era <- rast(here("./_out/ERA5_2m_temperature_2017.grd"))
 
-plot(dem, main="SRTM 90m (meter)",
-  col=terrain.colors(80, alpha=1))
-plot(zoi, add=T, lty=2, col=NA)
-plot(pts, add=T, pch=16)
-plot(stations, add=T, col=pal[c("red", "green")][1+(obs.gis$IsActive=="True")], pch="x")
-legend("topright", legend=c("Active station", "Stale station", "Production site"),
-  col=pal[c("red", "green", "black")], pch=c("x", "x", "o"), cex=.8)
+# Align projections
+pts <- vect(pts)
+stations <- vect(stations)
+zoi <- vect(zoi)
+
+pts <- project(pts, "epsg:4326")
+stations <- project(stations, "epsg:4326")
+zoi <- project(zoi, "epsg:4326")
+era <- project(era[[1]], "epsg:4326")
+dem <- project(rast(dem), "epsg:4326")
+rfmep <- project(rast(rfmep[[1]]), "epsg:4326")
+
+# Validate ERA5 and DEM covariates
+plot(era, ext=zoi, ylab=names(era), col=terrain.colors(20),
+  main="ERA5-LAND Temperature (°C) on 2017-01-01 01:00")
+grid()
+plot(stations, add=T, pch="x", col=pal[["dark"]])
+plot(pts, add=T, pch="o", col=pal["blue"])
+plot(pts[pts$loc_id %in% c(25, 82, 83), ], add=T, col=pal["red"], pch="o")
+legend("bottom", ncol=3, bty="n",
+  legend=c("CIMIS WS", "OLAM site", "Portfolio site"),
+  col=pal[c("dark", "blue", "red")], pch=c("x", "o", "o"))
+
+plot(dem, ext=zoi, ylab=names(dem), col=terrain.colors(20),
+  main="SRTM 90m (meter)")
+grid()
+plot(pts, add=T, pch="o", col=pal["dark"])
+plot(stations, add=T, col=pal[c("dark", "red")][1+(obs.gis$IsActive=="True")], pch="x")
+legend("bottom", ncol=3, bty="n",
+  legend=c("Active station", "Stale station", "Production site"),
+  col=pal[c("dark", "red", "dark")], pch=c("x", "x", "o"))
 
 ```
 
@@ -426,70 +445,76 @@ obs[, .(
   `Max.` = max(Value, na.rm=T),
   `Date Range` = paste(range(Date, na.rm=T), collapse=" - ")
 ), keyby=.(StationNbr)] %>%
-  paged_table()
+  rmarkdown::paged_table()
 
 ```
 
 ```{r}
+#| column: screen
+#| layout-ncol: 2
+#| fig-height: 5
 
 plot(obs.ts[,1], col=alpha(pal[1], .7),
-  main=paste("Station", names(obs.ts)[1]), xlab="Hourly Temp. °C", ylab=NA)
+  sub=paste("Station", names(obs.ts)[1]), xlab="CIMIS Hourly Temp. °C", ylab=NA)
 grid()
 
 plot(obs.ts[,20], col=alpha(pal[1], .7),
-  main=paste("Station", names(obs.ts)[20]), xlab="Hourly Temp. °C", ylab=NA)
+  sub=paste("Station", names(obs.ts)[20]), xlab="CIMIS Hourly Temp. °C", ylab=NA)
 grid()
 
 ```
 
 ```{r}
-#| fig-height: 5
+#| column: screen
+#| layout-ncol: 2
+#| fig-height: 6
 
-histogram(~Value|StationNbr, data=obs, 
-  col=alpha(pal[1], .6), border=pal["black"],
+histogram(~Value|StationNbr, data=obs, breaks=20,
+  col=alpha(pal[1], .6), border=pal["light"], layout=c(2,6),
   par.settings=my.settings,
-  layout=c(2,6), xlab="Jan-Apr 2017 Hourly Temp. °C")
+  xlab="Jan-Apr 2017 - CIMIS Hourly Temp. °C across meteo stations")
 
 ```
 
 ```{r}
+#| column: screen
+#| layout-ncol: 2
 #| fig-height: 5
 
-plot(rfmep[[1]], main="RF-MEP Temperatures", xlab=names(rfmep)[1],
-  col=terrain.colors(80, alpha=1))
-plot(pts, pch=16, col=pal["black"], add=T)
-plot(stations[stations$StationNbr %in% names(obs.ts),], pch="x", col=pal["black"], add=T)
-legend("topright", legend=c("Active station", "Production site"), pch=c("x", "o"), cex=.8)
+plot(rfmep, ext=zoi, ylab=names(rfmep)[1], 
+  col=terrain.colors(80), breaks=-8:11,
+  main="RF-MEP Temperatures °C")
+grid()
+plot(pts, pch="o", col=pal["dark"], add=T)
+plot(stations[stations$StationNbr %in% names(obs.ts),], 
+  pch="x", col=pal[["dark"]], add=T)
+legend("bottom", ncol=2, bty="n",
+  legend=c("Active station", "Production site"), pch=c("x", "o"))
+ 
+plot(era, ext=zoi, ylab=names(era)[1], 
+  col=terrain.colors(80), breaks=-8:11,
+  main="ERA5-LAND Temperatures °C")
+grid()
+plot(pts, pch="o", col=pal["dark"], add=T)
+plot(stations[stations$StationNbr %in% names(obs.ts),], 
+  pch="x", col=pal[["dark"]], add=T)
+legend("bottom", ncol=2, bty="n",
+  legend=c("Active station", "Production site"), pch=c("x", "o"))
 
 ```
 
+Hourly time-series from nearest CIMIS ground stations compared to hourly time-series at production sites from ERA5-LAND.
+
 ```{r}
+#| column: screen
+#| layout-ncol: 2
 #| fig-height: 5
-
-plot(era[[1]], main="ERA5-LAND Temperatures", xlab=names(era)[1],
-  col=terrain.colors(80, alpha=1))
-plot(pts, pch=16, col=pal["black"], add=T)
-plot(stations[stations$StationNbr %in% names(obs.ts),], pch="x", col=pal["black"], add=T)
-legend("topright", legend=c("Active station", "Production site"), pch=c("x", "o"), cex=.8)
-
-```
-
-
-Hourly time-series from CIMIS ground stations:
-
-```{r}
 
 wireframe(Value~as.numeric(Date)*Time, data=obs, 
-  xlab="Date", ylab="Hour", sub="CIMIS Stations - Hourly Temp. °C",
+  xlab="Date", ylab="Hour", sub="Nearest CIMIS Stations - Hourly Temp. °C",
   col=NA, col.regions=terrain.colors(100, alpha=.4), drape=T,
   at=do.breaks(c(-5,35), 100)
 )
-
-```
-
-Compared to hourly time-series at production sites from ERA5-LAND:
-
-```{r}
 
 wireframe(era~as.numeric(date)*time, data=dt.imp, 
   xlab="Date", ylab="Hour", zlab="°C",  
@@ -500,9 +525,11 @@ wireframe(era~as.numeric(date)*time, data=dt.imp,
 
 ```
 
-Mean recalibration effect across production sites (after RFmerge):
+Mean recalibration effect across production sites (after RFmerge procedure):
 
-```{r preview}
+```{r}
+#| fig-height: 5
+#| classes: preview-image
 
 wireframe((value-era)~as.numeric(date)*time, data=dt.imp, 
   xlab="Date", ylab="Hour", zlab="°C",  
@@ -526,6 +553,6 @@ dt.imp[date %between% c("2017-02-01", "2017-03-31"), .(
   `FDD (validate)` = sum(fifelse(era_valid<0, pmax(era_valid, -4, na.rm=T), 0), na.rm=T),
   `FDD (after)` = sum(fifelse(value<0, pmax(value, -4, na.rm=T), 0), na.rm=T)
 ), keyby=.(loc_id)]%>%
-  paged_table()
+  rmarkdown::paged_table()
 
 ```

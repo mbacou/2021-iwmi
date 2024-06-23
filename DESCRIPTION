@@ -1,10 +1,10 @@
 Package: mblabs
-Title: Mel's Labs personal blog website
+Title: Mel's Labs -- personal blog website and utilities
 Version: 3.0.0
 Authors@R: c(
 	person("Melanie", "Bacou", role="cre", email="mel@mbacou.com", comment=c(ORCID="0000-0003-1810-6818"))
 	)
-Description: A Quarto website for personal use
+Description: A personal blog and scientific notebooks built with Quarto
 License: file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.2)
@@ -19,7 +19,7 @@ Imports:
     highcharter,  
     sp, sf, terra,
     data.table
-Suggests: knitr, usethis
+Suggests: here, knitr, usethis
 SystemRequirements: gdal, geos
 URL: https://github.com/mbacou/mb-labs/, https://mbacou.com/
 BugReports: https://github.com/mbacou/mb-labs/issues/

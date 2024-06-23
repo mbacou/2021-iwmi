@@ -4,7 +4,6 @@ subtitle: "Agro-economist, agri-meteo and geospatial analyst"
 image: _assets/about/profile.jpg
 date: 2024-01-01
 date-modified: last-modified
-abstract: My long-form resume.
 ---
 
 ::: {.column-margin}

@@ -1,33 +1,42 @@
 ---
 title: ERA5-LAND Temperature Validation (California)
-description: |
-  Can we justify winter Y2017 corrections to ERA5-LAND temperature grids over central 
-  California?
+subtitle: Can we justify winter Y2017 corrections to ERA5-LAND temperature grids over central California?
 date: 2020-12-02
 draft: false
 freeze: true
-image: index_files/figure-html/unnamed-chunk-16-1.svg
+fig-format: png
 categories:
+  - meteo
   - risk modeling
 ---
 
-- Can we justify Y2017 correction to ERA5 grids over OLAM portfolio?
+----------
+
+While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by ERA5-LAND reanalysis dataset and ground observations. These biases impact the calculation of daily **Frost-Degree-Day** index (FDD) used to price insurance coverage.
+
+In this analysis we look into more details at ERA5-LAND temperature estimate biases against ground observations collected from NOAA GHCN network of meteorological stations.
+
+- Can we justify Y2017 correction to ERA5-LAND hourly temperature grids over OLAM portfolio?
 - Portfolio-wide ERA5-LAND temperature validation against NOAA GHCN ground records
+
+This work was initially performed for **WorldCover PBC** and **OLAM US** in early 2021, and redacted here to omit confidential details.
+
 
 ```{r load}
 
+library(here)
 library(lubridate)
 library(ggplot2)
 library(raster)
 library(scales)
 library(data.table)
 library(zoo)
-library(rgdal)
-library(rgeos)
 library(rnoaa)
 
-dir <- "."
-load(file.path(dir, "./_data/2020-burn_olam_usa_07.RData"))
+pal <- mblabs::pal
+mblabs::theme_labs_on()
+
+load(here("./_data/2020-burn_olam_usa_07.RData"))
 
 ```
 
@@ -35,7 +44,7 @@ load(file.path(dir, "./_data/2020-burn_olam_usa_07.RData"))
 #| eval: false
 
 # Clear workspace, keep portfolio details
-load(file.path(dir, "./_data/2020-burn_olam_usa_06.RData"))
+load(here("./_data/2020-burn_olam_usa_06.RData"))
 rm(list=setdiff(ls(), c("dir", "pts.dt", "dt.era", "dt.imp")))
 
 pts <- SpatialPointsDataFrame(pts.dt[, .(X,Y)], data.frame(pts.dt), 
@@ -45,7 +54,6 @@ pts <- SpatialPointsDataFrame(pts.dt[, .(X,Y)], data.frame(pts.dt),
 
 ```{r ghcn}
 #| eval: false
-#| echo: true
 
 # Get GHCN ground obs across ZOI
 stations <- ghcnd_stations()
@@ -78,7 +86,7 @@ ids <- stations[id %in% ids & element %in% vars & last_year > 2009, unique(id)]
 stations[id %in% ids & element %in% vars]
 
 # Get daily station time-series for the 29 selected
-# Request seems to time out when too large so batch it
+# Request seems to time out when too large so let's batch it
 stations.dt <- lapply(ids, function(x) 
   try(ghcnd_search(x, var=vars, date_min="2010-01-01", refresh=T)))
 stations.dt <- stations.dt[sapply(stations.dt, function(x) class(x)!="try-error")]
@@ -101,9 +109,8 @@ ids <- stations.dt[, unique(id)]
 
 ```{r extract}
 #| eval: false
-#| echo: true
 
-# Extract ERA5 at stations' coordinates
+# Extract ERA5 at stations coordinates
 x <- c("2010-01-01", "2020-07-31")
 cat <- wc_catalog(x, code="era5_temp_h_usa_ca")
 dt <- wc_extract(
@@ -153,17 +160,18 @@ dt[tmp, on=.(loc_id=id, date=date), `:=`(
 #| eval: false
 
 rm(x, i, j, t, tmp)
-save.image(file.path(dir, "./_data/2020-burn_olam_usa_07.RData"))
+save.image(here("./_data/2020-burn_olam_usa_07.RData"))
 
 ```
 
 
 # Results
 
-10-year comparisons between ERA5-LAND and GHCN station network over Feb-March risk period. 11 stations (under 30-km from production sites and with daily temperature records after 2010) are selected for the comparison.
+10-year comparisons between ERA5-LAND and GHCN station network observations over Feb-March risk period. 11 stations (under 30-km from production sites and with daily temperature records after 2010) are selected for this comparison.
 
-```{r preview}
-#| fig-height: 6
+```{r}
+#| classes: preview-image
+#| fig-height: 5
 
 plot(cat[date=="2020-02-01", crop(raster(file, 1), stations.sp[stations.sp$id %in% ids,])], 
   xlab=NA, ylab=NA, main="Tmean °C", sub="ERA5 2020-02-01 00:00")
@@ -181,18 +189,19 @@ List of GHCN stations retained in the analysis.
 
 ```{r}
 
-kable(stations[id %in% ids & element %in% c("TMIN", "TAVG"), .(
+stations[id %in% ids & element %in% c("TMIN", "TAVG"), .(
   first_year, last_year
-), keyby=.(id, name, element)]
-)
+), keyby=.(id, name, element)] %>% kable()
 
 ```
 
 10-year summary.
 
 ```{r}
+#| column: screen
+#| layout-ncol: 2
+#| fig-height: 5
 
-par(mfrow=c(2,2))
 for(i in stations.dt[, unique(var)]) stations.dt[var==i, hist(value, main=i)]
 
 ```

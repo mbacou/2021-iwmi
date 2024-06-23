@@ -4,10 +4,10 @@
 #' Bootstrap theme.
 #'
 #' @keywords datasets
-#' @name pal12
+#' @name pal
 #' @format A named character vector of hex color codes
 #' @export
-pal12 = c(
+pal = c(
   cyan   = "#789494",
   teal   = "#445e64",
   dark   = "#222e32",
@@ -19,7 +19,7 @@ pal12 = c(
   yellow = "#edcd37",
   orange = "#f67400",
   red    = "#da4453",
-  light  = "#fefefe"
+  light  = "#f9f9f9"
 )
 
 
@@ -37,7 +37,7 @@ pal12 = c(
 #' hist(x, freq=FALSE, ylim=c(0, 0.2), col=pal(8), border=12)
 #'
 #' @export
-pal <- function(x, ...)  colorRampPalette(unname(pal12), ...)(x)
+mblabs.colors <- function(x, ...) colorRampPalette(unname(pal), ...)(x)
 
 
 #' Apply graphic color palettes
@@ -49,7 +49,6 @@ pal <- function(x, ...)  colorRampPalette(unname(pal12), ...)(x)
 #' @inheritDotParams thematic::thematic_on
 #' @return A global graphic theme
 #' @importFrom thematic thematic_on font_spec sequential_gradient
-#' @importFrom scales alpha
 #' @examples
 #' theme_labs_on()
 #' lattice::show.settings()
@@ -57,11 +56,11 @@ pal <- function(x, ...)  colorRampPalette(unname(pal12), ...)(x)
 #' @export
 theme_labs_on <- function(
   bg = "transparent",
-  fg = "#333333",
-  accent = pal12[["teal"]],
+  fg = "#090909",
+  accent = pal[["teal"]],
   font = "Roboto Condensed",
   sequential = sequential_gradient(fg_weight=.5, bg_weight=.5, fg_low=FALSE),
-  qualitative = alpha(pal(12), .9),
+  qualitative = mblabs.colors(12, alpha=.9),
   ...) thematic_on(
     bg, fg, accent, font=font_spec(font), sequential, qualitative, ...)
 

@@ -1,22 +1,25 @@
 ---
 title: Econometric and Geospatial Analysis
 subtitle: ... to inform robust and equitable public policy
-description: |
-    > *" This is my favorite quote of the day "* \
-        <small>--- By me </small>
 page-layout: full
 margin-header: _custom.qmd
 listing:
+  id: listing-home
   contents: posts
   categories: true
   feed: true
+  filter-ui: false
   sort-ui: [date]
-  filter-ui: [title, description]
   sort: "date desc"
   type: grid
   max-items: 9
   fields: [title, description, image, date, author, categories]
 ---
+
+
+
+::: {#listing-home}
+:::
 
 
   

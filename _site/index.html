@@ -2,13 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.6">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="” This is my favorite quote of the day “ — By me ">
 
-<title>Mel's Labs – Econometric and Geospatial Analysis</title>
+<title>Mel’s Labs - Econometric and Geospatial Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-listing-home .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -84,11 +83,11 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-description','listing-image','listing-date','listing-author','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-title","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-listing-home'] = new List('listing-listing-home', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -139,8 +138,7 @@ window.Quarto = {
 </script>
 
 <link rel="alternate" type="application/rss+xml" title="Mel's Labs" href="index.xml" data-external="1"><meta name="twitter:title" content="Mel’s Labs - Econometric and Geospatial Analysis">
-<meta name="twitter:description" content="> ” This is my favorite quote of the day “
-— By me ">
+<meta name="twitter:description" content="… to inform robust and equitable public policy">
 <meta name="twitter:image" content="https://mbacou.com/www/favicon.png">
 <meta name="twitter:image-height" content="100">
 <meta name="twitter:image-width" content="100">
@@ -211,15 +209,7 @@ window.Quarto = {
     <div class="quarto-title column-page-left">
       <h1 class="title">Econometric and Geospatial Analysis</h1>
             <p class="subtitle lead">… to inform robust and equitable public policy</p>
-                  <div>
-        <div class="description">
-          <blockquote class="blockquote">
-          <p><em>” This is my favorite quote of the day “</em><br>
-          <small>— By me </small></p>
-          </blockquote>
-        </div>
-      </div>
-                </div>
+                      </div>
   </div>
     
   
@@ -245,7 +235,7 @@ All viewpoints here are strictly my own and do <u>not</u> reflect that of employ
 </p>
 </div>
 </section></div>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dataviz">dataviz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="meteo">meteo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="risk modeling">risk modeling <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dataviz">dataviz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="meteo">meteo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="risk modeling">risk modeling <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -253,15 +243,11 @@ All viewpoints here are strictly my own and do <u>not</u> reflect that of employ
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div id="listing-listing-home" class="quarto-listing quarto-listing-container-grid">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-listing-home-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing-home'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
          <option value="listing-date-sort" data-direction="asc">
@@ -272,10 +258,6 @@ All viewpoints here are strictly my own and do <u>not</u> reflect that of employ
         </option>
      </select>
   </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-categories="quarto,dataviz" data-listing-date-sort="1696114800000" data-listing-file-modified-sort="1707012644776" data-listing-date-modified-sort="1707012644000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2634">
@@ -311,12 +293,10 @@ Oct 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="meteo,risk modeling" data-listing-date-sort="1610755200000" data-listing-file-modified-sort="1706156931674" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1571">
+<div class="g-col-1" data-index="1" data-categories="meteo,risk modeling" data-listing-date-sort="1610755200000" data-listing-file-modified-sort="1719102621371" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1740">
 <a href="./posts/2021-01-16-rfmerge/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2021-01-16-rfmerge/index_files/figure-html/preview-1.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2021-01-16-rfmerge/index_files/figure-html/unnamed-chunk-7-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Merge Ground and Satellite Observations with RFMerge
@@ -330,7 +310,7 @@ risk modeling
 </div>
 </div>
 <div class="card-text listing-description">
-<p>Recalibrate ERA5 hourly temperatures to CIMIS network ground observations.</p>
+While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature…<strong></strong>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -344,23 +324,24 @@ Jan 16, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="risk modeling" data-listing-date-sort="1606867200000" data-listing-file-modified-sort="1706156931522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1148">
+<div class="g-col-1" data-index="2" data-categories="meteo,risk modeling" data-listing-date-sort="1606867200000" data-listing-file-modified-sort="1719102582283" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1240">
 <a href="./posts/2020-12-02-era5-ca/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2020-12-02-era5-ca/index_files/figure-html/unnamed-chunk-16-1.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2020-12-02-era5-ca/index_files/figure-html/preview-1.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 ERA5-LAND Temperature Validation (California)
 </h5>
 <div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('meteo'); return false;">
+meteo
+</div>
 <div class="listing-category" onclick="window.quartoListingCategory('risk modeling'); return false;">
 risk modeling
 </div>
 </div>
 <div class="card-text listing-description">
-<p>Can we justify winter Y2017 corrections to ERA5-LAND temperature grids over central California?</p>
+10-year comparisons between ERA5-LAND and GHCN station network over Feb-March risk period. 11 stations (under 30-km from production sites and with daily temperature records…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -378,7 +359,12 @@ Dec 2, 2020
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -469,6 +455,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -510,7 +501,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
