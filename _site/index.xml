@@ -38,12 +38,12 @@
 </div>
 <p>With the release of <strong>Quarto 1.4</strong>, markdown-based publishing is gaining popularity, way beyond the scientific community. Multilingual text-based documents (such as <strong>Rmarkdown</strong> and <strong>Jupyter</strong> notebooks) that combine executable code chunks with formatted prose greatly simplify the process of drafting, iterating, generating, documenting, sharing and reproducing computable research experiments.</p>
 <p>Old-time researchers have long used <strong>Emacs <code>Org-Mode</code></strong><sup>1</sup> along with its wild hordes of keyboard shortcuts<sup>2</sup> to achieve similar results thanks to <em>Eric Schulte</em>’s incredible <strong>babel</strong> extension to <code>Org-Mode</code> <span class="citation" data-cites="schulte2012">(see Schulte et al. 2012)</span> and to <em>John MacFarlane</em>’s <a href="https://pandoc.org/">Pandoc</a> document converter library – but nowadays Quarto makes use of more efficient parsers and runtime engines (Sass, Deno) and adds in-browser real-time rendering of documents.</p>
-<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;For folks born in this century, to <strong>babel</strong> (elips) or to <strong>sweave</strong> (R) is the process of compiling text documents that include both static markup and executable scripts.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;For folks born in this century, to <strong>babel</strong> (elips) or to <strong>sweave</strong> (R) is the process of compiling text documents that include both static markup and executable scripts.</p>
 <p><img src="https://mbacou.com/posts/2022-12-01-theme/Donald-Knuth.jpg" class="img-rounded img-fluid" style="width:10em"></p>
 <p>The concept of <strong>Literate Programming</strong> was introduced in 1984 by the mathematician <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> and was widely popularized thereafter in the engineering community thanks to <a href="https://orgmode.org/worg/org-contrib/babel/uses.html">org-mode</a> in the Emacs editor.</p>
 <p><img src="https://mbacou.com/posts/2022-12-01-theme/Carsten-Dominik.jpg" class="img-rounded img-fluid" style="width:10em"></p>
-<p>Emacs <strong><code>Org-Mode</code></strong> was created by the astronomer <a href="https://en.wikipedia.org/wiki/Org-mode#:~:text=Org%20Mode%20was%20created%20by,mode%20by%20default%20since%202006">Carsten Dominik</a> in 2003 and remains to this day one of the most used and madly loved note-taking and GTD (Get-Things-Done) tools, with many of its functionality (agenda, tags, etc.) yet to be ported to any markdown engine.</p><p><sup>2</sup>&nbsp;Only keyboard, Baby!</p>
-<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mbacou.com/posts/2022-12-01-theme/real-programmers.png" class="img-fluid"></a></p></div><p>While migrating my old content to the new Quarto markdown syntax, this post briefly outlines my process for creating a custom Bootstrap theme for this revamped website. Feel free to reuse my <code>theme.scss</code> Sass file.</p>
+<p>Emacs <strong><code>Org-Mode</code></strong> was created by the astronomer <a href="https://en.wikipedia.org/wiki/Org-mode#:~:text=Org%20Mode%20was%20created%20by,mode%20by%20default%20since%202006">Carsten Dominik</a> in 2003 and remains to this day one of the most used and madly loved note-taking and GTD (Get-Things-Done) tools, with many of its functionality (agenda, tags, etc.) yet to be ported to any markdown engine.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Only keyboard, Baby!</p>
+<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mbacou.com/posts/2022-12-01-theme/real-programmers.png" class="img-fluid"></a></p></div></div><p>While migrating my old content to the new Quarto markdown syntax, this post briefly outlines my process for creating a custom Bootstrap theme for this revamped website. Feel free to reuse my <code>theme.scss</code> Sass file.</p>
 <section id="css-grid-system" class="level1 page-columns page-full">
 <h1>CSS Grid System</h1>
 <p>Quarto uses the full flexibility of Bootstrap v5.3 grid system, with a few handy classes to help precisely position content on a page, in particular:</p>
@@ -105,8 +105,8 @@ font-style: inherit;">```</span></span>
 <p>.column-screen-inset-shaded</p>
 </div>
 <p>Finally any layout is achievable using stackable <code>&lt;div class="g-col-{width}"&gt;</code> columns inside a <code>&lt;div class="grid"&gt;</code> element (see color boxes below). The full system summarized here, copied straight from Quarto online documentation<sup>3</sup>.</p>
-<div class="no-row-height column-margin column-container"><p><sup>3</sup>&nbsp;Refer to <a href="https://quarto.org/docs/authoring/article-layout.html#available-columns">Quarto CSS classes</a> official documentation.</p></div><div class="column-page-right">
-<table class="table">
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Refer to <a href="https://quarto.org/docs/authoring/article-layout.html#available-columns">Quarto CSS classes</a> official documentation.</p></div></div><div class="column-page-right">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 40%">
@@ -179,7 +179,7 @@ column: screen-right</code></pre></td>
 <section id="color-system" class="level1 page-columns page-full">
 <h1>Color System</h1>
 <p>Choosing a color scheme is easy, start from your favorite photo or graphic and upload it to one of the many online color palette generators to extract base and accent colors. Below I have selected a standard 12-color palette that simply strives to complement my decade old <a href="https://store.kde.org/p/1980663">Kubuntu desktop</a><sup>4</sup> (in a light version).</p>
-<div class="no-row-height column-margin column-container"><p><sup>4</sup>&nbsp;KDE, 30 years later, still going strong! <a href="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="img-fluid"></a></p></div><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><span class="fu" style="color: #4758AB;
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;KDE, 30 years later, still going strong! <a href="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="img-fluid"></a></p></div></div><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(htmltools)</span>
 <span id="cb14-2"></span>
@@ -467,15 +467,15 @@ Blockquote content comes here…<br>
 <h5 class="anchored" data-anchor-id="heading-5">Heading 5</h5>
 <p>Sample paragraph content.</p>
 <p>Here is a footnote reference,<sup>5</sup> and another much longer one.<sup>6</sup>. Caption and footnote placement can be controlled in the config files <code>_quarto_yml</code> and/or <code>_metadata.yml</code>, or dircetly in the YAML front matter.</p>
-<div class="no-row-height column-margin column-container"><p><sup>5</sup>&nbsp;Here is the footnote.</p><p><sup>6</sup>&nbsp;Here’s one with multiple blocks.</p>
-<p>With subsequent paragraphs indented to show that they belong to the previous footnote.</p></div></section>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Here is the footnote.</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Here’s one with multiple blocks.</p>
+<p>With subsequent paragraphs indented to show that they belong to the previous footnote.</p></div></div></section>
 </section>
 </section>
 </section>
 <section id="tables" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <p>I prefer my normal tables slightly more condensed than Bootstrap’s default and to resemble LaTeX typesetting, so made a few simple changes here.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Default</caption>
 <tbody>
 <tr class="odd">
@@ -492,7 +492,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-borderless table-hover table-sm small table">
+<table class="table-borderless table-hover table-sm small caption-top table">
 <caption>borderless hover sm</caption>
 <thead>
 <tr class="header">
@@ -515,7 +515,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover table-sm small table">
+<table class="table-striped table-hover table-sm small caption-top table">
 <caption>striped hover sm</caption>
 <thead>
 <tr class="header">
@@ -538,7 +538,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover table-sm table-secondary small table">
+<table class="table-striped table-hover table-sm table-secondary small caption-top table">
 <caption>striped hover sm secondary</caption>
 <thead>
 <tr class="header">
@@ -582,7 +582,7 @@ background-color: null;
 font-style: inherit;">10</span>]</span>
 <span id="cb17-3">)</span></code></pre></div>
 <div class="cell-output-display column-page">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <caption>A full-width table to increase content space</caption>
 <colgroup>
 <col style="width: 28%">
@@ -1565,7 +1565,7 @@ Publishing.”</span> October 1, 2023. <a href="https://mbacou.com/posts/2022-12
 
 <hr>
 <p>While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by ERA5-LAND reanalysis dataset and ground observations. These biases impact the calculation of daily <strong>Frost-Degree-Day</strong> index (FDD) used to price insurance coverage.</p>
-<p>Here we want to recalibrate <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land">ERA5-LAND</a> hourly temperatures to <a href="https://cimis.water.ca.gov/">CIMIS</a> ground network observations in order to address ERA5-LAND model biases reported over central California. The procedure involves the following steps:</p>
+<p>Here we want to recalibrate <a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land">ERA5-LAND</a> hourly temperatures to <a href="https://cimis.water.ca.gov/">CIMIS</a> ground network observations in order to address ERA5-LAND model biases reported over Central California. The procedure involves the following steps:</p>
 <ul>
 <li>Build CIMIS time-series across OLAM portfolio extent<br>
 </li>

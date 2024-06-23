@@ -1,68 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mbacou.github.io/mb-labs/index.html</loc>
-    <lastmod>2024-01-30T13:28:00.274Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/portfolio.html</loc>
-    <lastmod>2024-01-30T10:39:32.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/about.html</loc>
-    <lastmod>2024-01-30T11:33:42.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/license.html</loc>
-    <lastmod>2024-01-25T05:08:21.582Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/posts/2022-12-01-armyvet/index.html</loc>
-    <lastmod>2024-01-27T16:47:31.669Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/posts/2021-01-16-rfmerge/index.html</loc>
-    <lastmod>2024-01-25T04:28:51.674Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/posts/2020-12-02-era5-ca/index.html</loc>
-    <lastmod>2024-01-25T04:28:51.522Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/posts/2022-12-01-theme/index.html</loc>
-    <lastmod>2024-01-29T15:31:11.179Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/portfolio/webapps.html</loc>
-    <lastmod>2024-01-30T10:33:16.428Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/portfolio/tableau.html</loc>
-    <lastmod>2024-01-30T10:29:51.538Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.github.io/mb-labs/portfolio/print.html</loc>
+    <loc>https://mbacou.com/portfolio/print.html</loc>
     <lastmod>2024-01-30T10:30:56.158Z</lastmod>
   </url>
   <url>
-    <loc>https://mbacou.com/index.html</loc>
-    <lastmod>2024-06-21T21:26:46.345Z</lastmod>
+    <loc>https://mbacou.com/portfolio/tableau.html</loc>
+    <lastmod>2024-01-30T10:29:51.538Z</lastmod>
   </url>
   <url>
-    <loc>https://mbacou.com/about.html</loc>
-    <lastmod>2024-06-21T22:38:38.421Z</lastmod>
+    <loc>https://mbacou.com/about/index.html</loc>
+    <lastmod>2024-06-23T01:01:47.488Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mbacou.com/license.html</loc>
+    <lastmod>2024-01-25T05:08:21.582Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mbacou.com/posts/2020-12-02-era5-ca/index.html</loc>
+    <lastmod>2024-06-23T00:29:42.283Z</lastmod>
   </url>
   <url>
     <loc>https://mbacou.com/posts/2021-01-16-rfmerge/index.html</loc>
-    <lastmod>2024-06-23T00:30:21.371Z</lastmod>
+    <lastmod>2024-06-23T01:03:15.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mbacou.com/posts/2022-12-01-theme/index.html</loc>
+    <lastmod>2024-02-04T02:10:44.776Z</lastmod>
   </url>
   <url>
     <loc>https://mbacou.com/portfolio.html</loc>
     <lastmod>2024-01-30T15:15:40.944Z</lastmod>
   </url>
   <url>
-    <loc>https://mbacou.com/portfolio/webapps.html</loc>
-    <lastmod>2024-01-30T15:05:27.322Z</lastmod>
+    <loc>https://mbacou.com/index.html</loc>
+    <lastmod>2024-06-21T21:26:46.345Z</lastmod>
   </url>
   <url>
     <loc>https://mbacou.com/portfolio/app-wadashboard.html</loc>
@@ -71,13 +43,5 @@
   <url>
     <loc>https://mbacou.com/portfolio/app-pricing.html</loc>
     <lastmod>2024-01-30T15:05:27.322Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.com/posts/2022-12-01-theme/index.html</loc>
-    <lastmod>2024-02-04T02:10:44.776Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mbacou.com/posts/2020-12-02-era5-ca/index.html</loc>
-    <lastmod>2024-06-23T00:29:42.283Z</lastmod>
   </url>
 </urlset>

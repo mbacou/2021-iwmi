@@ -1,13 +1,14 @@
 ---
 title: "BACOU, Melanie"
 subtitle: "Agro-economist, agri-meteo and geospatial analyst"
-image: _assets/about/profile.jpg
+image: _fig/profile.jpg
 date: 2024-01-01
 date-modified: last-modified
+freeze: true
 ---
 
 ::: {.column-margin}
-![](_assets/about/profile.jpg){.img-rounded style="margin-top:-4rem;" width="12em" fig-align="left"}
+![](_fig/profile.jpg){.img-rounded style="margin-top:-3rem;" width="12em" fig-align="left"}
 
 {{< fa brands telegram >}}    [t.me/mbacou](https://t.me/mbacou)\
 {{< fa brands linkedin >}}    [linkedin.com/in/mbacou](https://linkedin.com/in/mbacou)\
@@ -65,7 +66,7 @@ Quantitative and spatial analysis, cost/benefit analysis, household surveys and 
 ## International Water Management Institute (IWMI)
 
 ::: column-margin
-![](_assets/about/iwmi.jpg){width="6em" fig-align="left"}
+![](_fig/iwmi.jpg){width="6em" fig-align="left"}
 
 Porto, Portugal\
 Aug 2021 -- Jan 2022\
@@ -79,7 +80,7 @@ Designed [complex ETLs](https://mbacou.github.io/WADashboard/) and [interactive 
 ## WorldCover PBC
 
 ::: column-margin
-![](_assets/about/wc.jpg){width="5em" fig-align="left"}
+![](_fig/wc.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Tamale, Ghana\
@@ -95,7 +96,7 @@ WorldCover engineers solutions to better design, target, and deliver affordable 
 ## Bill & Melinda Gates Foundation (BMGF)
 
 ::: column-margin
-![](_assets/about/bmgf.jpg){width="5em" fig-align="left"}
+![](_fig/bmgf.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Seattle WA\
@@ -110,7 +111,7 @@ Business-oriented typologies and characterization of small-holder farming system
 ## Abt Associates Inc.
 
 ::: column-margin
-![](_assets/about/abt.jpg){width="5em" fig-align="left"}
+![](_fig/abt.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Jun 2017 -- Jul 2017\
@@ -124,7 +125,7 @@ Geospatial analysis to support [USAID AgResults](https://agresults.org/) program
 ## International Food Policy Research Institute (IFPRI)
 
 ::: column-margin
-![](_assets/about/ifpri.jpg){width="5em" fig-align="left"}
+![](_fig/ifpri.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Sep 2014 -- Dec 2016\
@@ -138,7 +139,7 @@ Generated subnational socio-economic and biophysical datasets to inform and upsc
 ## IFPRI -- HarvestChoice Program
 
 ::: column-margin
-![](_assets/about/hc.jpg){width="5em" fig-align="left"}
+![](_fig/hc.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 May 2010 -- Aug 2014\
@@ -152,7 +153,7 @@ Research, data and analytics in support of the Global Development Program of the
 ## IFPRI -- AGRODEP Program
 
 ::: column-margin
-![](_assets/about/agrodep.jpg){width="5em" fig-align="left"}
+![](_fig/agrodep.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Dakar, Senegal\
@@ -167,7 +168,7 @@ The African Growth and Development Policy Modeling Consortium is a program spons
 ## Bill & Melinda Gates Foundation (BMGF)
 
 ::: column-margin
-![](_assets/about/bmgf.jpg){width="5em" fig-align="left"}
+![](_fig/bmgf.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Seattle WA\
@@ -182,7 +183,7 @@ Country diagnostics, segmentation of farm households, and data visualization for
 ## African Development Bank
 
 ::: column-margin
-![](_assets/about/afdb.jpg){width="9em" fig-align="left"}
+![](_fig/afdb.jpg){width="9em" fig-align="left"}
 
 Tunis, Tunisia\
 Oct 2008 -- Jan 2009\
@@ -196,7 +197,7 @@ Led a 4-month ICT project for the Bank’s Procurement and Fiduciary Services di
 ## Development Gateway Foundation
 
 ::: column-margin
-![](_assets/about/dgf.jpg){width="5em" fig-align="left"}
+![](_fig/dgf.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 May 2008 -- Sep 2008\
@@ -210,7 +211,7 @@ Helped conduct a 5-month evaluation of the relevance, effectiveness and impact, 
 ## Abt Associates Inc.
 
 ::: column-margin
-![](_assets/about/abt.jpg){width="5em" fig-align="left"}
+![](_fig/abt.jpg){width="5em" fig-align="left"}
 
 Washington DC\
 Sana'a, Yemen\
@@ -231,7 +232,7 @@ Managed environmental cost-benefit and regulatory analyses, and program evaluati
 ## Center for Global Trade Analysis (GTAP)
 
 ::: column-margin
-![](_assets/about/gtap.png){width="8em" fig-align="left"}
+![](_fig/gtap.png){width="8em" fig-align="left"}
 
 West Lafayette IN\
 2001 -- 2005\
@@ -249,7 +250,7 @@ West Lafayette IN\
 ## Landbouw Economisch Instituut -- Wageningen UR (LEI)
 
 ::: column-margin
-![](_assets/about/lei.jpg){width="6em" fig-align="left"}
+![](_fig/lei.jpg){width="6em" fig-align="left"}
 
 Den Haag, The Netherlands\
 Jan 2000 -- Aug 2000\
@@ -264,7 +265,7 @@ Jan 2000 -- Aug 2000\
 ## Purdue University -- Dpt of Agricultural Economics
 
 ::: column-margin
-![](_assets/about/purdue.jpg){width="5em" fig-align="left"}
+![](_fig/purdue.jpg){width="5em" fig-align="left"}
 
 West Lafayette IN\
 Harare, Zimbabwe\
@@ -281,7 +282,7 @@ Sep 1998 -- Dec 1999\
 ## Société Générale Emerging Europe Asset Management (SGEEAM)
 
 ::: column-margin
-![](_assets/about/sg.jpg){width="5em" fig-align="left"}
+![](_fig/sg.jpg){width="5em" fig-align="left"}
 
 London, UK\
 Jan 1996 -- May 1996\
@@ -297,7 +298,7 @@ Jan 1996 -- May 1996\
 ## FIMATEX S.A.
 
 ::: column-margin
-![](_assets/about/fimatex.jpg){width="6em" fig-align="left"}
+![](_fig/fimatex.jpg){width="6em" fig-align="left"}
 
 Paris, France\
 Jul 1995 -- Oct 1995\
@@ -314,7 +315,7 @@ Jul 1995 -- Oct 1995\
 ## SEAT France S.A.
 
 ::: column-margin
-![](_assets/about/seat.png){width="6em" fig-align="left"}
+![](_fig/seat.png){width="6em" fig-align="left"}
 
 Cergy Pontoise, France\
 Jan 1995 -- Apr 1995\
@@ -330,7 +331,7 @@ Contributed to monthly promotional campaigns with advertising agencies and track
 ## Purdue University
 
 ::: column-margin
-![](_assets/about/purdue.jpg){width="5em" fig-align="left"}
+![](_fig/purdue.jpg){width="5em" fig-align="left"}
 
 West Lafayette IN\
 1997 -- 2001
@@ -344,7 +345,7 @@ Activities: started and taught Purdue's Argentine tango student organization
 ## ESCP Europe
 
 ::: column-margin
-![](_assets/about/escp.jpg){width="5em" fig-align="left"}
+![](_fig/escp.jpg){width="5em" fig-align="left"}
 
 Paris, France\
 Oxford, UK\
@@ -361,7 +362,7 @@ Thesis: *Agricultural Derivatives Markets – A Substitute to the Common Agricul
 ## Lycée Louis-le-Grand
 
 ::: column-margin
-![](_assets/about/llg.jpg){width="6em" fig-align="left"}
+![](_fig/llg.jpg){width="6em" fig-align="left"}
 
 Paris, France\
 1992 -- 1994

@@ -1,19 +1,19 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/posts/2022-12-01-theme/index.html",
-      "/posts/2021-01-16-rfmerge/index.html",
-      "/posts/2020-12-02-era5-ca/index.html"
-    ]
-  },
-  {
     "listing": "/portfolio.html",
     "items": [
       "/portfolio/app-wadashboard.html",
       "/portfolio/app-pricing.html",
       "/portfolio/tableau.html",
       "/portfolio/print.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2022-12-01-theme/index.html",
+      "/posts/2021-01-16-rfmerge/index.html",
+      "/posts/2020-12-02-era5-ca/index.html"
     ]
   }
 ]

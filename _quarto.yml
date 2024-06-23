@@ -32,7 +32,7 @@ website:
       - text: Portfolio
         file: portfolio.qmd
       - text: About
-        file: about.qmd
+        file: about/index.qmd
     right:
       - icon: github
         href: https://github.com/mbacou/mb-labs
@@ -51,7 +51,7 @@ website:
       Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
     center:
       - text: About
-        href: about.qmd
+        href: about/index.qmd
       - text: License
         href: license.qmd
       - text: RSS

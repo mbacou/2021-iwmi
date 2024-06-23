@@ -14,7 +14,7 @@ categories:
 
 While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by ERA5-LAND reanalysis dataset and ground observations. These biases impact the calculation of daily **Frost-Degree-Day** index (FDD) used to price insurance coverage.
 
-Here we want to recalibrate [ERA5-LAND](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land) hourly temperatures to [CIMIS](https://cimis.water.ca.gov/) ground network observations in order to address ERA5-LAND model biases reported over central California. The procedure involves the following steps:
+Here we want to recalibrate [ERA5-LAND](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land) hourly temperatures to [CIMIS](https://cimis.water.ca.gov/) ground network observations in order to address ERA5-LAND model biases reported over Central California. The procedure involves the following steps:
 
 * Build CIMIS time-series across OLAM portfolio extent  
 * Build DEM covariate (using ERA5-LAND extent and spatial resolution)

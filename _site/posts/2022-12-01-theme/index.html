@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.6">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Melanie BACOU">
 <meta name="dcterms.date" content="2023-10-01">
 
-<title>Mel's Labs – Migrating from Distill to Quarto Publishing</title>
+<title>Mel’s Labs - Migrating from Distill to Quarto Publishing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -177,7 +177,7 @@ div.csl-indent {
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../about/index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -279,7 +279,7 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
@@ -298,12 +298,12 @@ div.csl-indent {
 </div>
 <p>With the release of <strong>Quarto 1.4</strong>, markdown-based publishing is gaining popularity, way beyond the scientific community. Multilingual text-based documents (such as <strong>Rmarkdown</strong> and <strong>Jupyter</strong> notebooks) that combine executable code chunks with formatted prose greatly simplify the process of drafting, iterating, generating, documenting, sharing and reproducing computable research experiments.</p>
 <p>Old-time researchers have long used <strong>Emacs <code>Org-Mode</code></strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> along with its wild hordes of keyboard shortcuts<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to achieve similar results thanks to <em>Eric Schulte</em>’s incredible <strong>babel</strong> extension to <code>Org-Mode</code> <span class="citation" data-cites="schulte2012">(see <a href="#ref-schulte2012" role="doc-biblioref">Schulte et al. 2012</a>)</span> and to <em>John MacFarlane</em>’s <a href="https://pandoc.org/">Pandoc</a> document converter library – but nowadays Quarto makes use of more efficient parsers and runtime engines (Sass, Deno) and adds in-browser real-time rendering of documents.</p>
-<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;For folks born in this century, to <strong>babel</strong> (elips) or to <strong>sweave</strong> (R) is the process of compiling text documents that include both static markup and executable scripts.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;For folks born in this century, to <strong>babel</strong> (elips) or to <strong>sweave</strong> (R) is the process of compiling text documents that include both static markup and executable scripts.</p>
 <p><img src="Donald-Knuth.jpg" class="img-rounded img-fluid" style="width:10em"></p>
 <p>The concept of <strong>Literate Programming</strong> was introduced in 1984 by the mathematician <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> and was widely popularized thereafter in the engineering community thanks to <a href="https://orgmode.org/worg/org-contrib/babel/uses.html">org-mode</a> in the Emacs editor.</p>
 <p><img src="Carsten-Dominik.jpg" class="img-rounded img-fluid" style="width:10em"></p>
-<p>Emacs <strong><code>Org-Mode</code></strong> was created by the astronomer <a href="https://en.wikipedia.org/wiki/Org-mode#:~:text=Org%20Mode%20was%20created%20by,mode%20by%20default%20since%202006">Carsten Dominik</a> in 2003 and remains to this day one of the most used and madly loved note-taking and GTD (Get-Things-Done) tools, with many of its functionality (agenda, tags, etc.) yet to be ported to any markdown engine.</p><p><sup>2</sup>&nbsp;Only keyboard, Baby!</p>
-<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="real-programmers.png" class="img-fluid"></a></p></div><p>While migrating my old content to the new Quarto markdown syntax, this post briefly outlines my process for creating a custom Bootstrap theme for this revamped website. Feel free to reuse my <code>theme.scss</code> Sass file.</p>
+<p>Emacs <strong><code>Org-Mode</code></strong> was created by the astronomer <a href="https://en.wikipedia.org/wiki/Org-mode#:~:text=Org%20Mode%20was%20created%20by,mode%20by%20default%20since%202006">Carsten Dominik</a> in 2003 and remains to this day one of the most used and madly loved note-taking and GTD (Get-Things-Done) tools, with many of its functionality (agenda, tags, etc.) yet to be ported to any markdown engine.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Only keyboard, Baby!</p>
+<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="real-programmers.png" class="img-fluid"></a></p></div></div><p>While migrating my old content to the new Quarto markdown syntax, this post briefly outlines my process for creating a custom Bootstrap theme for this revamped website. Feel free to reuse my <code>theme.scss</code> Sass file.</p>
 <section id="css-grid-system" class="level1 page-columns page-full">
 <h1>CSS Grid System</h1>
 <p>Quarto uses the full flexibility of Bootstrap v5.3 grid system, with a few handy classes to help precisely position content on a page, in particular:</p>
@@ -351,8 +351,8 @@ div.csl-indent {
 <p>.column-screen-inset-shaded</p>
 </div>
 <p>Finally any layout is achievable using stackable <code>&lt;div class="g-col-{width}"&gt;</code> columns inside a <code>&lt;div class="grid"&gt;</code> element (see color boxes below). The full system summarized here, copied straight from Quarto online documentation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><p><sup>3</sup>&nbsp;Refer to <a href="https://quarto.org/docs/authoring/article-layout.html#available-columns">Quarto CSS classes</a> official documentation.</p></div><div class="column-page-right">
-<table class="table">
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Refer to <a href="https://quarto.org/docs/authoring/article-layout.html#available-columns">Quarto CSS classes</a> official documentation.</p></div></div><div class="column-page-right">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 40%">
@@ -425,7 +425,7 @@ column: screen-right</code></pre></td>
 <section id="color-system" class="level1 page-columns page-full">
 <h1>Color System</h1>
 <p>Choosing a color scheme is easy, start from your favorite photo or graphic and upload it to one of the many online color palette generators to extract base and accent colors. Below I have selected a standard 12-color palette that simply strives to complement my decade old <a href="https://store.kde.org/p/1980663">Kubuntu desktop</a><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (in a light version).</p>
-<div class="no-row-height column-margin column-container"><p><sup>4</sup>&nbsp;KDE, 30 years later, still going strong! <a href="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="img-fluid"></a></p></div><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;KDE, 30 years later, still going strong! <a href="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://images.pling.com/img/00/00/51/57/23/1980663/screenshot-20230201-205024.png" class="img-fluid"></a></p></div></div><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>pal12 <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">cyan   =</span> <span class="st">"#789494"</span>,</span>
@@ -595,15 +595,15 @@ Blockquote content comes here…<br>
 <h5 class="anchored" data-anchor-id="heading-5">Heading 5</h5>
 <p>Sample paragraph content.</p>
 <p>Here is a footnote reference,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and another much longer one.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Caption and footnote placement can be controlled in the config files <code>_quarto_yml</code> and/or <code>_metadata.yml</code>, or dircetly in the YAML front matter.</p>
-<div class="no-row-height column-margin column-container"><p><sup>5</sup>&nbsp;Here is the footnote.</p><p><sup>6</sup>&nbsp;Here’s one with multiple blocks.</p>
-<p>With subsequent paragraphs indented to show that they belong to the previous footnote.</p></div></section>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Here is the footnote.</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Here’s one with multiple blocks.</p>
+<p>With subsequent paragraphs indented to show that they belong to the previous footnote.</p></div></div></section>
 </section>
 </section>
 </section>
 <section id="tables" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <p>I prefer my normal tables slightly more condensed than Bootstrap’s default and to resemble LaTeX typesetting, so made a few simple changes here.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Default</caption>
 <tbody>
 <tr class="odd">
@@ -620,7 +620,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-borderless table-hover table-sm small table">
+<table class="table-borderless table-hover table-sm small caption-top table">
 <caption>borderless hover sm</caption>
 <thead>
 <tr class="header">
@@ -643,7 +643,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover table-sm small table">
+<table class="table-striped table-hover table-sm small caption-top table">
 <caption>striped hover sm</caption>
 <thead>
 <tr class="header">
@@ -666,7 +666,7 @@ Blockquote content comes here…<br>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover table-sm table-secondary small table">
+<table class="table-striped table-hover table-sm table-secondary small caption-top table">
 <caption>striped hover sm secondary</caption>
 <thead>
 <tr class="header">
@@ -694,7 +694,7 @@ Blockquote content comes here…<br>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display column-page">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <caption>A full-width table to increase content space</caption>
 <colgroup>
 <col style="width: 28%">
@@ -1099,6 +1099,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -1140,7 +1145,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1423,7 +1432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about/index.html">
 <p>About</p>
 </a>
   </li>  
@@ -1444,7 +1453,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
