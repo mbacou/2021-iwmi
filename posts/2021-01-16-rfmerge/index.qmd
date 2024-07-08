@@ -2,6 +2,7 @@
 title: Merge Ground and Satellite Observations with RFMerge
 subtitle: Recalibrate ERA5 hourly temperatures to CIMIS network ground observations.
 date: 2021-01-16
+date-modified: last-modified
 draft: false
 freeze: true
 fig-format: png
@@ -427,7 +428,7 @@ plot(dem, ext=zoi, ylab=names(dem), col=terrain.colors(20),
 grid()
 plot(pts, add=T, pch="o", col=pal["dark"])
 plot(stations, add=T, col=pal[c("dark", "red")][1+(obs.gis$IsActive=="True")], pch="x")
-legend("bottom", ncol=3, bty="n",
+legend("bottom", ncol=3, bg=pal["light"],
   legend=c("Active station", "Stale station", "Production site"),
   col=pal[c("dark", "red", "dark")], pch=c("x", "x", "o"))
 
@@ -488,7 +489,7 @@ grid()
 plot(pts, pch="o", col=pal["dark"], add=T)
 plot(stations[stations$StationNbr %in% names(obs.ts),], 
   pch="x", col=pal[["dark"]], add=T)
-legend("bottom", ncol=2, bty="n",
+legend("bottom", ncol=2, bg=pal["light"],
   legend=c("Active station", "Production site"), pch=c("x", "o"))
  
 plot(era, ext=zoi, ylab=names(era)[1], 
@@ -498,7 +499,7 @@ grid()
 plot(pts, pch="o", col=pal["dark"], add=T)
 plot(stations[stations$StationNbr %in% names(obs.ts),], 
   pch="x", col=pal[["dark"]], add=T)
-legend("bottom", ncol=2, bty="n",
+legend("bottom", ncol=2, bg=pal["light"],
   legend=c("Active station", "Production site"), pch=c("x", "o"))
 
 ```

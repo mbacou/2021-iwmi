@@ -4,6 +4,7 @@ subtitle: My Design Portfolio
 image: fig/mbacou-app-pricing.png
 date: 2024-02-01
 date-modified: last-modified
+title-block-banner: var(--bs-shaded)
 categories:
   - model front-end
   - R/Shiny
@@ -11,12 +12,27 @@ abstract: |
   Showcase of interactive statistical dashboards and decision-support tools designed for partners and clients.
 ---
 
-Complex statistical analyses and economic models always require robust end-user design.
+```{r}
+#| echo: false
+#| output: false
+
+svg(here::here("../_site/www/parallax.svg"), height=3)
+plot(rnorm(10), type="b")
+dev.off()
+```
+
+::: {.column-screen .parallax-container}
+::: {.parallax-image-container style="background-image: url(../www/parallax.svg)"}
+Content there.
+:::
+:::
+
+Complex statistical analyses and economic models always require robust end-user
+design.
 
 ## Water accounting Balances
 
 Model visualization for large-scale water accounting models
-
 
 ## Simulating Historical Claim Costs
 
@@ -26,9 +42,33 @@ Real-time pricing of weather-index insurance
 
 This tool supports WorldCover PBC agricultural insurance operations.
 
-How to cite
-Confidential.
+How to cite Confidential.
 
-Tools
-R/Shiny, bs4Dash, bslib, shinyWidgets, data.table, leaflet, highcharter, terra
+Tools R/Shiny, bs4Dash, bslib, shinyWidgets, data.table, leaflet, highcharter, terra
 
+<!--# some comment -->
+
+::: {.callout-note icon="false"}
+## Test callout
+
+And something important.
+:::
+
++----------+----------+----------+
+| Col1     | Col2     | Col3     |
++==========+:========:+==========+
+| aa       |          |          |
++----------+----------+----------+
+| bb       |          |          |
++----------+----------+----------+
+| m        |          |          |
+| ultiple\ |          |          |
+| lines    |          |          |
+| here.    |          |          |
++----------+----------+----------+
+
+: Table
+
+::: column-margin
+Something in the margin now.
+:::

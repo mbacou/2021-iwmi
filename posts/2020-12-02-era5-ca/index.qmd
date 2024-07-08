@@ -2,6 +2,7 @@
 title: ERA5-LAND Temperature Validation (California)
 subtitle: Can we justify winter Y2017 corrections to ERA5-LAND temperature grids over central California?
 date: 2020-12-02
+date-modified: last-modified
 draft: false
 freeze: true
 fig-format: png
@@ -12,19 +13,20 @@ categories:
 
 ----------
 
-While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by ERA5-LAND reanalysis dataset and ground observations. These biases impact the calculation of daily **Frost-Degree-Day** index (FDD) used to price insurance coverage.
+While estimating winter season frost risk for almond orchards over Central California, project partners reported significant discrepancies between modeled-based temperature estimates provided by **ERA5-LAND Reanalysis** dataset and ground observations from meteo stations. These biases impact the calculation of daily **Frost-Degree-Day** index (FDD) used to price insurance coverage.
 
-In this analysis we look into more details at ERA5-LAND temperature estimate biases against ground observations collected from NOAA GHCN network of meteorological stations.
+In this analysis we look into more details at ERA5-LAND temperature estimate biases against ground observations collected from NOAA GHCN network of meteorological stations. In particular:
 
 - Can we justify Y2017 correction to ERA5-LAND hourly temperature grids over OLAM portfolio?
-- Portfolio-wide ERA5-LAND temperature validation against NOAA GHCN ground records
+- Can we perform a portfolio-wide ERA5-LAND temperature validation against NOAA GHCN ground records?
 
-This work was initially performed for **WorldCover PBC** and **OLAM US** in early 2021, and redacted here to omit confidential details.
+This work was initially produced for **WorldCover PBC** and **OLAM US** in early 2021, and redacted here to omit confidential details.
 
 
 ```{r load}
 
 library(here)
+library(mblabs)
 library(lubridate)
 library(ggplot2)
 library(raster)
@@ -33,8 +35,8 @@ library(data.table)
 library(zoo)
 library(rnoaa)
 
-pal <- mblabs::pal
-mblabs::theme_labs_on()
+theme_labs_on()
+pal2 <- alpha(unname(pal[c("blue", "purple")]), .8)
 
 load(here("./_data/2020-burn_olam_usa_07.RData"))
 
@@ -43,7 +45,7 @@ load(here("./_data/2020-burn_olam_usa_07.RData"))
 ```{r zoi}
 #| eval: false
 
-# Clear workspace, keep portfolio details
+# Clear workspace, keep only portfolio details
 load(here("./_data/2020-burn_olam_usa_06.RData"))
 rm(list=setdiff(ls(), c("dir", "pts.dt", "dt.era", "dt.imp")))
 
@@ -167,21 +169,26 @@ save.image(here("./_data/2020-burn_olam_usa_07.RData"))
 
 # Results
 
-10-year comparisons between ERA5-LAND and GHCN station network observations over Feb-March risk period. 11 stations (under 30-km from production sites and with daily temperature records after 2010) are selected for this comparison.
+10-year comparisons between ERA5-LAND and GHCN station network observations over Feb-March risk period. 11 stations (under 30-km from almond production sites and with daily temperature records after 2010) are selected for this comparison.
 
 ```{r}
 #| classes: preview-image
-#| fig-height: 5
+#| fig-height: 7
 
-plot(cat[date=="2020-02-01", crop(raster(file, 1), stations.sp[stations.sp$id %in% ids,])], 
-  xlab=NA, ylab=NA, main="Tmean °C", sub="ERA5 2020-02-01 00:00")
-plot(crop(stations.sp[!stations.sp$id %in% ids,], pts), col="black", add=T)
+library(terra)
+r <- rast(here("_data/daily_2020-02-01.nc"))
+
+plot(r[[1]], ext=ext(stations.sp[stations.sp$id %in% ids,]) + c(1,1,0,0),
+  col=terrain.colors(20), ylab=names(r)[1],
+  main="Hourly Tmean (°C) - ERA5 2020-02-01 00:00")
+grid()
+plot(crop(stations.sp[!stations.sp$id %in% ids,], pts), col=pal["dark"], add=T)
 plot(stations.sp[stations.sp$id %in% ids,], col="red", add=T)
-plot(pts, col="blue", pch="*", add=T)
-plot(pts[pts$loc_id==25,], col="blue", pch=1, cex=2, add=T)
-legend("bottomleft", 
+plot(pts, col=pal["blue"], pch="*", add=T)
+plot(pts[pts$loc_id==25,], col=pal["blue"], pch=1, cex=2, add=T)
+legend("bottom", bg=pal["light"], cex=.8,
   legend=c("GHCN station", "GHCN station ≤ 30-km", "OLAM production site", "Main site"),
-  col=c("black", "red", "blue", "blue"), pch=c("+", "+", "*", "o"), cex=.7)
+  col=pal[c("dark", "red", "blue", "blue")], pch=c("+", "+", "*", "o"))
 
 ```
 
@@ -191,7 +198,7 @@ List of GHCN stations retained in the analysis.
 
 stations[id %in% ids & element %in% c("TMIN", "TAVG"), .(
   first_year, last_year
-), keyby=.(id, name, element)] %>% kable()
+), keyby=.(id, name, element)] |> knitr::kable()
 
 ```
 
@@ -200,18 +207,21 @@ stations[id %in% ids & element %in% c("TMIN", "TAVG"), .(
 ```{r}
 #| column: screen
 #| layout-ncol: 2
-#| fig-height: 5
+#| fig-height: 3
 
-for(i in stations.dt[, unique(var)]) stations.dt[var==i, hist(value, main=i)]
+for(i in stations.dt[, unique(var)]) stations.dt[var==i, 
+  hist(value, main=i, xlab=NA, col=pal2[2], border=pal["light"])]
 
 ```
 
 # Temperature Minima
 
-2010-2014
+2010-2014 and 2015-2020.
 
 ```{r}
-#| fig-height: 6
+#| column: screen
+#| layout-ncol: 2 
+#| fig-height: 8
 
 prd <- c("2020-02-01", "2020-03-31")
 dt[, sdate := as.Date(date)][, year := year(date)]
@@ -225,84 +235,62 @@ tmp <- dt[yday(date) %between% yday(prd), .(
 ), by=.(year, date, sdate)
 ][, sign := diff_Tmin > 0]
 
-ggplot(tmp[year(date) %between% c(2010, 2014)], aes(x=sdate)) +
+gglabs(tmp[year(date) %between% c(2010, 2014)], aes(x=sdate)) +
   geom_line(aes(y=Tmin, color="ERA5 Tmin")) + 
   geom_point(aes(y=Tmin, color="ERA5 Tmin"), size=.5) +
   geom_line(aes(y=GHCN_Tmin, color="GHCN Tmin")) + 
   geom_point(aes(y=GHCN_Tmin, color="GHCN Tmin"), size=.5) +
   scale_x_date(date_labels="%b-%d", breaks="2 days") +
-  scale_color_discrete(NULL) +
+  scale_color_discrete(NULL, type=pal2) +
   facet_wrap("year", ncol=1) +
   xlab(NULL) +
-  ggtitle("Temperature Mean of Min -- ERA5 vs. GHCN (19 WS)") +
-  theme(
-    legend.position="top", legend.justification=0, 
-    axis.text.x=element_text(angle=-90)
-  )
+  ggtitle("Temperature Mean of Min (°C) -- ERA5 vs. GHCN (19 WS)") +
+  theme(axis.text.x=element_text(angle=-90))
 
-```
-
-2015-2020
-
-```{r}
-#| fig-height: 6
-
-ggplot(tmp[year(date) > 2014], aes(x=sdate)) +
+gglabs(tmp[year(date) > 2014], aes(x=sdate)) +
   geom_line(aes(y=Tmin, color="ERA5 Tmin")) + 
   geom_point(aes(y=Tmin, color="ERA5 Tmin"), size=.5) +
   geom_line(aes(y=GHCN_Tmin, color="GHCN Tmin")) + 
   geom_point(aes(y=GHCN_Tmin, color="GHCN Tmin"), size=.5) +
   scale_x_date(date_labels="%b-%d", breaks="2 days") +
-  scale_color_discrete(NULL) +
+  scale_color_discrete(NULL, type=pal2) +
   facet_wrap("year", ncol=1) +
   xlab(NULL) +
-  ggtitle("Temperature Mean of Min -- ERA5 vs. GHCN (19 WS)") +
-  theme(
-    legend.position="top", legend.justification=0, 
-    axis.text.x=element_text(angle=-90)
-  )
+  ggtitle("Temperature Mean of Min (°C) -- ERA5 vs. GHCN (19 WS)") +
+  theme(axis.text.x=element_text(angle=-90))
 
 ```
 
-2010-2014
+2010-2014 and 2015-2020.
 
 ```{r}
-#| fig-height: 6
+#| column: screen
+#| fig-height: 8
+#| layout-ncol: 2
 
-ggplot(tmp[year(date) %between% c(2010, 2014)], 
+gglabs(tmp[year(date) %between% c(2010, 2014)], 
   aes(sdate, color=sign)) +
   geom_segment(aes(xend=sdate, y=Tmin, yend=GHCN_Tmin), size=.8, lineend="butt") +
   geom_point(aes(y=GHCN_Tmin)) +
   scale_x_date(date_labels="%b-%d", breaks="3 day") +
-  scale_color_discrete(NULL, labels=c("ERA5 ≤ GHCN", "ERA5 > GHCN")) +
+  scale_color_discrete(NULL, type=pal2, 
+    labels=c("ERA5 ≤ GHCN", "ERA5 > GHCN")) +
   facet_wrap("year", ncol=1) +
   xlab(NULL) +
-  ggtitle("Temperature Mean of Min -- ERA5 vs. GHCN WS") +
-  theme(
-    legend.position="top", legend.justification=0, 
-    axis.text.x=element_text(angle=-90)
-  )
+  ggtitle("Temperature Mean of Min (°C) -- ERA5 vs. GHCN WS") +
+  theme(axis.text.x=element_text(angle=-90))
 
-```
-
-2015-2020
-
-```{r}
-#| fig-height: 6
-
-ggplot(tmp[year(date) > 2014], 
+gglabs(tmp[year(date) > 2014], 
   aes(sdate, color=sign)) +
   geom_segment(aes(xend=sdate, y=Tmin, yend=GHCN_Tmin), size=.8, lineend="butt") +
   geom_point(aes(y=GHCN_Tmin)) +
   scale_x_date(date_labels="%b-%d", breaks="3 day") +
-  scale_color_discrete(NULL, labels=c("ERA5 ≤ GHCN", "ERA5 > GHCN")) +
+  scale_color_discrete(NULL, type=pal2,
+    labels=c("ERA5 ≤ GHCN", "ERA5 > GHCN")) +
   facet_wrap("year", ncol=1) +
   xlab(NULL) +
-  ggtitle("Temperature Mean of Min -- ERA5 vs. GHCN WS") +
-  theme(
-    legend.position="top", legend.justification=0, 
-    axis.text.x=element_text(angle=-90)
-  )
+  ggtitle("Temperature Mean of Min (°C) -- ERA5 vs. GHCN WS") +
+  theme(axis.text.x=element_text(angle=-90))
 
 ```
 
@@ -354,19 +342,16 @@ tmp <- dt[!is.na(GHCN_Tmin), .(
   Tmin_bias = GHCN_Tmin - Tmin
 )]
 
-ggplot(tmp) +
+gglabs(tmp) +
   geom_smooth(aes(x=GHCN_Tmean, y=Tmean_bias, color="Bias (Tmean)")) +
   geom_smooth(aes(x=GHCN_Tmin, y=Tmin_bias, color="Bias (Tmin)")) +
-  geom_hline(aes(yintercept=0), color="black", linetype=1) +
-  geom_vline(aes(xintercept=0), color="black", linetype=3) +
-  scale_color_discrete(NULL) +
+  geom_hline(aes(yintercept=0), color=pal["dark"], linetype=1) +
+  geom_vline(aes(xintercept=0), color=pal["dark"], linetype=3) +
+  scale_color_discrete(NULL, type=pal2) +
   scale_x_continuous(n.breaks=10) +
   scale_y_continuous(n.breaks=10) +
   xlab("GHCN Temp. (°C)") + ylab("ERA5 Bias (°C)") +
-  ggtitle("ERA5 Bias vs. GHCN WS (2010-2020)") +
-  theme(
-    legend.position="top", legend.justification=0
-  )
+  ggtitle("ERA5 Temperature Bias vs. GHCN WS (2010-2020)")
 
 ```
 
@@ -393,32 +378,26 @@ idx <- dt[yday(date) %between% yday(prd), .(
 tmp <- melt(idx, id.vars=c("loc_id", "year"))
 tmp <- tmp[, .(value=mean(value, na.rm=T)), by=.(year, variable)]
 
-ggplot(tmp[variable %in% c("idx", "idx_ghcn")], 
+gglabs(tmp[variable %in% c("idx", "idx_ghcn")], 
   aes(year, value, fill=variable)) +
-  geom_col(position="dodge", color=NA, alpha=.8, width=.8) +
-  scale_fill_discrete(NULL, labels=c("GHCN FDD", "ERA5 FDD")) +
+  geom_col(position="dodge", color=pal["light"], width=.8) +
+  scale_fill_discrete(NULL, type=pal2[2:1], labels=c("GHCN FDD", "ERA5 FDD")) +
   scale_x_continuous(breaks=2010:2020) +
   xlab(NULL) + ylab(NULL) +
   ggtitle("Mean FDD across Stations -- ERA5 vs. GHCN (2010-2020)") +
-  theme(
-    axis.text.x=element_text(angle=-90),
-    legend.position="top", legend.justification=0
-  )
+  theme(axis.text.x=element_text(angle=-90))
 
 ```
 
 ```{r}
 
-ggplot(idx[idx_ghcn>0], aes(idx_ghcn, idx)) +
+gglabs(idx[idx_ghcn>0], aes(idx_ghcn, idx)) +
   geom_abline(linetype=3) +
   geom_smooth(aes(color="ERA5 non-adjusted")) +
-  geom_point(shape="+", size=4) +
-  scale_color_discrete(NULL) +
+  geom_point(shape="+", color=pal["dark"], size=4) +
+  scale_color_discrete(NULL, type=pal2[1]) +
   xlab("GHCN FDD") + ylab("ERA5 FDD") +
-  ggtitle("FDD -- ERA5 vs. GHCN (2010-2020)") +
-  theme(
-    legend.position="top", legend.justification=0
-  )
+  ggtitle("FDD -- ERA5 vs. GHCN (2010-2020)")
 
 ```
 

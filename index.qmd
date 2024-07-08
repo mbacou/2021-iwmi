@@ -1,24 +1,38 @@
 ---
 title: Econometric and Geospatial Analysis
 subtitle: ... to inform robust and equitable public policy
+description: |
+  A personal Blog 
+  
+  largely centered around R programming and statistical analysis for **agricultural economic research** -- but you'll also find book and article reviews, and the occasional opinion piece. Check out my [full Bio](./about/index.qmd) for details.
 page-layout: full
-margin-header: _custom.qmd
+toc: false
 listing:
-  id: listing-home
+  id: lst-home
   contents: posts
-  categories: true
+  categories: false
   feed: true
   filter-ui: false
-  sort-ui: [date]
+  sort-ui: false
   sort: "date desc"
   type: grid
   max-items: 9
   fields: [title, description, image, date, author, categories]
 ---
 
+This is a line of content before the listing[^1].
 
 
-::: {#listing-home}
+Quarto provides a default layout for HTML pages that should work well for many documents. However, if the default layout isn’t working for your content, you can adjust it.
+
+On this page, learn about:
+
+The three high level layout options for your pages in Page Layout.
+
+How to adjust the width of the individual layout components (sidebar, body, margins, and gutter) to fit your content in Grid Customization.
+
+
+::: {#lst-home}
 :::
 
 

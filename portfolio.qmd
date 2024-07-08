@@ -5,12 +5,12 @@ margin-header: _custom.qmd
 page-layout: full
 listing:
   contents: portfolio
-  sort-ui: [date]
-  filter-ui: [title, description]
+  sort-ui: false
+  filter-ui: false
   sort: "date desc"
   type: default
   date-format: medium
-  image-align: right
+  image-align: left
   image-height: 180px
   max-items: 10
   categories: true

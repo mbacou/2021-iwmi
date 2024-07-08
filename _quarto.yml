@@ -21,11 +21,10 @@ website:
 
   navbar:
     title: "{{< fa regular compass-drafting >}}   Mel's Labs"
-    foreground: dark
-    background: white
+    foreground: gray-800
+    background: gray-100
     pinned: false
     toggle-position: right
-
     left:
       - text: Notebooks
         file: index.qmd
@@ -44,10 +43,14 @@ website:
         href: https://www.youtube.com/@mbacou/playlists
 
   page-footer:
-    foreground: light
-    background: dark
+    foreground: dark
+    background: transparent
+    right: |
+      All views here are strictly my own and do <u>not</u> reflect that of employers,
+      project partners or clients. Refer to each article for citation, code and data reuse.
     left: |
-      &copy; Copyright 2024 &mdash; BACOU, Melanie.
+      BACOU, Melanie &copy; 2024
+
       Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
     center:
       - text: About
@@ -56,7 +59,8 @@ website:
         href: license.qmd
       - text: RSS
         href: index.xml
-    right: "Built with [Quarto](https://quarto.org/)^®^"
+      - text: Built with Quarto^®^
+        href: https://quarto.org
 
 bibliography: references.bib
 
@@ -76,16 +80,16 @@ format:
     code-copy: true
     code-overflow: wrap
 
-    tbl-cap-location: top
+    tbl-cap-location: bottom
     fig-cap-location: bottom
     reference-location: margin
     citation-location: document
 
-    theme: www/theme-notebook.scss
-    fontsize: 14px
+    theme: www/theme-news.scss
+    fontsize: 16px
     title-block-banner: transparent
     grid:
+      body-width: 900px
       sidebar-width: 160px
-      body-width: 880px
-      margin-width: 260px
+      margin-width: 240px
       gutter-width: 2em

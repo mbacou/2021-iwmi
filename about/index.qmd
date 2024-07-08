@@ -1,21 +1,27 @@
 ---
-title: "BACOU, Melanie"
-subtitle: "Agro-economist, agri-meteo and geospatial analyst"
+title: BACOU, Melanie
+subtitle: Agro-economist, agri-meteo and geospatial analyst
+description: |
+  In short...
+  
+  I'm an applied economist with a focus on agricultural trade and development for both large- and small-holder farming systems. Over the years I have gained experience in policy formulation, monitoring & evaluation of ODA programs, climate risk and adaptation strategies, and in agricultural finance.
+page-layout: article
 image: _fig/profile.jpg
 date: 2024-01-01
 date-modified: last-modified
-freeze: true
+backgroundcolor: white
+freeze: true  
 ---
 
 ::: {.column-margin}
-![](_fig/profile.jpg){.img-rounded style="margin-top:-3rem;" width="12em" fig-align="left"}
+![](_fig/profile.jpg){.img-rounded .mt-n2 width="12em" fig-align="left"}
 
 {{< fa brands telegram >}}    [t.me/mbacou](https://t.me/mbacou)\
 {{< fa brands linkedin >}}    [linkedin.com/in/mbacou](https://linkedin.com/in/mbacou)\
 {{< fa brands github >}}    [github.com/mbacou](https://github.com/mbacou)\
 {{< fa book >}}    [orcid.org/0000-0003-1810-6818](https://orcid.org/0000-0003-1810-6818)
 
-## Top Skills
+##### Top Skills {.mt-5}
 
 Cost/benefit analysis\
 Economic impact evaluation\
@@ -25,29 +31,29 @@ Weather risk and adaptation\
 Parametric risk transfer\
 R, STATA, QGIS
 
-## Languages
+##### Languages
 
 French (native)\
 English (bilingual)\
 German (limited working)\
 Russian (beginner)
 
-## Certifications
+##### Certifications
 
 [SAS® Programming III](https://learn.sas.com/course/view.php?id=211)
 :::
 
+
 # Summary
 
-Applied economist with a focus on agricultural policies, small-holder farming systems, climate risk and adaptation strategies, monitoring & evaluation of development assistance programs.
+- Led research grants in the \$500K range, advised public agencies and private firms with large-scale data collection methods (incl. remote sensing), household survey design and analysis, market segmentation, agricultural value-chain analysis, pricing of (parametric) weather insurance.
 
-Led research grants in the \$500K range, advised public agencies with large-scale data collection methods (incl. remote sensing), household survey design and analysis, market segmentation, agricultural value-chain analysis, pricing of (parametric) weather insurance.
+- Strong quantitative, analytic, writing and presentation skills acquired over 20 years of collaboration with leading economic research institutes and consulting firms.
 
-Strong quantitative, analytic, writing and presentation skills acquired over 20 years of collaboration with leading economic research institutes and consulting firms.
+- Multidisciplinary background with ability to communicate efficiently with government officials, private sector partners, technical experts, and researchers.
 
-Multidisciplinary background with ability to communicate efficiently with government officials, private sector partners, technical experts, and researchers.
+- Work experience in fragile states (Mid-East, West/sub-Saharan Africa). French / U.S. citizenships.
 
-Work experience in fragile states (Mid-East, West/sub-Saharan Africa). French / U.S. citizenships.
 
 # Specialties
 
