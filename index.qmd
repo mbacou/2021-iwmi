@@ -1,10 +1,4 @@
 ---
-title: Econometric and Geospatial Analysis
-subtitle: ... to inform robust and equitable public policy
-description: |
-  A personal Blog 
-  
-  largely centered around R programming and statistical analysis for **agricultural economic research** -- but you'll also find book and article reviews, and the occasional opinion piece. Check out my [full Bio](./about/index.qmd) for details.
 page-layout: full
 toc: false
 listing:
@@ -19,6 +13,16 @@ listing:
   max-items: 9
   fields: [title, description, image, date, author, categories]
 ---
+
+# Econometric and Geospatial Analysis {.title}
+
+To inform robust and equitable public policy.
+
+----------
+
+<div class="parallax-container"><div class="parallax-image-container"></div></div>
+
+A personal Blog largely centered around R programming and statistical analysis for **agricultural economic research** -- but you'll also find book and article reviews, and the occasional opinion piece. Check out my [full Bio](./about/index.qmd) for details.
 
 This is a line of content before the listing[^1].
 

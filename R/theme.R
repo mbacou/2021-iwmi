@@ -23,7 +23,7 @@ pal = c(
   yellow = "#edcd37",
   orange = "#f67400",
   red    = "#da4453",
-  light  = "#f9f9f9"
+  light  = "#eff0f1"
 )
 
 
@@ -61,7 +61,7 @@ labs.colors <- function(x, colors=unname(pal), ...) colorRampPalette(colors, ...
 #' @export
 theme_labs_on <- function(
   bg = "transparent",
-  fg = "#090909",
+  fg = "#505050",
   accent = pal[[1]],
   font = "Roboto Condensed",
   sequential = sequential_gradient(fg_weight=.5, bg_weight=.5, fg_low=FALSE),
@@ -105,7 +105,7 @@ theme_labs_on <- function(
 #'
 #' @export
 theme_labs <- function(
-    base_size = 12,
+  base_size = 12,
   base_family = NULL, # use Thematic theme,
   base_bg = NULL, # use Thematic theme
   base_color = NULL, # use Thematic theme
@@ -198,7 +198,7 @@ theme_labs <- function(
 #'
 #' @export
 gglabs <- function(
-    data = NULL,
+  data = NULL,
   mapping = aes(),
   pos_x = c("bottom", "top"),
   pos_y = c("right", "left"),

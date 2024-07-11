@@ -12,5 +12,5 @@ set -e
 R -e 'roxygen2::roxygenize()'
 R -e 'devtools::install()'
 
-# Start preview server
-quarto preview . --port 5555
+
+quarto preview .

@@ -6,70 +6,79 @@
 /*-- scss:defaults --*/
 
 $white:     #ffffff;
-$black:     #090909;
+$black:     #000000;
 
-$blue:      #3daee9;
-$indigo:    #9b59b6;
-$purple:    #98796f;
-$pink:      #aea39a;
-$red:       #da4453;
-$orange:    #f67400;
-$yellow:    #edcd37;
-$green:     #27ae60;
-$teal:      #445e64;
 $cyan:      #789494;
-
+$teal:      #445e64;
 $dark:      #222e32;
-$light:     #f9f9f9;
+$pink:      #aea39a;
+$purple:    #98796f;
+$indigo:    #9b59b6;
+$blue:      #3daee9;
+$green:     #27ae60;
+$yellow:    #edcd37;
+$orange:    #f67400;
+$red:       #da4453;
+$light:     #eff0f1;
+$gray:      #505050;
 
-$gray:      #d6d6d7;
-$gray-100:  #f9f9f9;
-$gray-200:  #d6d6d7;
-$gray-300:  #bdbdbd;
-$gray-400:  #a3a3a3;
-$gray-500:  #8a8a8a;
-$gray-600:  #717171;
-$gray-700:  #717171;
-$gray-800:  #3d3d3d;
-$gray-900:  #242424;
+$darkgray:  darken($gray, 4%);
+$gray-100:  tint-color($gray, 90%);
+$gray-200:  tint-color($gray, 80%);
+$gray-300:  tint-color($gray, 70%);
+$gray-400:  tint-color($gray, 60%);
+$gray-500:  tint-color($gray, 50%);
+$gray-600:  tint-color($gray, 40%);
+$gray-700:  tint-color($gray, 30%);
+$gray-800:  tint-color($gray, 20%);
+$gray-900:  tint-color($gray, 10%);
 
-$primary:   $teal;
+$primary:   $purple;
 $secondary: $cyan;
 
-$min-contrast-ratio: 2.6;
+$spacer: 22px;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * 1,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+);
 
-$body-color: $black;
-$body-bg: darken($light, 4%);
-$shaded: $light;
-$link-color: mix($indigo, $blue);
-$text-muted: lighten($body-color, 40%);
+$body-color: $gray;
+$body-bg: $white;
+$shaded: lighten($light, 4%);
+$link-color: $gray-700;
+$text-muted: rgba($body-color, 70%);
 $secondary-color: $text-muted;
 $code-color: $text-muted;
+
+$blockquote-font-size:  1.5rem;
+$blockquote-margin-y: .5* $spacer;
+$blockquote-color: $darkgray;
 $blockquote-small-color: $text-muted;
 
-$border-color: rgba($gray, 75%);
-$border-radius-sm: 0.25rem;
-$border-radius: 0.25rem;
+$border-color: rgba($gray-300, 75%);
+$border-radius-sm: 0;
+$border-radius: 0;
 $border-radius-lg: 0.50rem;
 $enable-rounded: true;
-$hr-border-color: $border-color;
+$hr-border-color: $body-color;
+$hr-opacity: 1;
 
-$nav-link-padding-x: 0.75rem;
-$nav-link-padding-y: 0.15rem;
-$nav-link-font-size: 1.25rem;
-
-$table-cell-padding: .25rem;
-$table-cell-padding-sm: .25rem;
-$table-striped-bg: darken($body-bg, 2%);
-$table-border-color: darken($body-bg, 2%);
+$table-cell-padding: 0 .5em;
+$table-cell-padding-sm: 0 .25em;
+$table-striped-bg: $shaded;
+$table-border-color: $border-color;
 
 $thumbnail-border-width: 0;
 $thumbnail-border-radius: $border-radius;
 $thumbnail-border-color: $border-color;
 
 $input-color: $text-muted;
-$input-bg: $light;
-$input-btn-padding-y: .15rem;
+$input-bg: $shaded;
+$input-btn-padding-y: 0;
 $input-placeholder-color: $input-color;
 $input-border-color: $border-color;
 $input-disabled-bg: darken($input-bg, 4%);
@@ -78,8 +87,8 @@ $input-group-addon-bg: darken($input-bg, 4%);
 $breadcrumb-active-color: $body-color;
 $component-active-bg: rgba($link-color, 12%);
 
-$jumbotron-bg: $light;
-$label-margin-bottom: .05rem;
+$jumbotron-bg: $shaded;
+$label-margin-bottom: .25* $spacer;
 $list-group-bg: $input-bg;
 $list-group-border-color: $input-border-color;
 $list-group-hover-bg: lighten($component-active-bg, 20%);
@@ -91,108 +100,151 @@ $pagination-bg: $input-bg;
 $pagination-border-color: $border-color;
 $pagination-color: $input-color;
 $pagination-disabled-bg: $input-disabled-bg;
-$pagination-hover-color: $white;
+$pagination-hover-color: $link-color;
 $progress-bg: $input-bg;
 
-$card-bg: $white;
+$card-bg: transparent;
 $card-cap-bg: rgba($border-color, 10%);
-$card-border-width: 0;
+$card-spacer-x: .5* $spacer;
+$card-spacer-y: .25* $spacer;
+$card-border-width: 1px;
 $card-border-color: $border-color;
 $card-border-radius: $border-radius;
 
-$font-family-base: "Merriweather";
+$font-family-base: "Source Pro Sans";
+$headings-font-family: "Oswald";
 $font-sans-serif: "Roboto Condensed";
 $font-monospace: "Roboto Mono";
-$headings-font-family: "Oswald";
+$headings-font-color: $darkgray;
+$headings-font-weight: 400;
 $font-weight-bold: 500;
-$headings-font-weight: 300;
-$small-font-size: .9rem;
+$small-font-size: .875rem;
 
+$line-height-base: 1.375;
+$headings-line-height: 1.375;
+$list-inline-padding: .5* $spacer;
+
+$navbar-hover-color: $darkgray;
+$nav-link-font-family: $font-family-base;
+$nav-link-font-weight: 400;
+$nav-link-font-size: 1rem;
+$nav-link-padding-x: 0.25rem;
+$nav-link-padding-y: 0;
 
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500&family=Roboto+Condensed:wght@300;400;500&family=Roboto+Mono:wght@400&family=Oswald:wght@300;400');
+@import url('https://fonts.googleapis.com/css2?family=Source+Pro+Sans:wght@300;400;500&family=Roboto+Condensed:wght@400;500&family=Roboto+Mono:wght@400&family=Oswald:wght@400;500');
 
 b, strong {
   font-weight: 500;
 }
-h1, h2 {
-  font-weight: 400;
+p, div {
+  line-height: $spacer;
 }
-h3, h4, h5 {
-  font-weight: 400;
+p {
+  margin-bottom: .5* $spacer;
 }
-h2, h4 {
-  color: $text-muted;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-weight: $headings-font-weight;
+  margin-top: 1* $spacer;
+  margin-bottom: .5* $spacer;
 }
-blockquote, .blockquote {
-  color: $body-color;
+h2, .h2, {
+  color: $gray-400;
+  font-style: italic;
 }
-blockquote small, .blockquote small {
+h4, .h4, h5, .h5 {
+  font-weight: 500;
+}
+hr {
+  border-top: double 5.5px $border-color;
+  margin: .5* $spacer 0;
+}
+ol, ul, dl {
+  margin-bottom: .5* $spacer;
+}
+blockquote, blockquote p {
+  padding: .25* $spacer 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5* $spacer;
+  font-style: italic;
+  border: none;
+}
+blockquote small, blockquote .small {
   font-family: $font-sans-serif;
-  color: $text-muted;
   font-size: 1rem;
+  font-style: normal;
+  color: $headings-font-color;
 }
-pre code {
-  font-family: $font-monospace;
-  font-size: .85rem;
-  color: $text-muted;
+.quarto-title-banner h1, .quarto-title-banner .h1,
+.quarto-title-banner h2, .quarto-title-banner .h2 {
+  color: $headings-font-color;
+  font-weight: 400;
 }
-p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
-  font-family: $font-monospace;
-  font-size: .85rem;
-  color: $body-color;
-  background-color: transparent;
-}
-.code-with-filename .code-with-filename-file {
-  background-color: $border-color;
-}
-.quarto-title-banner .quarto-title .title {
-  font-weight: normal;
-}
-.quarto-title {
-  margin-bottom: .5rem;
-}
-.quarto-title-banner .quarto-title .title {
-  font-weight: 300;
-  font-size: 2.5rem;
-  color: rgba($body-color, 90%);
-  margin-top: 1rem;
+.quarto-title-banner .quarto-title .title, h1.title {
+  font-family: $headings-font-family;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 2* $spacer;
+  margin-top: $spacer;
 }
 h5.card-title {
-  font-family: $headings-font-family;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-family: $font-family-base;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $headings-font-color;
 }
 h2 {
   border-bottom: solid 1px $border-color;
 }
-.lead {
-  font-family: $font-sans-serif;
-  font-weight: 300;
-  color: $gray-500;
-  font-size: 1.5rem;
+p.subtitle {
+  margin: .5*$spacer 0 1*$spacer 0;
 }
-.abstract {
-  color: $text-muted;
-  margin-bottom: 1rem;
+.lead {
+  font-family: $font-family-base;
+  font-weight: 400;
+  color: rgba($text-muted, 50%);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5* $spacer;
 }
 .description {
+  font-family: $font-sans-serif;
+  padding: .75* $spacer 2em;
   font-weight: 400;
-  color: rgba($body-color, 75%);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  color: rgba($body-color, 85%);
+  font-size: 1.15rem;
+  border: solid 1px $border-color;
+}
+#title-block-header.quarto-title-block.default .description>p:first-child {
+  font-family: $headings-font-family;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $primary;
 }
 #title-block-header.quarto-title-block.default .quarto-title-meta-heading,
 #title-block-header.quarto-title-block.default .abstract .block-title,
-#quarto-appendix.default .quarto-appendix-heading, #toc-title, details>summary {
+#quarto-appendix.default .quarto-appendix-heading, details>summary {
   font-family: $font-sans-serif;
-  font-size: .95rem;
+  font-size: .825rem !important;
+  color: $primary;
   font-weight: 500;
   text-transform: uppercase;
-  color: $purple;
-  margin-top: 1rem;
+  margin-top: 0;
   opacity: 1;
+}
+#title-block-header.quarto-title-block.default .quarto-title-meta-contents p,
+#title-block-header.quarto-title-block.default .quarto-title-authors p,
+#title-block-header.quarto-title-block.default .quarto-title-affiliations p,
+#title-block-header.quarto-title-block.default .abstract p {
+  font-size: .9rem;
+  color: $text-muted;
+  margin-bottom: .5* $spacer;
+}
+#title-block-header.quarto-title-block.default .keywords>p:last-of-type,
+#title-block-header.quarto-title-block.default .description>p:last-of-type,
+#title-block-header.quarto-title-block.default .abstract>p:last-of-type {
+  margin-bottom: .5* $spacer;
 }
 #quarto-appendix.default {
   background: none;
@@ -200,60 +252,79 @@ h2 {
 div.quarto-post .metadata {
   font-size: 1rem;
 }
-.nav-footer {
-  font-family: $font-sans-serif;
-}
-.nav-footer .nav-footer-left, .nav-footer .nav-footer-right, .nav-footer .nav-footer-center {
-  font-size: unset;
-}
 .quarto-grid-item .card-attribution, .listing-author, .date, .date-modified {
   color: $text-muted;
+}
+.quarto-grid-item .card-attribution {
+  padding-top: 1* $spacer;
 }
 .action-links {
   font-family: $headings-font-family;
   color: $text-muted;
   font-weight: 400;
 }
-h5.quarto-listing-category-title,
-#quarto-margin-sidebar h5.quarto-listing-category-title {
+h5.quarto-listing-category-title, #quarto-margin-sidebar h5,
+#quarto-margin-sidebar .quarto-listing-category-title,
+.column-margin h5, #toc-title {
+  color: $headings-font-color;
   font-family: $headings-font-family;
+  font-size: 1.5rem;
   font-weight: 400;
-  text-transform: uppercase;
-  color: $purple;
-}
-#quarto-margin-sidebar .quarto-listing-category-title {
-  font-weight: unset;
-  font-size: unset;
+  font-style: italic;
   cursor: unset;
 }
 .card {
-  border-bottom: solid $border-color 2px;
+  border-bottom: solid $border-color 1px;
 }
 .card-img-top {
-  background-color: $light;
+  background-color: $gray-100;
   border-radius: $border-radius;
 }
 .quarto-grid-item .card-text {
   font-size: unset;
-  margin-top: .5rem;
+  margin: .5*$spacer 0 $spacer 0;
 }
 .quarto-grid-item .card-text-small {
-  font-size: .9rem;
+  font-size: $small-font-size;
 }
 .quarto-grid-item .card-title {
-  margin-bottom: 1rem;
+  margin-top: 1* $spacer;
+  margin-bottom: .5* $spacer;
 }
 .quarto-grid-item .card-attribution {
-  font-weight: unset;
+  padding: .5* $spacer 0 0;
+  text-transform: none;
+  font-weight: 400;
 }
 .listing-date {
   font-family: $font-sans-serif;
+  font-size: $small-font-size;
+  text-transform: uppercase;
   font-weight: 500;
-  color: $purple;
+  color: $primary;
 }
 .listing-file-modified, .listing-author {
   font-family: $font-sans-serif;
+  font-size: $small-font-size;
+  color: $headings-font-color;
+}
+
+pre code {
+  font-family: $font-monospace;
+  font-size: .75rem;
   color: $text-muted;
+}
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
+  font-family: $font-monospace;
+  font-size: .75rem;
+  color: $body-color;
+  background-color: transparent;
+}
+.code-with-filename .code-with-filename-file {
+  background-color: $border-color;
+}
+div.sourceCode, details {
+  margin: .5*$spacer 0 1*$spacer;
 }
 div.sourceCode, pre.sourceCode {
   background-color: $input-bg;
@@ -262,56 +333,70 @@ div.sourceCode, pre.sourceCode {
 #quarto-appendix.default .quarto-appendix-bibtex, .sourceCode .bibtex,
 #quarto-appendix.default .quarto-appendix-citeas {
   font-family: $font-monospace;
-  font-size: .85rem;
+  font-size: .75rem;
+  line-height: 20px;
   color: $text-muted;
   border: none;
   background: transparent;
 }
+
 .quarto-title .quarto-categories {
   padding-bottom: unset;
-  margin-top: 1rem;
+  margin-top: .5* $spacer;
 }
 .quarto-title .quarto-categories .quarto-category,
 .quarto-grid-item .listing-categories .listing-category,
 div.quarto-post .listing-categories .listing-category {
-  font-family: $headings-font-family;
-  font-size: .9rem;
+  font-family: $font-sans-serif;
+  color: rgba($body-color, 94%);
+  font-size: .825rem;
   font-weight: 400;
   text-transform: uppercase;
   border: none;
-  color: $gray-500;
-  background-color: $light;
+  background: $shaded;
+  padding: 0 .75em;
   opacity: 1;
 }
-.table {
+.figure-img {
+  margin: 0;
+}
+
+thead, tbody, tfoot, tr, td, th {
+  border-color: rgba($body-color, 25%);
+}
+table, table.table, figure {
   border-top: none;
   border-radius: 0;
-}
-.table>thead {
-  border-bottom: 2px solid $body-color;
-}
-th {
-  font-family: $font-sans-serif;
-  font-weight: 400;
-}
-.small th {
-  font-size: 1rem;
+  margin-top : .5* $spacer;
+  margin-bottom: 1* $spacer;
 }
 .table>:not(caption)>*>* {
-  padding: 0.2rem 0.5rem 0.05rem 0.5rem;
+  padding: 0 .5em;
 }
-.table-sm>:not(caption)>*>* {
-  padding: 0.1rem 0.5rem 0 0.5rem;
+.table>thead {
+  border-bottom: 2px solid $primary;
+}
+.table th {
+  font-family: $font-sans-serif;
+  font-weight: 400;
+  color: $headings-font-color;
+}
+.table-sm th {
+  font-size: 1rem;
+  line-height: $spacer;
+}
+.table-sm td {
+  line-height: calc($spacer - 1px);
 }
 caption, .panel-caption, .figure-caption, .subfigure-caption, .table-caption,
-figcaption, .column-margin figcaption,
-.margin-caption, div.aside, aside, .column-margin {
+figcaption, .column-margin figcaption, .margin-caption, div.aside, aside, .column-margin {
   font-family: $font-sans-serif;
-  font-size: 1rem;
+  font-size: $small-font-size;
   color: $text-muted;
 }
 caption, .table-caption {
-  padding: 0.25rem 0 0.5rem;
+  padding: 0;
+  margin: .25*$spacer 0;
   text-align: left;
 }
 .callout.callout-style-default, .callout.callout-style-simple {
@@ -323,28 +408,70 @@ caption, .table-caption {
 .callout.callout-style-default .callout-body {
   font-size: unset;
 }
-.quarto-sidebar-toggle {
+.callout.callout-style-default:not(.no-icon) div.callout-title-container {
+  margin-top: unset;
+}
+callout.callout-style-default>div.callout-header, .callout-title-container {
+  font-family: $font-sans-serif;
+  font-size: $small-font-size;
+  font-weight: 500;
+  border-bottom: none;
+  padding: 0 .75em;
+}
+.callout:not(.callout-titled) .callout-body>:last-child,
+.callout:not(.callout-titled) .callout-body>div>:last-child {
+  margin-bottom: unset;
+}
+.callout:not(.callout-titled) .callout-body>:first-child,
+.callout:not(.callout-titled) .callout-body>div>:first-child {
+  margin-top: unset;
+}
+#quarto-content .quarto-sidebar-toggle {
   background: none;
   border: none;
 }
 .quarto-sidebar-toggle-title {
-  background: $light;
-  padding: 0.5rem;
+  font-family: $font-sans-serif;
+  font-size: $small-font-size;
+  background: none;
+  border-bottom: solid 1px $border-color;
+  margin-top: .5* $spacer;
+  padding: .5em;
 }
 nav.sidebar.sidebar-navigation:not(.rollup) {
   background-color: transparent;
 }
-.nav-link {
+nav.sidebar .nav-link {
   font-family: $font-sans-serif;
+  font-size: $small-font-size;
+}
+
+.sidebar .toc-actions h2, .sidebar .toc-actions .h2,
+.sidebar .quarto-code-links h2, .sidebar .quarto-code-links .h2,
+.sidebar .quarto-other-links h2, .sidebar .quarto-other-links .h2,
+.sidebar .quarto-alternate-notebooks h2, .sidebar .quarto-alternate-notebooks .h2,
+.sidebar .quarto-alternate-formats h2, .sidebar .quarto-alternate-formats .h2,
+.sidebar nav[role=doc-toc]>h2, .sidebar nav[role=doc-toc]>.h2 {
+  margin-top: 1* $spacer;
+  margin-bottom: .5* $spacer;
+}
+.sidebar.sidebar-navigation>* {
+  padding-top: $spacer;
 }
 .sidebar nav[role=doc-toc]>ul li a {
-  font-size: 1rem;
-  line-height: 20px;
   color: $text-muted;
+  border-left: solid 1px $border-color;
 }
 .sidebar nav[role=doc-toc] ul>li>a.active,
 .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-  border-left-width: 2px;
+  border-left: solid 2px $primary;
+}
+.sidebar .toc-actions ul li a, .sidebar .quarto-code-links ul li a,
+.sidebar .quarto-other-links ul li a, .sidebar .quarto-alternate-notebooks ul li a,
+.sidebar .quarto-alternate-formats ul li a, .sidebar nav[role=doc-toc]>ul li a {
+  line-height: $spacer;
+  padding-top: .125* $spacer;
+  padding-bottom: .125* $spacer;
 }
 
 // Utilities
@@ -359,6 +486,7 @@ nav.sidebar.sidebar-navigation:not(.rollup) {
 }
 .img-thumbnail {
   padding: 0;
+  margin-bottom: .5* $spacer;
 }
 .img-fluid {
   border-radius: $border-radius;
@@ -370,61 +498,77 @@ nav.sidebar.sidebar-navigation:not(.rollup) {
   position: relative;
 }
 .parallax-image-container {
-  background-image: url(./www/banner/ru-map.jpg);
-  height: 200px;
+  background-image: url(./www/banner/cr-map.png);
+  height: 33vh;
   opacity: 1;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 // Quarto layout fixes
-.navbar .nav-item .nav-link {
-  font-family: $font-sans-serif;
-  font-weight: 400;
-  color: lighten($black, 8%);
-  border-radius: $border-radius;
-  margin-right: 0.25em;
-}
-.navbar .nav-link:hover {
-  color: $black;
-  background-color: rgba($body-bg, 90%);
-}
-.navbar .nav-link.active {
-  color: $black;
-  background-color: rgba($light, 90%);
-}
-.navbar-brand {
-  font-family: $headings-font-family;
-  margin-left: 1em;
-  margin-right: 3em;
-  font-weight: 400;
-  color: $purple;
-  font-size: 1.5rem;
-}
-#title-block-header {
-  padding-bottom: 1rem;
-  margin-block-end: 0;
-}
-#quarto-header>nav {
-  padding-left: 0;
-  padding-right: 0;
-}
-.quarto-title-banner {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0;
-}
 #quarto-content>* {
   padding-top: 0;
   margin-top: 0;
 }
-.sidebar-navigation {
-  padding-left: unset;
+#quarto-header>nav {
+  padding: 0;
 }
-.column-margin {
-  padding-left: 2em;
+.headroom {
+  padding: 0 .5* $spacer 0 0;
+  background: 0 0 / 100% no-repeat url(./www/banner/ru-map-top.jpg);
+}
+#quarto-announcement {
+  background: none;
+  border: none;
+  height: 2* $spacer;
+}
+.navbar {
+  background: linear-gradient(190deg, transparent, rgba($white, 96%) 60%);
+  border-bottom: solid 1px $border-color;
+}
+.quarto-title-banner {
+  padding: 0;
+  margin: 0  0 1* $spacer;
+}
+.navbar .nav-item:not(.compact) .nav-link {
+  line-height: 1.5* $spacer;
+  margin-top: .5* $spacer;
+  margin-left: .5em;
+  margin-bottom: -3px;
+  border-bottom: solid 3px transparent;
+}
+.navbar .nav-item:not(.compact) .nav-link:hover {
+  background: $shaded;
+  border-bottom: solid 3px $primary;
+}
+.navbar .nav-item:not(.compact) .nav-link.active {
+  border-bottom: solid 3px $primary;
+}
+.navbar-brand {
+  font-family: $headings-font-family;
+  font-weight: 500;
+  color: $darkgray;
+  margin-left: 1em;
+  margin-right: 2.5em;
+  font-size: 1.5rem;
+}
+footer.footer .nav-footer {
+  margin: 0;
+  padding: .5* $spacer 2em $spacer;
+  border-top: solid 1px $border-color;
+}
+.nav-footer .nav-footer-left,
+.nav-footer .nav-footer-right,
+.nav-footer .nav-footer-center {
+  font-family: $font-family-base;
+  font-size: $small-font-size;
+}
+.sidebar-navigation {
+  padding-left: 0;
 }
 .column-margin.column-container p {
-    margin-bottom: 1rem;
+  margin-bottom: .5* $spacer;
 }
+

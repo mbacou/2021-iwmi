@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -136,23 +137,26 @@ window.Quarto = {
 };
 </script>
 
-<link rel="alternate" type="application/rss+xml" title="Mel's Labs" href="portfolio.xml" data-external="1"><meta name="twitter:title" content="Design Portfolio – Mel’s Labs">
-<meta name="twitter:description" content="Scientific visualization projects">
-<meta name="twitter:image" content="https://mbacou.com/www/favicon.png">
-<meta name="twitter:image-height" content="100">
-<meta name="twitter:image-width" content="100">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Mel's Labs" href="portfolio.xml" data-external="1"><meta property="og:title" content="Design Portfolio – Mel’s Labs">
+<meta property="og:description" content="Scientific visualization projects">
+<meta property="og:image" content="https://mbacou.com/www/favicon.png">
+<meta property="og:site_name" content="Mel's Labs">
+<meta property="og:image:height" content="100">
+<meta property="og:image:width" content="100">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <div id="quarto-announcement" data-announcement-id="3c3b03581d52fd477a23e553392cfc29" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p><strong>New</strong> - this is an announcement</p>
+</div></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><i class="fa-regular fa-compass-drafting" aria-label="compass-drafting"></i> &nbsp; Mel’s Labs</span>
+    <span class="navbar-title"><i class="fa-regular fa-compass-drafting" aria-label="compass-drafting"></i> &nbsp;<em>Mel’s</em> Labs</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -201,12 +205,22 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Design Portfolio</h1>
+        </a>     
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Design Portfolio</h1>
+      <h1 class="title d-none d-lg-block">Design Portfolio</h1>
             <p class="subtitle lead">Scientific visualization projects</p>
                       </div>
   </div>
@@ -823,10 +837,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>BACOU, Melanie © 2024</p>
-<p>Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<p>BACOU, Melanie © 2024 / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<p>All views here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.</p>
 </div>   
     <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/mbacou/mb-labs/edit/quarto/portfolio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mbacou/mb-labs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
     <a class="nav-link" href="./about/index.html">
@@ -850,9 +867,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>
-    <div class="nav-footer-right">
-<p>All views here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.</p>
-</div>
   </div>
 </footer>
 

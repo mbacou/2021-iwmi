@@ -3,7 +3,6 @@ title: Migrating this Blog from *Distill* to *Quarto* Publishing Framework
 subtitle: Mastering Quarto Markdown for Literate Programming and Web Publishing
 date: 2023-10-01
 date-modified: last-modified
-image: thumb.svg
 categories:
   - quarto
   - dataviz
@@ -23,11 +22,13 @@ abstract: |
 
 ```{r}
 #| echo: false
-#| column: screen
+#| column: page
 #| classes: mb-4
 
 library(leaflet)
-leaflet(width="100%", height="15rem") %>% addTiles() %>%
+leaflet(width="100%", height="15rem", options=leafletOptions(maxZoom=12)) %>% 
+  addTiles("https://proxy.nakarte.me/http/88.99.52.155/tmg/{z}/{x}/{y}",
+    "sovietmap.com") %>%
   addMarkers(-8.65406047010657, 41.14426475811268, 
     label="Me, as I'm writing this post. Read on, tips below!", 
     labelOptions=labelOptions(textsize="1rem"))
@@ -170,7 +171,7 @@ pal <- c(
   yellow = "#edcd37",
   orange = "#f67400",
   red    = "#da4453",
-  light  = "#fefefe"
+  light  = "#eff0f1"
 )
 
 n <- c(rep(2,6), rep(4,6))
@@ -182,6 +183,7 @@ lapply(1:length(pal),
   tagList() |> 
   div(class="grid", style="--bs-gap: .5rem;")
 ```
+
 
 # Block Elements
 
@@ -238,7 +240,28 @@ This is a callout with a title.
 
 # Typography
 
-Bootstrap default line-height and font sizing typically work. No change here aside from using `PT Serif`, `Oswald`, and `Roboto Condensed` fonts. This is how **bold**, *italic*, and <small>small</small> text look like. Here is ^superscript^ and ~subscript~ text, and ~~strikethrough~~ notes. Semantic colors with <span class="text-info">.text-info</span> provide accented text. I have added 2 background classes for my own use <span class="shaded">`.shaded`</span> and <span class="striped">`.striped`</span>. I also use secondary font for all post metadata, end and margin notes, and for captioning.
+Bootstrap default line-height and font sizing typically work, but I like to enforce a strict vertical grid whenever possible, so I make sure to define all vertical spacing and padding as multiple of a standard line height of `spacer`. 
+
+```{sass}
+#| eval: false
+#| filename: ./www/theme-mblabs.scss
+
+$spacer: 22px;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * 1,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+);
+
+$line-height-base: 1.375;
+$headings-line-height: 1.375;
+$list-inline-padding: .5* $spacer;
+```
+
+No additional changes to font definitions aside from using `Source Sans Pro`, `Oswald`, and `Roboto Condensed` fonts. This is how **bold**, *italic*, and <small>small</small> text look like. Here is ^superscript^ and ~subscript~ text, and ~~strikethrough~~ notes. Semantic colors with e.g. <span class="text-info">.text-info</span> provide accented text. I have added 2 background classes for my own use <span class="shaded">`.shaded`</span> and <span class="striped">`.striped`</span>. I use <span class="text-muted">.text-muted</span> for all post metadata, end and margin notes, and for captioning.
 
 ## Heading 2
 
@@ -263,8 +286,10 @@ Ordered list:
 Sample paragraph content.
 
 > Blockquote title  
-> Blockquote content comes here...   
-> <small>-- And small source</small>
+  Blockquote content comes here...   
+  <small>-- And small source</small>
+  
+Sample paragraph content after blockquote.
 
 ##### Heading 5
 
@@ -324,14 +349,14 @@ knitr::kable(mtcars[1:6, 1:10])
 
 # Apply Themed Colors to R Graphics
 
-I make use of R `thematic::thematic_on()` package to auto-generate `base graphics`, `lattice` and `ggplot2` font and palettes that match the new Bootstrap scheme.
+I make use of R `thematic::thematic_on()` package to auto-generate `base graphics`, `lattice` and `ggplot2` color palettes that match the new Bootstrap scheme.
 
 ```{r}
 #| eval: false
 
 # Specify your sequential and qualitative palettes
 thematic::thematic_on(
-  bg = "transparent", fg = "#333333", accent = pal["cyan"],
+  bg = "transparent", fg = "#505050", accent = pal["cyan"],
   font = font_spec("Roboto Condensed"),
   sequential = sequential_gradient(fg_weight=.5, bg_weight=.5, fg_low=FALSE),
   qualitative = alpha(pal[1:12], .85)
@@ -352,17 +377,18 @@ These graphic customizations are further documented in `./R/theme.R` in this rep
 
 ```
 
-Finally let's output a couple of categorical and continuous `ggplot` and `lattice` charts below to make sure everything looks adequate.
+Let's generate a couple of categorical and continuous `ggplot` and `lattice` charts below to make sure everything looks adequate.
 
 ```{r}
 # Apply and check my new graphic theme
 library(mblabs)
 library(ggplot2)
 theme_labs_on()
-
 ```
 
 ```{r}
+#| classes: preview-image
+
 ggplot(mtcars, aes(factor(carb), mpg, fill=factor(carb))) + geom_col() +
   guides(y=guide_none(), y.sec=guide_axis()) +
   labs(

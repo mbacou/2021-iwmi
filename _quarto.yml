@@ -1,18 +1,35 @@
 project:
   title: mb-labs
   type: website
+  execute-dir: file
   output-dir: _site
+  preview:
+    port: 5555
+
 
 website:
   title: "Mel's Labs"
   favicon: www/favicon.png
   image: www/favicon.png
-  twitter-card: true
+  twitter-card: false
+  open-graph: true
   site-url: https://mbacou.com
   repo-url: https://github.com/mbacou/mb-labs
+  repo-branch: quarto
+  repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: false
-  description: Playground for consulting and data science projects.
+  description: Playground for consulting and data science projects
+
+  announcement:
+    content: "**New** - this is an announcementt"
+    position: above-navbar
+    dismissable: false
+    type: light
+
+  sidebar:
+    pinned: false
+    border: false
 
   search:
     location: navbar
@@ -20,9 +37,9 @@ website:
     show-item-context: true
 
   navbar:
-    title: "{{< fa regular compass-drafting >}}   Mel's Labs"
-    foreground: gray-800
-    background: gray-100
+    title: "{{< fa regular compass-drafting >}}  *Mel's* Labs"
+    foreground: gray-900
+    background: white
     pinned: false
     toggle-position: right
     left:
@@ -43,16 +60,15 @@ website:
         href: https://www.youtube.com/@mbacou/playlists
 
   page-footer:
-    foreground: dark
-    background: transparent
-    right: |
+    foreground: gray-800
+    background: gray-200
+    left: |
+      BACOU, Melanie &copy; 2024 /
+      Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
       All views here are strictly my own and do <u>not</u> reflect that of employers,
       project partners or clients. Refer to each article for citation, code and data reuse.
-    left: |
-      BACOU, Melanie &copy; 2024
-
-      Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
-    center:
+    right:
       - text: About
         href: about/index.qmd
       - text: License
@@ -85,7 +101,8 @@ format:
     reference-location: margin
     citation-location: document
 
-    theme: www/theme-news.scss
+    theme:
+      light: www/theme-mblabs.scss
     fontsize: 16px
     title-block-banner: transparent
     grid:
