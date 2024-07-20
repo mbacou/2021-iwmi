@@ -1,0 +1,16 @@
+
+::: {nav-footer-left}
+BACOU, Melanie © 2024 / Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
+All views here are strictly my own and do not reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.
+:::
+
+
+::: {nav-footer-center}
+[License](./license.qmd)
+:::
+
+::: {nav-footer-right}
+Built with [Quarto®](https://quarto.org/) {{< bi heart >}} and {{< bi coffee >}} 
+[{{< bi rss >}}](/index.xml)
+:::

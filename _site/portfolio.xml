@@ -16,7 +16,7 @@
 <height>100</height>
 <width>100</width>
 </image>
-<generator>quarto-1.6.1</generator>
+<generator>quarto-1.6.2</generator>
 <lastBuildDate>Thu, 01 Feb 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Interactive Web Applications</title>
@@ -84,7 +84,7 @@ Test callout
 <p>And something important.</p>
 </div>
 </div>
-<table class="caption-top table">
+<table class="table">
 <caption>Table</caption>
 <colgroup>
 <col style="width: 15%">

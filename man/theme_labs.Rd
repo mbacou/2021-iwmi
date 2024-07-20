@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme.R
 \name{theme_labs}
 \alias{theme_labs}
-\title{Default \code{ggplot2} theme for \code{mblabs}}
+\title{MBLABS \code{ggplot2} theme}
 \usage{
 theme_labs(
   base_size = 12,
@@ -190,7 +190,7 @@ elements.}
 A custom \code{ggplot2} theme
 }
 \description{
-Custom \code{ggplot} theme for \code{mblabs} website.
+Custom \code{ggplot} theme for \code{mblabs} website and blog posts.
 }
 \examples{
 require(ggplot2)

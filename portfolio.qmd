@@ -1,12 +1,15 @@
 ---
 title: Design Portfolio
-subtitle: Scientific visualization projects
-margin-header: _custom.qmd
+subtitle: A collection of visuals.
 page-layout: full
+title-block-banner: url(/www/banner/dashboard.jpg) fixed
+title-block-banner-color: var(--bs-light)
+toc: false
 listing:
+  id: lst-portfolio
   contents: portfolio
   sort-ui: false
-  filter-ui: false
+  filter-ui: true
   sort: "date desc"
   type: default
   date-format: medium
@@ -17,6 +20,12 @@ listing:
   feed: true
 ---
 
+::: {.column-page .mt-3}
+
 An annotated collection of visuals and tools I have built in the past for research teams, partners and clients.
+
+::: {#lst-portfolio .mt-3}
+:::
+:::
 
 

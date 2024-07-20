@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.1">
+<meta name="generator" content="quarto-1.6.2">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,8 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-lst-portfolio .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -87,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-lst-portfolio'] = new List('listing-lst-portfolio', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -102,8 +101,19 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <style>
 
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: var(--bs-light);
+      }
+
       .quarto-title-block .quarto-title-banner {
-        background: transparent;
+        color: var(--bs-light);
+background: url(./www/banner/dashboard.jpg) fixed;
       }
 </style>
 
@@ -138,7 +148,7 @@ window.Quarto = {
 </script>
 
 <link rel="alternate" type="application/rss+xml" title="Mel's Labs" href="portfolio.xml" data-external="1"><meta property="og:title" content="Design Portfolio – Mel’s Labs">
-<meta property="og:description" content="Scientific visualization projects">
+<meta property="og:description" content="A collection of visuals.">
 <meta property="og:image" content="https://mbacou.com/www/favicon.png">
 <meta property="og:site_name" content="Mel's Labs">
 <meta property="og:image:height" content="100">
@@ -149,14 +159,14 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <div id="quarto-announcement" data-announcement-id="3c3b03581d52fd477a23e553392cfc29" class="alert alert-primary hidden"><div class="quarto-announcement-content">
-<p><strong>New</strong> - this is an announcement</p>
-</div></div>
+    <div id="quarto-announcement" data-announcement-id="8ed67a3dd1b8fcb038c68509120c9059" class="alert alert-dark hidden"><div class="quarto-announcement-content">
+<p><i class="bi-warning " style="" role="img" aria-hidden="true"></i> This blog is being migrating to <a href="https://quarto.org">Quarto</a>, expect quirks and dead links!</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><i class="fa-regular fa-compass-drafting" aria-label="compass-drafting"></i> &nbsp;<em>Mel’s</em> Labs</span>
+    <span class="navbar-title"><i class="bi-compass " style="" role="img" aria-hidden="true"></i> &nbsp;Mel’s <strong>Labs</strong></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -166,6 +176,10 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Notebooks</span></a>
   </li>  
@@ -174,8 +188,12 @@ window.Quarto = {
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./posts/tools/index.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts/resume/index.html"> 
+<span class="menu-text">Full Bio</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -219,14 +237,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-body">
       <h1 class="title d-none d-lg-block">Design Portfolio</h1>
-            <p class="subtitle lead">Scientific visualization projects</p>
+            <p class="subtitle lead">A collection of visuals.</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-body">
 
       
     
@@ -239,28 +257,24 @@ window.Quarto = {
   
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><section id="about" class="level5 margin-header-item">
-<h5 data-anchor-id="about">About</h5>
-<p>This Blog is a my personal code playground in the form of executable notebooks using a mix of <strong>R</strong>, <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>D3.js</strong>.</p>
-<div class="small text-shaded mb-4 border-bottom">
-All viewpoints here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.
-<p></p>
-</div>
-</section></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="R/Shiny">R/Shiny <span class="quarto-category-count">(2)</span></div><div class="category" data-category="design">design <span class="quarto-category-count">(2)</span></div><div class="category" data-category="model front-end">model front-end <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tableau">tableau <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full column-body" id="quarto-document-content">
 
 
 
 
 
+<div class="column-page mt-3">
 <p>An annotated collection of visuals and tools I have built in the past for research teams, partners and clients.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div id="listing-lst-portfolio" class="mt-3 listing quarto-float quarto-figure quarto-figure-left quarto-listing quarto-listing-container-default anchored">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
 <div class="quarto-post image-left" data-index="0" data-categories="model front-end,R/Shiny" data-listing-date-sort="1706745600000" data-listing-file-modified-sort="1706627114646" data-listing-date-modified-sort="1706627114000" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
 <div class="thumbnail">
@@ -407,7 +421,13 @@ Melanie BACOU
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -837,7 +857,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>BACOU, Melanie © 2024 / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<p><strong>BACOU, Melanie © 2024</strong> / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
 <p>All views here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.</p>
 </div>   
     <div class="nav-footer-center">
@@ -846,7 +866,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./about/index.html">
+    <a class="nav-link" href="./about.html">
 <p>About</p>
 </a>
   </li>  
@@ -856,14 +876,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./index.xml">
-<p>RSS</p>
+    <a class="nav-link" href="https://quarto.org/">
+<p>Quarto<sup>®</sup></p>
 </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://quarto.org">
-<p>Built with Quarto<sup>®</sup></p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="./index.xml">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
   </li>  
 </ul>
     </div>

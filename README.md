@@ -1,2 +1,2 @@
-Personal blog, design portfolio, computational notebooks, and code playground published at https://mbacou.github.io/mb-labs/.
+My personal blog, project portfolio, computational notebooks, and code playground published at https://mbacou..com/.
 

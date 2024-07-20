@@ -3,7 +3,7 @@
 \docType{data}
 \name{pal}
 \alias{pal}
-\title{Default \code{mblabs} 12-color palette}
+\title{MBLABS 12-color palette}
 \format{
 A named character vector of hex color codes
 }
@@ -11,12 +11,11 @@ A named character vector of hex color codes
 pal
 }
 \description{
-Custom named qualitative color palette with 12 hues derived from \code{mblabs}
-Bootstrap theme.
+Custom named qualitative color palette with 12 hues and 1 black derived from
+\code{mblabs} Bootstrap theme.
 }
 \examples{
-
-pie(rep(1, 12), col=pal, labels=names(pal), border="white", clockwise=TRUE)
+pie(rep(1, length(pal)), col=pal, labels=names(pal), border="white", clockwise=TRUE)
 
 }
 \keyword{datasets}

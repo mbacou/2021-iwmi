@@ -21,34 +21,36 @@ website:
   bread-crumbs: false
   description: Playground for consulting and data science projects
 
-  announcement:
-    content: "**New** - this is an announcementt"
-    position: above-navbar
-    dismissable: false
-    type: light
-
   sidebar:
     pinned: false
     border: false
 
   search:
-    location: navbar
     type: overlay
     show-item-context: true
 
+  announcement:
+    dismissable: true
+    type: dark
+    content: "{{< bi warning >}} This blog is being migrating to [Quarto](https://quarto.org), expect quirks and dead links!"
+
   navbar:
-    title: "{{< fa regular compass-drafting >}}  *Mel's* Labs"
+    title: "{{< bi compass >}}  Mel's **Labs**"
     foreground: gray-900
-    background: white
+    background: transparent
     pinned: false
     toggle-position: right
     left:
+      - text: About
+        file: about.qmd
       - text: Notebooks
         file: index.qmd
       - text: Portfolio
         file: portfolio.qmd
-      - text: About
-        file: about/index.qmd
+      - text: Resources
+        file: posts/tools/index.qmd
+      - text: Full Bio
+        file: posts/resume/index.qmd
     right:
       - icon: github
         href: https://github.com/mbacou/mb-labs
@@ -60,23 +62,23 @@ website:
         href: https://www.youtube.com/@mbacou/playlists
 
   page-footer:
-    foreground: gray-800
-    background: gray-200
+    foreground: gray-700
+    background: light
     left: |
-      BACOU, Melanie &copy; 2024 /
+      **BACOU, Melanie &copy; 2024** /
       Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
       All views here are strictly my own and do <u>not</u> reflect that of employers,
       project partners or clients. Refer to each article for citation, code and data reuse.
     right:
       - text: About
-        href: about/index.qmd
+        href: about.qmd
       - text: License
         href: license.qmd
-      - text: RSS
+      - text: Quarto^®^
+        href: https://quarto.org/
+      - icon: rss
         href: index.xml
-      - text: Built with Quarto^®^
-        href: https://quarto.org
 
 bibliography: references.bib
 
@@ -87,6 +89,7 @@ format:
     toc-location: left
     link-external-icon: false
     link-external-newwindow: true
+    title-block-banner: transparent
 
     fig-dpi: 220
     fig-format: svg
@@ -101,10 +104,9 @@ format:
     reference-location: margin
     citation-location: document
 
+    fontsize: 16px
     theme:
       light: www/theme-mblabs.scss
-    fontsize: 16px
-    title-block-banner: transparent
     grid:
       body-width: 900px
       sidebar-width: 160px

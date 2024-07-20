@@ -1,0 +1,812 @@
+---
+title: Data, Resources, and Tools
+subtitle: A curated list of accessible resources for agricultural and agro-meteo research
+date: 2024-07-16
+date-modified: last-modified
+page-layout: full
+title-block-banner: url(/www/banner/dashboard.jpg) fixed
+title-block-banner-color: var(--bs-light)
+---
+
+
+A curated list of resources and tools, always in progress.
+
+::: {.panel-tabset .nav-fill .mt-4}
+
+## Remote Sensing
+
+[DigitalEarth Africa](https://sandbox.digitalearth.africa/) sandbox. Tutorials available on the [DE Africa](https://www.youtube.com/@digitalearthafrica) YouTube channel.
+
+[SEPAL](https://sepal.io/-/app-launch-pad)
+
+
+
+## Open Data
+
+[UN HDX](https://data.humdata.org/) Humanitarian Data Exchange. The latest subnational administrative datasets often available.
+
+[C3S Climate Data Store Toolbox User Forum - Copernicus User Support Forum - ECMWF Confluence Wiki](https://confluence.ecmwf.int/pages/viewpage.action?pageId=133257503)
+
+[Order real-time forecasts | ECMWF](https://www.ecmwf.int/en/forecasts/accessing-forecasts/order-real-time-forecasts)
+
+[Weather Data meets IBM Cloud. Part 3 - Transformation and Aggregation of Weather Data - developerWorks Recipes](https://developer.ibm.com/recipes/tutorials/weather-data-meets-ibm-cloud-part-3-transformation-and-aggregation-of-weather-data/?_lrsc=70fd54ac-912a-4f59-8b07-1a80270463e6)
+
+[Implementing Git in Data Science – Towards Data Science](https://towardsdatascience.com/implementing-git-in-data-science-11528f0fb4a7)
+
+[ECMWF holds webinars on June upgrade of its forecasting system | ECMWF](https://www.ecmwf.int/en/about/media-centre/news/2019/ecmwf-holds-webinars-june-upgrade-its-forecasting-system)
+
+[SERVIR Global Data Catalog - My organization](http://gis1.servirglobal.net:8080/geonetwork/srv/eng/catalog.search;jsessionid=4D9DC62FC21332D3516E971709B0F8A4#/home)
+
+[USDA ERS - International Agricultural Productivity](https://www.ers.usda.gov/data-products/international-agricultural-productivity/)
+
+[Earth \* Data \* Science - Earth Lab](http://earthdatascience.org/)
+
+[Seasonal forecasts | Copernicus Climate Change Service](https://climate.copernicus.eu/seasonal-forecasts)
+
+[Terra Populus](https://www.terrapop.org/)
+
+[ESA/CCI viewer](http://maps.elie.ucl.ac.be/CCI/viewer/download.php)
+
+[Climate Corporation | Data services for yield maximization](https://www.climate.com/)
+
+[Free GIS Datasets - Categorised List](http://freegisdata.rtwilson.com/)
+
+[Geospatial Knowledge Infrastructure Summit | InCubed](https://incubed.phi.esa.int/geospatial-knowledge-infrastructure-summit/)
+
+[S2-VarBIO: four biophysical variables to monitor crops and vegetation – Theia](https://www.theia-land.fr/en/s2-varbio-four-biophysical-variables-to-monitor-crops-and-vegetation/)
+
+[A swath of hail](https://axaxl.com/fast-fast-forward/articles/a-swath-of-hail)
+
+[Gridded Daily Rainfall Metadata](http://www.bom.gov.au/climate/austmaps/metadata-daily-rainfall.shtml)
+
+[OpenLandMap | OpenGeoHub Foundation](https://www.openlandmap.org/#/?base=Stamen%20(OpenStreetMap)&center=39.0000,25.0000&zoom=4&opacity=80&layer=lcv_land.cover_esacci.lc.l4_c&time=2015)
+
+[Custom query in ASCII](https://www.ecad.eu/dailydata/customquery.php?optionSelected=country&processtext1=Your+query+is+being+processed.+Please+wait...&blendingselect=no&countryselect=PORTUGAL%7Cpt&stationselect=All+stations%7C**&elementselect=Minimum+temperature%7Ctn&advanced=yes&periodselect=All+available+years%7C**&elevationselect=**&processtext2=Your+query+is+being+processed.+Please+wait...)
+
+[Assessing Frost Exposure On Vegetation - News](https://landsaf.ipma.pt/en/news/news/assessing-frost-exposure-on-vegetation/)
+
+[GLAM](https://glam.nasaharvest.org/)
+
+[Science for Disaster Risk Management 2020](https://drmkc.jrc.ec.europa.eu/Knowledge/Science-for-DRM/Science-for-Disaster-Risk-Management-2020)
+
+[Dashboard | Euro Data Cube](https://eurodatacube.com/dashboard)
+
+[Theia](https://catalogue.theia-land.fr/?extend=-102.832031,5.790896893464023,122.16796899999929,77.91566900328445)
+
+[Surface Soil Moisture | Copernicus Global Land Service](https://land.copernicus.eu/global/products/ssm)
+
+[Open Data Portal](https://climate.esa.int/en/odp/#/dashboard)
+
+[Land Products Main Page - Office of Satellite and Product Operations](https://www.ospo.noaa.gov/Products/land/index.html)
+
+[North American Drought Monitor | Temperature, Precipitation, and Drought | National Centers for Environmental Information (NCEI)](https://www.ncdc.noaa.gov/temp-and-precip/drought/nadm/maps/en/202101)
+
+[Display and animate data in QGIS /Afficher et animer des couches dans QGIS - MSC Open Data / Données ouvertes du SMC](https://eccc-msc.github.io/open-data/usage/tutorial_WMS_QGIS_en/)
+
+[Climate data extraction tool - Regional Deterministic Precipitation Analysis](https://climate-change.canada.ca/climate-data/#/regional-deterministic-precipitation-analysis)
+
+[NADM - The Global Drought Monitor](https://experience.arcgis.com/experience/61910f1269f14220850ab93a4a60d883/)
+
+[GADAS](https://geo.fas.usda.gov/GADAS/index.html)
+
+[CaSPAr](https://caspar-data.ca/caspar)
+
+[Eumetview](https://view.eumetsat.int/productviewer?v=default)
+
+[ISERV Viewer](https://www.servirglobal.net/mapresources/iserv/index.html)
+
+[Daymet](https://daymet.ornl.gov/)
+
+[Home | AgWeatherNet at Washington State University](https://weather.wsu.edu/?p=88650)
+
+[ORNL NetCDF Subset Service for Grids](https://thredds.daac.ornl.gov/thredds/ncss/grid/ornldaac/1840/daymet_v4_daily_na_prcp_1980.nc/dataset.html)
+
+[TerraScope](https://viewer.terrascope.be/?language=en&bbox=-2.4136960878968243,48.280999751124625,11.648803912103176,53.13820360563409&overlay=true&bgLayer=Satellite)
+
+[Fishnets and Honeycomb: Square vs. Hexagonal Spatial Grids | Matt Strimas-Mackey](https://strimas.com/post/hexagonal-grids/)
+
+[NOAA Historical Hurricane Tracks](https://coast.noaa.gov/hurricanes/#map=5.72/16.012/-24.015&search=eyJzZWFyY2hTdHJpbmciOiJDYXAtVmVydCIsInNlYXJjaFR5cGUiOiJnZW9jb2RlZCIsIm9zbUlEIjoiNTM1Nzc0IiwiY2F0ZWdvcmllcyI6WyJINSIsIkg0IiwiSDMiLCJIMiIsIkgxIiwiVFMiLCJURCIsIkVUIl0sInllYXJzIjpbXSwibW9udGhzIjpbXSwiZW5zbyI6W10sInByZXNzdXJlIjp7InJhbmdlIjpbMCwxMTUwXSwiaW5jbHVkZVVua25vd25QcmVzc3VyZSI6dHJ1ZX0sImJ1ZmZlclVuaXQiOlsiTWlsZXMiXSwic29ydFNlbGVjdGlvbiI6eyJ2YWx1ZSI6InllYXJzX25ld2VzdCIsImxhYmVsIjoiWWVhciAoTmV3ZXN0KSJ9LCJhcHBseVRvQU9JIjp0cnVlLCJpc1N0b3JtTGFiZWxzVmlzaWJsZSI6dHJ1ZX0=)
+
+[2021 Series of Webinars on Earth Observation in Africa](https://www.eventsforce.net/eumetsat/frontend/reg/tvenue.csp?pageID=10401&eventID=24&traceRedir=2)
+
+[Earth Observing Dashboard](https://eodashboard.org/)
+
+[Readme hrdps datamart en - MSC Open Data / Données ouvertes du SMC](https://eccc-msc.github.io/open-data/msc-data/nwp_hrdps/readme_hrdps-datamart_en/)
+
+[FAO Water Productivity](https://wapor.apps.fao.org/home/WAPOR_2/1)
+
+[Related Links - Agriculture and Agri-Food Canada (AAFC)](https://www.agr.gc.ca/eng/agriculture-and-the-environment/drought-watch/related-links/?id=1463575565688)
+
+[AgRisk | Southwest Climate Hub](https://swclimatehub.info/rma/rma-data-viewer.html)
+
+[Daily Summaries Station Details: PRAIA, CV, GHCND:CVM00008589 | Climate Data Online (CDO) | National Climatic Data Center (NCDC)](https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:CVM00008589/detail)
+
+[Water Accounting](https://www.wateraccounting.org/)
+
+[Bioregions 2020 | One Earth](https://www.oneearth.org/bioregions-2020/)
+
+[Soil Data Aids Prediction of Locust Swarms](https://earthobservatory.nasa.gov/images/148314/soil-data-aids-prediction-of-locust-swarms)
+
+[Eumetsat LSA SAF](https://landsaf.ipma.pt/en/applications/agrometeorology/)
+
+[EUMETSAT Product Ordering Application](https://archive.eumetsat.int/usc/UserServicesClient.html#sp:;id=EO:EUM:DAT:MSG:HRSEVIRI;delm=O;noti=1;udsp=OPE;qqov=ALL;seev=0)
+
+[Catalogs - STAC Index](https://stacindex.org/catalogs)
+
+[Euro Data Cube](https://eurodatacube.com/)
+
+[TdsStaticCatalog http://psd.cube.eumetsat.int/thredds/catalog.html](https://psd.cube.eumetsat.int/thredds/catalog.html)
+
+[EUMETSAT NetCDF Subset Service for Grids](https://psd.cube.eumetsat.int/thredds/ncss/LSASAF_CDR_LST_H/2015/NETCDF4_LSASAF_MSG_LST_MSG-Disk_201512312300_lst_psdc.nc/dataset.html)
+
+[agera5tools · PyPI](https://pypi.org/project/agera5tools/)
+
+[Irrigation solutions powered by aerial imagery and analytics](https://www.ceresimaging.net/solutions#tab-4)
+
+[Gro](https://app.gro-intelligence.com/login)
+
+[https://app.climateengine.org/climateEngine](https://app.climateengine.org/climateEngine)
+
+[Weather for Portugal | Swiss Quality Weather Forecasting - Meteologix.com](https://meteologix.com/pt)
+
+[Satellite Weather Data Extractor](https://sites.google.com/view/srs-export)
+
+[JAXA G-Portal](https://gportal.jaxa.jp/gpr/information/download)
+
+[Portal – Space in Africa](https://spaceinafrica.com/portal/)
+
+[Rangeland Analysis Platform](https://rangelands.app/)
+
+[2020 report on the food & beverage sector | Carbone 4](https://www.carbon4finance.com/publication-food-and-beverage-2022)
+
+[Agro Observer](https://agroobserver.com/)
+
+[Welcome | Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/)
+
+[Soil and Agronomy Data Cube for Africa at 30-m spatial resolution | by OpenGeoHub | Nerd For Tech | Medium](https://medium.com/nerd-for-tech/soil-and-agronomy-data-cube-for-africa-at-30-m-spatial-resolution-591e04bfc372)
+
+[StreamYard](https://streamyard.com/?utm_source=google&utm_medium=cpc&utm_campaign=3-branded&utm_content=119379464307&utm_term=streamyard&gclid=Cj0KCQiAmpyRBhC-ARIsABs2EAqoRQr8AfqfuBdFxSZuztrc3IWm8tYbSVUO3KUUzu3kzYJPHxPkg1EaAmtDEALw_wcB)
+
+[Nimbo | Earth observation reinvented](https://nimbo.earth/)
+
+[Model charts for Portugal (Temperature) | AROME (2 days)](https://meteologix.com/pt/model-charts/french-hd)
+
+[Home - OpenET](https://openetdata.org/)
+
+[Institutes & Partners](https://thetricontinental.org/institutes/)
+
+[Sóbrio Olhar - Google Maps](https://www.google.com/maps/place/S%C3%B3brio+Olhar/@41.1563076,-8.6464613,15z/data=!4m5!3m4!1s0xd24657656f41149:0xf399081d2ca047ad!8m2!3d41.1541842!4d-8.6459335)
+
+[USGS ShakeMaps](https://earthquake.usgs.gov/earthquakes/map/?extent=6.95914,-10.49194&extent=17.93693,-0.06592&range=search&baseLayer=terrain&timeZone=utc&search=%7B%22name%22:%22Search%20Results%22,%22params%22:%7B%22endtime%22:%222022-05-11T21:57:44.343Z%22,%22latitude%22:6.9894,%22longitude%22:126.9322,%22maxradiuskm%22:250,%22minmagnitude%22:3,%22starttime%22:%222022-03-30T21:57:44.343Z%22%7D%7D)
+
+[Speedwell Weather - Weather Data Inventory Tool](https://www.speedwellweather.com/Pages/Others/DataInventory.aspx)
+
+[Weather API | Meteomatics](https://www.meteomatics.com/en/weather-api/)
+
+[NCEP-GFS / Animations / France & UK | MeteoCentre.com](https://meteocentre.com/numerical-weather-prediction/map-animation.php?mod=gfs&run=06&stn=TT2m&mode=archives&map=fr&lang=en)
+
+[weather model gfs model - france - temperature high (2m) \[base + 384\] - zoom | weatheronline](https://www.weatheronline.co.uk/cgi-bin/expertcharts?LANG=en&MENU=0000000000&CONT=frfr&MODELL=gfs&MODELLTYP=1&BASE=-&VAR=tmax&HH=384&ZOOM=1&WMO=&ARCHIV=0&RES=0)
+
+[GWPrime : The First Subscription based Geospatial Media Platform](https://www.geospatialworld.net/)
+
+[CATastrophes NATurelles .net - + Tableau de bord de l'année en cours](https://www.catnat.net/veille-catastrophes-naturelles/catnat-analytics/tableau-de-bord-de-l-annee-en-cours)
+
+[Linuxiac - Linux News, Tutorials, Tips & Tricks, and More](https://linuxiac.com/)
+
+[Testimonials on operational satellite applications - Success stories -Eurisy](https://www.eurisy.eu/stories/)
+
+[Welcome - GEOSS](https://www.geoportal.org/?m:activeLayerTileId=osm&f:dataSource=dab)
+
+[awesome-gee-community-datasets](https://samapriya.github.io/awesome-gee-community-datasets/)
+
+[Latest Table Gallery topics - RStudio Community](https://community.rstudio.com/c/table-gallery/64)
+
+[Sentinel Hub EO Browser](https://apps.sentinel-hub.com/eo-browser/?zoom=16&lat=46.77824&lng=33.36756&themeId=DEFAULT-THEME&visualizationUrl=https%3A%2F%2Fservices.sentinel-hub.com%2Fogc%2Fwms%2Fbd86bcc0-f318-402b-a145-015f85b9427e&datasetId=S2L2A&fromTime=2022-10-31T00%3A00%3A00.000Z&toTime=2022-10-31T23%3A59%3A59.999Z&layerId=1_TRUE_COLOR&demSource3D=%22MAPZEN%22)
+
+[Dashboard](https://apps.sentinel-hub.com/dashboard/#/account/billing/payment)
+
+[Fossil Fuel Non-Proliferation Tracker](https://fossilfueltracker.org/app/ffnpt/?utm_medium=email&utm_source=newsletter&utm_campaign=rshiny-weekly-newsletter)
+
+[ADAM](https://explorer.dte-hydro.adamplatform.eu/)
+
+[Sentinel Hub’s albums | Flickr](https://flickr.com/photos/sentinelhub/albums)
+
+[Requests Builder](https://apps.sentinel-hub.com/requests-builder/)
+
+[LIVE REAL TIME SATELLITE TRACKING AND PREDICTIONS: COSMOS 2562](https://www.n2yo.com/?s=54110)
+
+[Overview - France Nuclear - Dashboards - Grafana](https://energygraph.info/d/q7IpAJHVz/overview?orgId=1&refresh=30m)
+
+[Development Experience Clearinghouse (DEC) - Advanced Search: Documents](https://dec.usaid.gov/dec/content/AdvancedSearch.aspx?ctID=ODVhZjk4NWQtM2YyMi00YjRmLTkxNjktZTcxMjM2NDBmY2Uy)
+
+[3D Map: The World's Largest Population Density Centers](https://www.visualcapitalist.com/cp/3d-mapping-the-worlds-largest-population-densities/)
+
+[Ukraine Interactive map - Ukraine Latest news on live map - liveuamap.com](https://liveuamap.com/en/2023/25-january-russian-army-shelled-zaporizhzhia-rescue-services)
+
+[Global Croplands](https://www.usgs.gov/apps/croplands/app/map?lat=0&lng=0&zoom=2)
+
+[Earth Map](https://earthmap.org/?map=%7B%22center%22%3A%7B%22lat%22%3A0%2C%22lng%22%3A0%7D%2C%22zoom%22%3A3%2C%22mapType%22%3A%22terrain%22%7D)
+
+[ECMWF holds webinars on June upgrade of its forecasting system | ECMWF](https://www.ecmwf.int/en/about/media-centre/news/2019/ecmwf-holds-webinars-june-upgrade-its-forecasting-system)
+
+[SERVIR Global Data Catalog - My organization](http://gis1.servirglobal.net:8080/geonetwork/srv/eng/catalog.search;jsessionid=4D9DC62FC21332D3516E971709B0F8A4#/home)
+
+[USDA ERS - International Agricultural Productivity](https://www.ers.usda.gov/data-products/international-agricultural-productivity/)
+
+[Earth \* Data \* Science - Earth Lab](http://earthdatascience.org/)
+
+[Terra Populus](https://www.terrapop.org/)
+
+[ESA/CCI viewer](http://maps.elie.ucl.ac.be/CCI/viewer/download.php)
+
+[Free GIS Datasets - Categorised List](http://freegisdata.rtwilson.com/)
+
+[Sankey GHG](https://sankey.theshiftproject.org/)
+
+[WorldCereal products | WorldCereal](https://esa-worldcereal.org/en/about/worldcereal-products)
+
+[USDA - National Agricultural Statistics Service - Data Visualization - Crop Sequence Boundaries (CSB) Viewer](https://www.nass.usda.gov/Research_and_Science/Crop-Sequence-Boundaries/Viewer/index.php)
+
+[American Economic Association](https://www.aeaweb.org/research/are-colonial-era-borders-holding-africa-back)
+
+[Aqueduct Water Risk Atlas](https://www.wri.org/applications/aqueduct/water-risk-atlas/#/?advanced=false&basemap=hydro&indicator=w_awr_def_tot_cat&lat=30&lng=-80&mapMode=view&month=1&opacity=0.5&ponderation=DEF&predefined=false&projection=absolute&scenario=optimistic&scope=baseline&threshold&timeScale=annual&year=baseline&zoom=3)
+
+[Malawi Segmentation Tool | UMN](https://mst.agroinformatics.org/overview)
+
+[OpenAerialMap](https://openaerialmap.org/)
+
+[TopoExport](https://topoexport.fr/)
+
+[FAO WaPOR](https://data.apps.fao.org/wapor/?lang=en)
+
+[FAO Data Catalog (CKAN)](https://data.apps.fao.org/catalog/)
+
+[OpenCelliD - Largest Open Database of Cell Towers & Geolocation - by Unwired Labs](https://www.opencellid.org/#zoom=16&lat=37.77889&lon=-122.41942)
+
+[MSC Open Data](https://eccc-msc.github.io/open-data/readme_en/)
+
+[MSC Datamart (high)](https://hpfx.collab.science.gc.ca/)
+
+[Copernicus and Sentinel data at your fingertips | WEkEO](https://www.wekeo.eu/)
+
+[Meteoblue | Live Satellite & Weather Radar](https://www.meteoblue.com/weather/maps/manaus_brazil_3663517#coords=4/-3.1/-60.02&map=temperatureAnomaly~monthly~auto~sfc~none)
+
+[Cartographie - Géoportail de l'Urbanisme](https://www.geoportail-urbanisme.gouv.fr/map/#tile=1&lon=0.7992549459999999&lat=47.41211102099999&zoom=13&mlon=0.799255&mlat=47.412111)
+
+[Accueil - Géoportail de l'Urbanisme](https://www.geoportail-urbanisme.gouv.fr/)
+
+[Terria Map](https://maps.digitalearth.africa/)
+
+[Directory of Open Access Journals – DOAJ](https://doaj.org/)
+
+[Global Intertidal Change](https://www.intertidal.app/)
+
+[WaterChange](https://bjornburrnyberg.users.earthengine.app/view/waterchange)
+
+[EU ASAP Agriculture](https://agricultural-production-hotspots.ec.europa.eu/)
+
+[Crop Monitoring and Early Warning in North-Africa](http://guetcrop.oss-online.org/)
+
+[Home | Welcome at Sahara and Sahel Observatory](http://oss-online.org/)
+
+[ICPAC - Warning Explorer](https://agriculturehotspots.icpac.net/)
+
+[GEOGLAM Crop Monitor](https://www.cropmonitor.org/)
+
+[ASAP - Seasonal Forecast](https://agricultural-production-hotspots.ec.europa.eu/seasonal_forecast.php?sfreg=africa)
+
+[Global Food and Nutrition Security Dashboard | Data on food crisis](https://www.gafs.info/home/)
+
+[Electricity Production | Energy-Charts](https://energy-charts.info/charts/power/chart.htm?l=en&c=DE&interval=month)
+
+
+
+
+
+## Water Modeling
+
+[WASA project (IWMI) - Materials for consultancy - All Documents](https://cgiar.sharepoint.com/sites/IWMIHelmsleyWorkgroup/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FIWMIHelmsleyWorkgroup%2FShared%20Documents%2FWater%20Accounting%2FUSAID%20Communicating%20Water%20Accounting%20results%2FMaterials%20for%20consultancy&p=true&originalPath=aHR0cHM6Ly9jZ2lhci5zaGFyZXBvaW50LmNvbS86Zjovcy9JV01JSGVsbXNsZXlXb3JrZ3JvdXAvRW52Wm9WUS1CS0ZOdnRueTliSjZIbjhCMl9MYV9rZHdkbjgtaVN1UDRaRURtZz9ydGltZT1fbDliOGpwRzJVZw)
+
+[Example UX docs and deliverables - UXM](http://www.uxforthemasses.com/resources/example-ux-docs/)
+
+[WASA project (IWMI) - admin - All Documents](https://cgiar.sharepoint.com/sites/IWMIHelmsleyWorkgroup/Shared%20Documents/Forms/AllItems.aspx?originalPath=aHR0cHM6Ly9jZ2lhci5zaGFyZXBvaW50LmNvbS86Zjovcy9JV01JSGVsbXNsZXlXb3JrZ3JvdXAvRW52Wm9WUS1CS0ZOdnRueTliSjZIbjhCMl9MYV9rZHdkbjgtaVN1UDRaRURtZz9ydGltZT1pNVhhcmNCVjJVZw&viewid=dc1295bd%2D50ba%2D4410%2D99cb%2Dae07de55883b&id=%2Fsites%2FIWMIHelmsleyWorkgroup%2FShared%20Documents%2FWater%20Accounting%2FUSAID%20Communicating%20Water%20Accounting%20results%2FMaterials%20for%20consultancy%2Fadmin)
+
+[World Water Week 2021 :: IWMI](https://www.iwmi.cgiar.org/news/campaigns/world-water-week/2021-august/#tuesday)
+
+[Browse thousands of Icons images for design inspiration | Dribbble](https://dribbble.com/search/icons)
+
+[East Africa Hazards Watch | EAHW](https://eahazardswatch.icpac.net/map/ea/?map=eyJkYXRhc2V0cyI6W3siZGF0YXNldCI6ImVhX2JvdW5kYXJpZXMiLCJsYXllcnMiOlsiZWFfYm91bmRhcmllcyJdLCJvcGFjaXR5IjoxLCJ2aXNpYmlsaXR5Ijp0cnVlfSx7ImRhdGFzZXQiOiJlYV93YXRlcl9ib2RpZXMiLCJsYXllcnMiOlsiZWFfd2F0ZXJfYm9kaWVzIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsiZGF0YXNldCI6ImUzYjBjMGE4LTlkZTAtNDY4Mi1hOTU4LTg4YWUzMDM3MDhmNyIsImxheWVycyI6WyIxNjhiYjI4Yi0yNzYyLTRmZWItYWEyMS0zZTYwZTZiN2JhMzgiLCIzYzUzODBmOS1mMzczLTQ1NmUtYTY1OS1mYjk2NTYyMGU3MGQiLCJiYjU4N2E5Ni0zMTM2LTRjZWUtYThhNy0yYTIwMzhmMDEwMWIiLCIzYzUzODBmOS1mMzczLTQ1NmUtYTY1OS1mYjk2NTYyMGU3MGQiLCJiYjU4N2E5Ni0zMTM2LTRjZWUtYThhNy0yYTIwMzhmMDEwMWIiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX1dfQ%3D%3D&mapPrompts=eyJzdGVwc0tleSI6Im1hcFRvdXIiLCJmb3JjZSI6dHJ1ZX0%3D)
+
+[IrriSAT - Weather based irrigation scheduling](https://irrisat-cloud.appspot.com/)
+
+[UX Collective](https://uxdesign.cc/)
+
+[Webflow](https://webflow.com/dashboard?r=1)
+
+[Groundwater | Applications – GRACE Tellus](https://grace.jpl.nasa.gov/applications/groundwater/)
+
+[GRACE | Data Analysis Tool](https://grace.jpl.nasa.gov/data-analysis-tool/#b=ESRI_World_Imagery&l=TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06_V2_LAND(1),OSMCoastlines(1)&vm=2D&ve=-90,-49.4296875,90,49.4296875&pl=false&pb=false&tr=false&d=2021-06-15&tlr=months)
+
+[Datawheel](https://www.datawheel.us/)
+
+[Extra Functionality for leaflet Package • leaflet.extras2](https://trafficonese.github.io/leaflet.extras2/)
+
+[HESS - Using R in hydrology: a review of recent developments and future directions](https://hess.copernicus.org/articles/23/2939/2019/)
+
+[D3plus](https://d3plus.org/)
+
+[R Shiny Templates From Appsilon Are Now Available - Appsilon | End­ to­ End Data Science Solutions](https://appsilon.com/shiny-templates-available/)
+
+[IIASA Visualise](https://visualise-madagascar.shinyapps.io/visualise-madagascar/)
+
+[HydroSHEDS](https://www.hydrosheds.org/page/hydroatlas)
+
+[Free Resources | Designing for Analytics (Brian T. O'Neill)](https://designingforanalytics.com/resources/)
+
+[General Schedule | FOSS4G 2021 Buenos Aires | The International GeoSpatial Conference](https://2021.foss4g.org/schedule/outline.html)
+
+[FAO-EOSTAT: EO data for Official Agricultural Statistics](https://storymaps.arcgis.com/stories/3004c4ffd8fa4d11870863106b024d6b)
+
+[The Water Blog | World Bank Blogs](https://blogs.worldbank.org/water)
+
+[Welcome to WaterPIP | Water Productivity Improvement in Practice](https://waterpip.un-ihe.org/welcome-waterpip)
+
+[Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/going-further-webdev.html)
+
+[Designing for Analytics (Brian T. O'Neill)](https://designingforanalytics.com/brian-t-oneill-product-designer-for-analytics-machine-learning-ai/)
+
+[Four Impressive Visual Data Stories To Check Out | DataViz Weekly](https://www.anychart.com/blog/2021/10/01/impressive-visual-data-stories/)
+
+[Solutions | Project Drawdown](https://www.drawdown.org/solutions)
+
+[COMET-Farm](https://comet-farm.com/)
+
+[Greenhouse Gas Equivalencies Calculator | US EPA](https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator)
+
+[Royal Geographical Society - Geography](https://www.rgs.org/geography/advocacy-and-impact/impact/nsra-review-drmevent/)
+
+[Interactive visualization with R-Shiny versus with Tableau: Treemaps](https://datascience-enthusiast.com/R/R_shiny_Tableau_treemap.html)
+
+[d3\_tutorial/index.html at master · civisanalytics/d3\_tutorial](https://github.com/civisanalytics/d3_tutorial/blob/master/Part%203/index.html)
+
+[Live Free or Dichotomize - Custom JavaScript visualizations in RMarkdown](https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/)
+
+[Hello JS in R Markdown](https://www.aliciaschep.com/blog/js-rmarkdown/)
+
+[d3/d3-selection: Transform the DOM by selecting elements and joining to data.](https://github.com/d3/d3-selection#modifying-elements)
+
+[Setup Development Environment](https://www.tutorialsteacher.com/d3js/setup-d3js-development-environment)
+
+[va\_lesson14\_geography.pdf](http://didawiki.di.unipi.it/lib/exe/fetch.php/magistraleinformaticaeconomia/va/2020/va_lesson14_geography.pdf)
+
+[General Update Pattern / D3 / Observable](https://observablehq.com/@d3/general-update-pattern)
+
+[Recreating Real-World Terrain With React, Three.js & WebGL Shaders](https://techblog.geekyants.com/recreating-real-world-terrain-with-react-threejs-and-webgl-shaders-1)
+
+[JavaScript for R](https://book.javascript-for-r.com/intro-overview.html)
+
+[A 3D tour over Lake Geneva with rayshader | R-bloggers](https://www.r-bloggers.com/2019/10/a-3d-tour-over-lake-geneva-with-rayshader/)
+
+[Flood depth map on 3D terrain / sw1227 / Observable](https://observablehq.com/@sw1227/flood-depth-map-on-3d-terrain?collection=@sw1227/geo)
+
+[Tutorial: Adding Open Street Map Data to Rayshader Maps in R – Rayverse Blog](https://www.tylermw.com/adding-open-street-map-data-to-rayshader-maps-in-r/)
+
+[How to Create a Distill Article](https://distill.pub/guide/)
+
+[three.js editor](https://threejs.org/editor/)
+
+[deck.gl v8.6 now available with deeper Google Maps support | by Alberto Asuero | vis.gl | Oct, 2021 | Medium](https://medium.com/vis-gl/deck-gl-v8-6-now-available-with-deeper-google-maps-support-b734719076a7)
+
+[Templating in d3js](https://bin.re/blog/templating-in-d3js/)
+
+[Dockerizing Shiny Apps. David Schappler, Data Scientist | by 84.51° | Medium](https://medium.com/@8451marketing/dockerizing-shiny-apps-a1d81f6cfb9e)
+
+[deck.gl/terrain-layer.md at 8.6-release · visgl/deck.gl](https://github.com/visgl/deck.gl/blob/8.6-release/docs/api-reference/geo-layers/terrain-layer.md)
+
+[deck.gl/examples/website/terrain at 8.6-release · visgl/deck.gl](https://github.com/visgl/deck.gl/tree/8.6-release/examples/website/terrain)
+
+[Tutorial: Build a Full Shiny Dashboard With shiny.fluent | R-bloggers](https://www.r-bloggers.com/2021/06/tutorial-build-a-full-shiny-dashboard-with-shiny-fluent/)
+
+[deck.gl | ContourLayer Example](https://deck.gl/examples/contour-layer/)
+
+[Home - Documentation](https://www.procedural.eu/)
+
+[Learning Center – Cesium](https://cesium.com/learn/)
+
+[30daymapchallenge/day3.R at main · AlexandraKapp/30daymapchallenge](https://github.com/AlexandraKapp/30daymapchallenge/blob/main/R/day3.R)
+
+[D3 for Data Scientists, Part I: A re-usable template for combining R and D3 to build interactive visualizations – Civis Analytics](https://www.civisanalytics.com/blog/d3-for-data-scientists-part-i-a-re-usable-template-for-combining-r-and-d3-to-build-interactive-visualizations/)
+
+[Scaling RStudio/Shiny using Serverless Architecture and AWS Fargate | AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/scaling-rstudio-shiny-using-serverless-architecture-and-aws-fargate/)
+
+[WorldWater – Surface water dynamics from space](https://worldwater.earth/)
+
+[Coastal aquifers management – imaGeau](https://imageau.eu/solutions/coastal-aquifers-management/?lang=en)
+
+[Chapter 27 Shiny and React with {reactR} | Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/going-further-reactr)
+
+[joaoleopoldoesilva/Awesome-Geospatial - Giters](https://www.giters.com/joaoleopoldoesilva/Awesome-Geospatial)
+
+[Africa Platform](https://africa-knowledge-platform.ec.europa.eu/)
+
+[Global Cropland Monitoring Tool](https://wrd-iwmi.users.earthengine.app/view/global-cropland-monitoring-tool)
+
+[Shiny on ECS](https://datawookie.dev/blog/2021/06/shiny-on-ecs/)
+
+[Running a shiny app in a docker container | sellorm](https://blog.sellorm.com/2021/04/25/shiny-app-in-docker/)
+
+[Recordings – ISARM2021](https://isarm2021.org/recordings/)
+
+[HYPOS - Hydropower Management from Space - Zoom](https://us02web.zoom.us/rec/play/NTEqeaUVii8F0Wbok3A_uu_tICE9YHgu0ATH3hHAqH9BzU5offWeDBYMo8gEZyFjf2MCEKf3LQo0HH9v.u9PvXlLy702u_UDb?continueMode=true&_x_zm_rtaid=i6wKW87UQfSiZ-9X4LZjhw.1641685236343.56899eb224477a279b4a1898b46cedc0&_x_zm_rhtaid=668)
+
+[Data made insightful, effective & beautiful through visualization | Visual Cinnamon](https://www.visualcinnamon.com/)
+
+[ESA Soil Moisture project](https://climate.esa.int/en/projects/soil-moisture/)
+
+[SAMS - Systematic Asset Management Software](http://samsv2.iwmi.org/user_management/login.php#)
+
+[Course: Earth Observation for Drought Assessment and Monitoring](https://eoafrica.itc.utwente.nl/course/view.php?id=2#section-0)
+
+[Global Hydrology | PCR-GLOBWB 2.0](https://globalhydrology.nl/research/models/pcr-globwb-2-0/)
+
+[ATLAS - AGRICULTURAL INTEROPERABILITY AND ANALYSIS SYSTEM](https://www.atlas-h2020.eu/)
+
+[River Runner Global](https://river-runner-global.samlearner.com/)
+
+[Highcharts Editor - full](http://editor.highcharts.com/full.html)
+
+[OSM Water Layer Surface Waters in OpenStreetMap - awesome-gee-community-datasets](https://samapriya.github.io/awesome-gee-community-datasets/projects/osm_water/)
+
+[‘Earth observation for water management’ Community of Practice - International Water Association](https://iwa-network.org/projects/earth-observation-for-water-management-community-of-practice/)
+
+[Designing for Analytics - Design / UX / UI for AI, ML, Data Products](https://designingforanalytics.com/)
+
+[JavaScript for R](https://book.javascript-for-r.com/)
+
+[Gallery | echarty](https://helgasoft.github.io/echarty/gallery.html)
+
+[Melanie's Projects](https://hydra.org.uk/projects)
+
+[32 Beautiful Color Palettes With Their Corresponding Gradient Palettes](https://digitalsynopsis.com/design/beautiful-color-gradient-palettes/)
+
+[Field Notes: Accelerating Data Science with RStudio and Shiny Server on AWS Fargate | AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/field-notes-accelerating-data-science-with-rstudio-and-shiny-server-on-aws-fargate/)
+
+[themer](https://themer.dev/)
+
+[Viz Palette](https://projects.susielu.com/viz-palette)
+
+[chroma.js palette helper](https://gka.github.io/palettes/#/9|d|00429d,96ffea,ffffe0|ffffe0,ff005e,93003a|1|1)
+
+[Welcome | Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/welcome.html)
+
+[Viz](https://observablehq.com/)
+
+[IWMI and partners map the state of water across Africa :: IWMI](https://www.iwmi.cgiar.org/news/iwmi-and-partners-map-the-state-of-water-across-africa/)
+
+[IWMI](https://iwmi.africageoportal.com/)
+
+
+## Cartography
+
+[Soviet Military Maps of the World | Soviet Mapping of the Cold War era](https://www.sovietmaps.com/)
+
+
+
+## Statistics
+
+[R Interface for MiniZinc · R Views](https://rviews.rstudio.com/2021/02/15/r-interface-for-minizinc/)
+
+[Lesson 2: MA Models, Partial Autocorrelation, Notational Conventions | STAT 510](https://online.stat.psu.edu/stat510/lesson/2)
+
+[Lesson 3: Identifying and Estimating ARIMA models; Using ARIMA models to forecast future values | STAT 510](https://online.stat.psu.edu/stat510/lesson/3)
+
+[detrend](https://www.machinelearningplus.com/time-series/time-series-analysis-python/)
+
+[Rmetrics](https://www.rmetrics.org/)
+
+[Modelling Loss Curves in Insurance with RStan](https://mc-stan.org/users/documentation/case-studies/losscurves_casestudy.html)
+
+[Spatial Interpolation in R](https://zia207.github.io/geospatial-r-github.io/spatial-interpolation.html)
+
+[Feature Engineering and Selection: A Practical Approach for Predictive Models](https://bookdown.org/max/FES/)
+
+[Tidy time series forecasting with fable](https://tidyverts.github.io/tidy-forecasting-principles/)
+
+[Introduction to Econometrics with R](https://www.econometrics-with-r.org/1-1-a-very-short-introduction-to-r-and-rstudio.html)
+
+[Advanced Spatial Modeling with Stochastic Partial Differential Equations Using R and INLA](https://becarioprecario.bitbucket.io/spde-gitbook/)
+
+[Shiny tips & tricks for improving your apps and solving common problems](https://deanattali.com/blog/advanced-shiny-tips/)
+
+[Displaying time series, spatial and space-time data with R](http://oscarperpinan.github.io/spacetime-vis/)
+
+[srvyr compared to the survey package](https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html)
+
+[A Practical Guide to Geostatistical Mapping | by Tomislav Hengl | 291 p. | ISBN 978-90-9024981-0](http://www.spatial-analyst.net/book/)
+
+[GEOSTAT course | Master spatial analysis using FOSS4G](https://geostat-course.org/)
+
+[Chapter 9: Spatial Models](http://rstudio-pubs-static.s3.amazonaws.com/5578_4da95fcdbc2742d8a0701066fe02813e.html)
+
+[dendextend: a package for visualizing, adjusting, and comparing dendrograms (based on a paper from “bioinformatics”) | R-statistics blog](https://www.r-statistics.com/2015/08/dendextend-a-package-for-visualizing-adjusting-and-comparing-dendrograms-from-the-journal-bioinformatics/)
+
+[The Remote Sensing and GIS Software Library (RSGISLib) — RSGISLib](http://www.rsgislib.org/)
+
+[Evolving R Tools and Practices – Win-Vector Blog](http://www.win-vector.com/blog/2017/02/evolving-r-tools-and-practices/)
+
+[Applied Econometrics at the University of Illinois: e-Tutorial](http://www.econ.uiuc.edu/~econ472/e-Tutorial.html)
+
+[RPubs - Visualizacion geoinformación](https://rpubs.com/daniballari/geovisualizacion)
+
+[ggplot2 Maps | Tutorial | plotly](https://plot.ly/ggplot2/maps/)
+
+[r - Plotting contours on an irregular grid - Stack Overflow](http://stackoverflow.com/questions/19339296/plotting-contours-on-an-irregular-grid)
+
+[PURR - Data Management Plan (DMP)](https://purr.purdue.edu/dmp)
+
+[Presentations](https://nyhackr.org/presentations.html)
+
+[Section 4 Access meteorological data | The openair book](https://bookdown.org/david_carslaw/openair/sec-worldmet.html)
+
+[Section 14 Calendar plots | The openair book](https://bookdown.org/david_carslaw/openair/sec-calendarPlot.html)
+
+[ITRC GSMC-1 - 5.5 Trend Tests](https://www.itrcweb.org/gsmc-1/Default.htm#GW%20Stats/5%20Methods%20in%20indiv%20Topics/5%205%20Trend%20Tests.htm#5.5_Trend_Tests%3FTocPath%3D5.%2520Statistical%2520Tests%2520and%2520Methods%7C5.5%2520Trend%2520Tests%7C_____0)
+
+[Financial Institution: Bespoke Report Generation using R Markdown](https://www.jumpingrivers.com/case-studies/financial-institution-r-markdown/)
+
+[Program | Extreme Value Analysis](https://sites.lsa.umich.edu/eva2015/program/)
+
+[Section 9 Polar annulus | The openair book](https://bookdown.org/david_carslaw/openair/sec-polarAnnulus.html)
+
+[SECRETS OF THE SURFACE | The Mathematical Vision of Maryam Mirzakhani](http://www.zalafilms.com/secrets/)
+
+[Chapter 6 Maximum Likelihood Estimation | A Very Short Course on Time Series Analysis](https://bookdown.org/rdpeng/timeseriesbook/maximum-likelihood-estimation.html)
+
+[Chapter 2 The Structure of Temporal Data | A Very Short Course on Time Series Analysis](https://bookdown.org/rdpeng/timeseriesbook/the-structure-of-temporal-data.html)
+
+[useR! 2021 - ConfTool Pro - BrowseSessions](https://www.conftool.org/user2021/sessions.php)
+
+[Top 3 Coding Best Practices from the Shiny Contest | RStudio Blog](https://blog.rstudio.com/2021/07/22/three-shiny-best-practices-seen-in-the-shiny-contest/)
+
+[Practical Advice for R in Production, Part 1: Why? - RStudio](https://www.rstudio.com/resources/webinars/practical-advice-for-r-in-production-1-why/)
+
+[R Quantitative Analysis Package Integrations in tidyquant](https://cran.r-project.org/web/packages/tidyquant/vignettes/TQ02-quant-integrations-in-tidyquant.html#example-4-use-ttr-macd-to-visualize-moving-average-convergence-divergence)
+
+[ESA - Climate from Space](https://cfs.climate.esa.int/index.html#/stories?tags=sea-surface-temperature&globe=SI-1.84I32.38I18523626.33I360.00I-89.85I0.00I0.00I0.00II)
+
+[An online community for showcasing R & Python tutorials | DataScience+](https://datascienceplus.com/)
+
+[Issues · Stephan Wahlbrink / RJSrv for GNU R · GitLab](https://gitlab.com/walware/de.walware.rj-server.gr/-/issues?scope=all&state=all)
+
+[Welcome | Geocomputation with R](https://geocompr.robinlovelace.net/)
+
+[Time Series Analysis - 7  Trend Detection](https://vlyubchich.github.io/tsar/l07_trendtest.html)
+
+[Time Series Analysis - 7  Trend Detection](https://vlyubchich.github.io/tsar/l07_trendtest.html#conclusion)
+
+[Step-by-Step Guide to Perform Principal Component Analysis (PCA) in R - AGRON INFO TECH](https://www.agroninfo.com/perform-pca-in-r/)
+
+[1 Introduction | Introduction to Econometrics with R](https://www.econometrics-with-r.org/1-introduction.html)
+
+[Build and Raytrace 3D Scenes • rayrender](https://www.rayrender.net/)
+
+[bfastSpatial package - RDocumentation](https://www.rdocumentation.org/packages/bfastSpatial/versions/0.6.2)
+
+[Thermal comfort indices derived from ERA5 reanalysis](https://cds.climate.copernicus.eu/cdsapp#!/dataset/derived-utci-historical?tab=overview)
+
+[Time Series - New Tools in R](https://fast.wistia.net/embed/iframe/92gp0z61r8)
+
+[Quarto - Libraries](https://quarto.org/docs/interactive/ojs/libraries.html)
+
+[R Workflow](http://hbiostat.org/rflow/)
+
+[Module 1. Modeling Forest Canopy Height using Earth Observation (EO) Data and Earth Engine – AI.Geolabs](https://aigeolabs.com/courses/course-4/module-1/)
+
+[Quarto - Article Layout](https://quarto.org/docs/authoring/article-layout.html)
+
+[Modelling Loss Curves in Insurance with RStan](https://mc-stan.org/users/documentation/case-studies/losscurves_casestudy.html)
+
+[Spatial Interpolation in R](https://zia207.github.io/geospatial-r-github.io/spatial-interpolation.html)
+
+[Weather Data meets IBM Cloud. Part 3 - Transformation and Aggregation of Weather Data - developerWorks Recipes](https://developer.ibm.com/recipes/tutorials/weather-data-meets-ibm-cloud-part-3-transformation-and-aggregation-of-weather-data/?_lrsc=70fd54ac-912a-4f59-8b07-1a80270463e6)
+
+[Implementing Git in Data Science – Towards Data Science](https://towardsdatascience.com/implementing-git-in-data-science-11528f0fb4a7)
+
+[Feature Engineering and Selection: A Practical Approach for Predictive Models](https://bookdown.org/max/FES/)
+
+[Tidy time series forecasting with fable](https://tidyverts.github.io/tidy-forecasting-principles/)
+
+[Introduction to Econometrics with R](https://www.econometrics-with-r.org/1-1-a-very-short-introduction-to-r-and-rstudio.html)
+
+[Advanced Spatial Modeling with Stochastic Partial Differential Equations Using R and INLA](https://becarioprecario.bitbucket.io/spde-gitbook/)
+
+[Shiny tips & tricks for improving your apps and solving common problems](https://deanattali.com/blog/advanced-shiny-tips/)
+
+[Displaying time series, spatial and space-time data with R](http://oscarperpinan.github.io/spacetime-vis/)
+
+[srvyr compared to the survey package](https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html)
+
+[A Practical Guide to Geostatistical Mapping | by Tomislav Hengl | 291 p. | ISBN 978-90-9024981-0](http://www.spatial-analyst.net/book/)
+
+[GEOSTAT course | Master spatial analysis using FOSS4G](https://geostat-course.org/)
+
+[dendextend: a package for visualizing, adjusting, and comparing dendrograms (based on a paper from “bioinformatics”) | R-statistics blog](https://www.r-statistics.com/2015/08/dendextend-a-package-for-visualizing-adjusting-and-comparing-dendrograms-from-the-journal-bioinformatics/)
+
+[Chapter 9: Spatial Models](http://rstudio-pubs-static.s3.amazonaws.com/5578_4da95fcdbc2742d8a0701066fe02813e.html)
+
+[Seasonal forecasts | Copernicus Climate Change Service](https://climate.copernicus.eu/seasonal-forecasts)
+
+[Evolving R Tools and Practices – Win-Vector Blog](http://www.win-vector.com/blog/2017/02/evolving-r-tools-and-practices/)
+
+[The Remote Sensing and GIS Software Library (RSGISLib) — RSGISLib](http://www.rsgislib.org/)
+
+[Applied Econometrics at the University of Illinois: e-Tutorial](http://www.econ.uiuc.edu/~econ472/e-Tutorial.html)
+
+[RPubs - Visualizacion geoinformación](https://rpubs.com/daniballari/geovisualizacion)
+
+[ggplot2 Maps | Tutorial | plotly](https://plot.ly/ggplot2/maps/)
+
+[r - Plotting contours on an irregular grid - Stack Overflow](http://stackoverflow.com/questions/19339296/plotting-contours-on-an-irregular-grid)
+
+[All About N-HiTS: The Latest Breakthrough in Time Series Forecasting](https://www.datasciencewithmarco.com/blog/all-about-n-hits-the-latest-breakthrough-in-time-series-forecasting)
+
+[Geospatial distributed processing with furrr - Posit](https://posit.co/blog/geospatial-distributed-processing-with-furrr/)
+
+[Chapter 1 Shiny and the Web | Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/web-intro.html#be-a-dj)
+
+[RStudio Latest Builds](https://dailies.rstudio.com/)
+
+[Ubuntu 22](https://dailies.rstudio.com/rstudio/desert-sunflower/server/jammy-amd64/)
+
+[Building Serverless Shiny Apps with webR: A Step-by-Step Guide - Hypebright](https://hypebright.nl/index.php/en/2023/07/25/building-serverless-shiny-apps-with-webr-a-step-by-step-guide/)
+
+[R-Ladies YouTube Video Feed](https://ivelasq.github.io/rladies-video-feed/)
+
+[That escalated quickly: from building a personal website to running a dockerized virtual private server (part 1)-Data thoughts](https://chrkoenig.io/post/2022-02-01-building_a_personal_website_with_hugo/)
+
+[An Introduction to Statistical Learning](https://www.statlearning.com/)
+
+[Main Directorate of the Ministry of Emergency Situations of Russia for the Oryol Region](https://57.mchs.gov.ru/)
+
+[Notes from a data witch](https://blog.djnavarro.net/posts/2023-03-13_shattered-landscapes/)
+
+[An Agri-Food Market Intelligence Tool for Malawi | GEMS](https://gems.umn.edu/news/agri-food-market-intelligence-tool-malawi)
+
+[htmlwidgets: leaflet](https://www.htmlwidgets.org/showcase_leaflet.html)
+
+[(10) Discord | #events-and-resources | geocompx](https://discord.com/channels/878051191374876683/918573864412409897/1146049954650013696)
+
+[Geocomputation with R](https://r.geocompx.org/)
+
+[Top 25 Shiny (R) Interview Questions and Answers - InterviewPrep](https://interviewprep.org/shiny-r-interview-questions/)
+
+[\[this is aaronland\] saying the quiet part out loud](https://www.aaronland.info/weblog/2023/08/21/quiet/)
+
+[Tech Blog](https://tech.marksblogg.com/)
+
+[Preface | sits: Satellite Image Time Series Analysis on Earth Observation Data Cubes](https://e-sensing.github.io/sitsbook/)
+
+[sits | Satellite Image Time Series Analysis on Earth Observation Data Cubes](https://e-sensing.github.io/sitsbook/index.html)
+
+[R-universe: personal package repositories for R!](https://r-universe.dev/search/)
+
+[Functional programming · Advanced R.](http://adv-r.had.co.nz/Functional-programming.html)
+
+[21994127.fs1.hubspotusercontent-na1.net/hubfs/21994127/Webinar recordings ED Agro/November 2023/November 2023\_Full.mp4?submissionGuid=4380f03e-72f2-4ba8-a720-238f22d36fb3](https://21994127.fs1.hubspotusercontent-na1.net/hubfs/21994127/Webinar%20recordings%20ED%20Agro/November%202023/November%202023_Full.mp4?submissionGuid=4380f03e-72f2-4ba8-a720-238f22d36fb3)
+
+[8 Statistics with R Online Courses You Must Know in 2024](https://www.mltut.com/statistics-with-r-online-courses/)
+
+[ChatGPT](https://chat.openai.com/)
+
+[Image Creator from Microsoft Designer](https://www.bing.com/images/create)
+
+[Adobe Firefly](https://firefly.adobe.com/upload/inpaint)
+
+[R Bayesian Inference for Multivariate Spatial Models with INLA](https://journal.r-project.org/articles/RJ-2023-068/)
+
+[Object-Oriented Programming in R (Part 1): An Introduction](https://www.appsilon.com/post/object-oriented-programming-in-r-part-1?utm_source=social&utm_medium=linkedin&utm_campaign=blog&utm_term=appsilon-account&utm_content=oop1-11-04-24)
+
+[Time Series Analysis with R](https://vlyubchich.github.io/tsar/)
+
+[DigitalEarth Africa Sandbox](https://deafrica-prod-af-eks-user-auth.auth.us-west-2.amazoncognito.com/confirmForgotPassword?response_type=code&redirect_uri=https%3A%2F%2Fsandbox.digitalearth.africa%2Foauth_callback&client_id=6vpn6tvdk35gn8b70gnjmt25od&state=eyJzdGF0ZV9pZCI6ICJmZmQ0NGYyZGVjMzQ0ODhiOGZkOGQ5ZmM5M2E5NDQ2OSJ9)
+
+
+## Risks in Agriculture
+
+[Risk Management and Monitoring - CoreLogic](https://www.corelogic.com/solutions/risk-management-and-monitoring-solutions.aspx)
+
+[Crop Yield Forecasting Tool + Data Feed | CropProphet](https://www.cropprophet.com/)
+
+[Home :: Drought Catalogue](https://droughtcatalogue.com/)
+
+[Climate scenario analysis | Other | PRI](https://www.unpri.org/climate-change/climate-scenario-analysis/3606.article)
+
+[Home - World Climate Service](https://www.worldclimateservice.com/)
+
+[Howden expands in Spain with ARTAI takeover - Reinsurance News](https://www.reinsurancene.ws/howden-expands-in-spain-with-artai-takeover/)
+
+[Speedwell Weather - Weather Station Installation](https://www.speedwellweather.com/Pages/Others/Marketing/WeatherStationInstallation.aspx)
+
+[Agriculture API Dashboard - OpenWeather](https://agromonitoring.com/dashboard)
+
+[ASAP - EC](https://mars.jrc.ec.europa.eu/asap/)
+
+[Impact Forecasting Revealed 2021](https://gateway.on24.com/wcc/experience/eliteAonCorporation2/2330318/3073271/impact-forecasting-revealed-2021)
+
+[Parhelion risk insurance for the energy and climate finance sectors](https://parhelion.co.uk/)
+
+[Investment impact of different climate scenarios/ASI](https://www.aberdeenstandard.com/en/luxembourg/institutional/insights-thinking-aloud/article-page/esg-climate-change-active-investing?utm_medium=social&utm_source=linkedin&utm_campaign=esg%7C202105%7Cskills%7Cinstitutional%7Clu%7Cen&utm_content=content%7Cpost%7Cesg&cn=esg%7C202105&li_fat_id=4dcabb34-ded9-4e5b-9af0-8f79e48bf956)
+
+[AIR Worldwide | Catastrophe Modeling and Risk Assessment](https://www.air-worldwide.com/)
+
+[Mike's Weather Page... powered by Firman Power Equipment!](https://spaghettimodels.com/)
+
+[Flycom Technologies d.o.o. – Geospatial solutions of tomorrow](https://www.flycom.si/en/homepage/)
+
+[NGFS Scenarios Portal](https://www.ngfs.net/ngfs-scenarios-portal/)
+
+[NGFS Scenario API](https://data.ene.iiasa.ac.at/ngfs/#/extra/API)
+
+[Tools / Climate Analytics](https://climateanalytics.org/tools/)
+
+[VanderSat events | Livestorm](https://app.livestorm.co/vandersat)
+
+[About Ceres Insurance Group | Risk and Insurance Brokerage Australia](https://ceresinsurancegroup.com.au/about-us/)
+
+[UNDP Insurance & Risk Finance Facility](https://irff.undp.org/)
+
+[Knowledge Series - Strengthening Financial Resilience in Agriculture | Financial Protection Forum](https://www.financialprotectionforum.org/knowledge-series-strengthening-financial-resilience-in-agriculture?mc_cid=70afb67004&mc_eid=81c3cf3a67)
+
+[Agrograph - About Us](https://agrograph.com/about#contact)
+
+[agriculture | VITO Remote Sensing](https://remotesensing.vito.be/applications/agriculture)
+
+[FARMCOVER](http://farmcover.tg/)
+
+[Financial Risk Assessment Tool](http://149.28.228.221/apps/Tool1/)
+
+[World Bank Financial Response Design Tool](http://149.28.228.221/apps/Tool2/)
+
+[New Start Ready Disaster Risk Financing Course | Start Network](https://startnetwork.org/news-and-blogs/new-start-ready-disaster-risk-financing-course)
+
+[ARDIS Entering its 5th Year: Reflections, Successes and its Future - Global Parametrics](https://www.globalparametrics.com/news/ardis-entering-its-5th-year-reflections-successes-and-its-future/)
+
+[Disaster and Risk Mapping | Billion-Dollar Weather and Climate Disasters | National Centers for Environmental Information (NCEI)](https://www.ncei.noaa.gov/access/billions/mapping)
+
+
+
+## Data Visualization
+
+[Cesium: The Platform for 3D Geospatial](https://cesium.com/)
+
+[Cesium Blog – Cesium](https://cesium.com/blog/)
+
+[Map Colors: The Ultimate Guide \[6 Essential Colors\] – Greenbelly Meals](https://www.greenbelly.co/pages/map-colors)
+
+[Data Vis Dispatch, January 30 - Datawrapper Blog](https://blog.datawrapper.de/data-vis-dispatch-january-30-2024/)
+
+[Decoding Mass Exploitation in 2023: A GreyNoise Perspective| GreyNoise Blog](https://www.greynoise.io/blog/decoding-mass-exploitation-in-2023-a-greynoise-perspective)
+
+[John MacFarlane - Papers](https://johnmacfarlane.net/papers.html)
+
+[Next.js Starter Templates & Themes | Vercel – Vercel](https://vercel.com/templates/next.js)
+
+[Datawrapper Blog](https://blog.datawrapper.de/)
+
+[Choosing the Right Data Visualization Tool: R Shiny, PowerBI, or Spotfire](https://www.appsilon.com/post/rshiny-vs-powerbi-vs-spotfire?utm_source=social&utm_medium=linkedin&utm_campaign=blog&utm_term=appsilon-account&utm_content=data-visualization)
+
+[Sandbox: Try NextGIS Web functionality for your projects](https://nextgis.com/blog/sandbox/?utm_source=nextgis-unisender&utm_medium=email&utm_campaign=news-03-24&utm_content=en)
+
+[R Color palette finder | Browse 2000+ palettes 🔥](https://r-graph-gallery.com/color-palette-finder)
+
+[Leaflet Provider Demo](https://leaflet-extras.github.io/leaflet-providers/preview/)
+
+[Nick Jones - Interface Prototyper / Designer](https://www.narrowdesign.com/)
+
+[somethingaboutmaps](https://somethingaboutmaps.wordpress.com/)
+
+[Geotribu](https://geotribu.fr/articles/2024/2024-06-18_carte-relief-ombre-avec-blender-partie-2-modelisation-reglages-cartographie/)
+
+[somethingaboutmaps](https://somethingaboutmaps.com/)
+
+:::

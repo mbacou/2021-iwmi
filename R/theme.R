@@ -1,14 +1,13 @@
-#' Default `mblabs` 12-color palette
+#' MBLABS 12-color palette
 #'
-#' Custom named qualitative color palette with 12 hues derived from `mblabs`
-#' Bootstrap theme.
+#' Custom named qualitative color palette with 12 hues and 1 black derived from
+#' `mblabs` Bootstrap theme.
 #'
 #' @keywords datasets
 #' @name pal
 #' @format A named character vector of hex color codes
 #' @examples
-#'
-#' pie(rep(1, 12), col=pal, labels=names(pal), border="white", clockwise=TRUE)
+#' pie(rep(1, length(pal)), col=pal, labels=names(pal), border="white", clockwise=TRUE)
 #'
 #' @export
 pal = c(
@@ -23,37 +22,42 @@ pal = c(
   yellow = "#edcd37",
   orange = "#f67400",
   red    = "#da4453",
-  light  = "#eff0f1"
+  light  = "#eff0f1",
+  black  = "#505050"
 )
 
 
-#' Color ramp based on `mblabs` theme colors
+#' MBLABS color ramp
 #'
 #' Default qualitative color ramp derived from `mblabs` Bootstrap theme.
 #'
 #' @param x number of colors to interpolate
 #' @inheritParams grDevices::colorRamp
+#' @inheritParams scales::alpha
 #' @inheritDotParams grDevices::colorRamp
 #' @return A function to interpolate colors
 #' @examples
 #' x <- rchisq(100, df=4)
 #' hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(20), border="white")
-#' hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(8), border="white")
+#' hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(8, alpha=.5), border="white")
 #'
 #' @export
-labs.colors <- function(x, colors=unname(pal), ...) colorRampPalette(colors, ...)(x)
+labs.colors <- function(
+  x,
+  colors = unname(pal[names(pal)!="black"]),
+  alpha = 0.9,
+  ...) alpha(colorRampPalette(colors, ...)(x), alpha)
 
 
-#' Apply graphic color palettes
+#' Thematic consistent color palettes
 #'
-#' Set `mblabs` default values to `thematic::thematic_on()`, and modify
-#' `lattice` and `ggplot` color palettes and fonts.
+#' Sets default values to `thematic::thematic_on()`, and modify
+#' `lattice` and `ggplot` color palettes and fonts to match `mblabs` theme.
 #'
 #' @inheritParams thematic::thematic_on
 #' @inheritDotParams thematic::thematic_on
 #' @return A global graphic theme
 #' @importFrom thematic thematic_on font_spec sequential_gradient
-#' @importFrom scales alpha
 #' @examples
 #' theme_labs_on()
 #' lattice::show.settings()
@@ -61,19 +65,19 @@ labs.colors <- function(x, colors=unname(pal), ...) colorRampPalette(colors, ...
 #' @export
 theme_labs_on <- function(
   bg = "transparent",
-  fg = "#505050",
+  fg = "#090909",   # pal[["black"]]
   accent = pal[[1]],
   font = "Roboto Condensed",
   sequential = sequential_gradient(fg_weight=.5, bg_weight=.5, fg_low=FALSE),
-  qualitative = alpha(labs.colors(12), .9),
+  qualitative = labs.colors(12),
   ...
 ) thematic_on(
   bg, fg, accent, font=font_spec(font), sequential, qualitative, ...)
 
 
-#' Default `ggplot2` theme for `mblabs`
+#' MBLABS `ggplot2` theme
 #'
-#' Custom `ggplot` theme for `mblabs` website.
+#' Custom `ggplot` theme for `mblabs` website and blog posts.
 #'
 #' @inheritParams ggthemes::theme_foundation
 #' @param base_bg Plot, panel, legend background
@@ -113,6 +117,7 @@ theme_labs <- function(
 ) theme_foundation(
   base_size = base_size,
   base_family = base_family
+
 ) + theme(
 
   plot.margin = unit(c(1, 1, 1, 1), "lines"),
@@ -121,6 +126,7 @@ theme_labs <- function(
   rect = element_rect(fill=NA, linetype=0, color=NA),
   plot.background = element_rect(fill=base_bg, color=NA),
   panel.background = element_rect(fill=base_bg, color=NA),
+
   panel.grid = element_line(color=NULL, linetype=3),
   panel.grid.major = element_line(color=base_color),
   panel.grid.major.x = element_blank(),
@@ -160,9 +166,10 @@ theme_labs <- function(
 )
 
 
-#' Default themed `ggplot` for `mblabs`
+#' MBLABS themed `ggplot`
 #'
-#' A themed `ggplot` with custom element sizes, colors, and guides for `mblabs` website.
+#' Convenience function to generate a themed `ggplot` with custom element sizes,
+#' colors, and guides for `mblabs` website.
 #'
 #' @inheritParams ggplot2::ggplot
 #' @param pos_x Position of x-axis (bottom or top)
@@ -216,3 +223,33 @@ gglabs <- function(
 
   ) + theme_labs(...)
 }
+
+
+#' MBLABS fill color scale
+#'
+#' Custom `ggplot` fill and color scales for `mblabs` website.
+#' One can also use `theme_labs_on()` to activate these scales automatically.
+#'
+#' @inheritDotParams ggplot2::discrete_scale
+#'
+#' @importFrom ggplot2 discrete_scale
+#' @seealso scale_color_labs
+#' @return a fill scale
+#' @export
+scale_fill_labs <- function(...) discrete_scale("fill", labs.colors, ...)
+
+
+#' MBLABS discrete color scale
+#'
+#' Custom `ggplot` fill and color scales for `mblabs` website.
+#' One can also use `theme_labs_on()` to activate these scales automatically.
+#'
+#' @inheritDotParams ggplot2::discrete_scale
+#'
+#' @importFrom ggplot2 discrete_scale
+#' @seealso scale_fill_labs
+#' @return a color scale
+#' @export
+scale_color_labs <- function(...) discrete_scale("color", labs.colors, ...)
+
+

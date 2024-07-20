@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.2">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Melanie BACOU">
+<meta name="dcterms.date" content="2024-07-16">
+
+<title>Data, Resources, and Tools – Mel’s Labs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../www/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: var(--bs-light);
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: var(--bs-light);
+background: url(../../www/banner/dashboard.jpg) fixed;
+      }
+</style>
+
+
+<meta property="og:title" content="Data, Resources, and Tools – Mel’s Labs">
+<meta property="og:description" content="A curated list of accessible resources for agricultural and agro-meteo research">
+<meta property="og:image" content="https://mbacou.com/posts/tools/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:site_name" content="Mel's Labs">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <div id="quarto-announcement" data-announcement-id="9d205868ebbfd7307f33ed6e8dfb00fd" class="alert alert-dark hidden"><div class="quarto-announcement-content">
+<p><i class="fa-solid fa-warning" aria-label="warning"></i> This blog is being migrating to <a href="https://quarto.org">Quarto</a>, expect quirks and dead links!</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><i class="fa-solid fa-compass-drafting" aria-label="compass-drafting"></i> &nbsp;Mel’s <strong>Labs</strong></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Notebooks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../portfolio.html"> 
+<span class="menu-text">Portfolio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../posts/tools/index.html" aria-current="page"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/resume/index.html"> 
+<span class="menu-text">Full Bio</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mbacou/mb-labs"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../t.me/mbacou"> <i class="bi bi-telegram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/mbacou"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@mbacou/playlists"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Data, Resources, and Tools</h1>
+        </a>     
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title d-none d-lg-block">Data, Resources, and Tools</h1>
+            <p class="subtitle lead">A curated list of accessible resources for agricultural and agro-meteo research</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Melanie BACOU <a href="mailto:mel@mbacou.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-1810-6818" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 16, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">July 16, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+
+
+
+
+
+<p>A curated list of resources and tools, always in progress.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-fill mt-4">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Remote Sensing</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Open Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Water Modeling</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Cartography</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">Risks in Agriculture</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false">Data Visualization</a></li></ul>
+<div class="tab-content nav-fill mt-4">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="https://sandbox.digitalearth.africa/">DigitalEarth Africa</a> sandbox. Tutorials available on the <a href="https://www.youtube.com/@digitalearthafrica">DE Africa</a> YouTube channel.</p>
+<p><a href="https://sepal.io/-/app-launch-pad">SEPAL</a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="https://data.humdata.org/">UN HDX</a> Humanitarian Data Exchange. The latest subnational administrative datasets often available.</p>
+<p><a href="https://confluence.ecmwf.int/pages/viewpage.action?pageId=133257503">C3S Climate Data Store Toolbox User Forum - Copernicus User Support Forum - ECMWF Confluence Wiki</a></p>
+<p><a href="https://www.ecmwf.int/en/forecasts/accessing-forecasts/order-real-time-forecasts">Order real-time forecasts | ECMWF</a></p>
+<p><a href="https://developer.ibm.com/recipes/tutorials/weather-data-meets-ibm-cloud-part-3-transformation-and-aggregation-of-weather-data/?_lrsc=70fd54ac-912a-4f59-8b07-1a80270463e6">Weather Data meets IBM Cloud. Part 3 - Transformation and Aggregation of Weather Data - developerWorks Recipes</a></p>
+<p><a href="https://towardsdatascience.com/implementing-git-in-data-science-11528f0fb4a7">Implementing Git in Data Science – Towards Data Science</a></p>
+<p><a href="https://www.ecmwf.int/en/about/media-centre/news/2019/ecmwf-holds-webinars-june-upgrade-its-forecasting-system">ECMWF holds webinars on June upgrade of its forecasting system | ECMWF</a></p>
+<p><a href="http://gis1.servirglobal.net:8080/geonetwork/srv/eng/catalog.search;jsessionid=4D9DC62FC21332D3516E971709B0F8A4#/home">SERVIR Global Data Catalog - My organization</a></p>
+<p><a href="https://www.ers.usda.gov/data-products/international-agricultural-productivity/">USDA ERS - International Agricultural Productivity</a></p>
+<p><a href="http://earthdatascience.org/">Earth * Data * Science - Earth Lab</a></p>
+<p><a href="https://climate.copernicus.eu/seasonal-forecasts">Seasonal forecasts | Copernicus Climate Change Service</a></p>
+<p><a href="https://www.terrapop.org/">Terra Populus</a></p>
+<p><a href="http://maps.elie.ucl.ac.be/CCI/viewer/download.php">ESA/CCI viewer</a></p>
+<p><a href="https://www.climate.com/">Climate Corporation | Data services for yield maximization</a></p>
+<p><a href="http://freegisdata.rtwilson.com/">Free GIS Datasets - Categorised List</a></p>
+<p><a href="https://incubed.phi.esa.int/geospatial-knowledge-infrastructure-summit/">Geospatial Knowledge Infrastructure Summit | InCubed</a></p>
+<p><a href="https://www.theia-land.fr/en/s2-varbio-four-biophysical-variables-to-monitor-crops-and-vegetation/">S2-VarBIO: four biophysical variables to monitor crops and vegetation – Theia</a></p>
+<p><a href="https://axaxl.com/fast-fast-forward/articles/a-swath-of-hail">A swath of hail</a></p>
+<p><a href="http://www.bom.gov.au/climate/austmaps/metadata-daily-rainfall.shtml">Gridded Daily Rainfall Metadata</a></p>
+<p><a href="https://www.openlandmap.org/#/?base=Stamen%20(OpenStreetMap)&amp;center=39.0000,25.0000&amp;zoom=4&amp;opacity=80&amp;layer=lcv_land.cover_esacci.lc.l4_c&amp;time=2015">OpenLandMap | OpenGeoHub Foundation</a></p>
+<p><a href="https://www.ecad.eu/dailydata/customquery.php?optionSelected=country&amp;processtext1=Your+query+is+being+processed.+Please+wait...&amp;blendingselect=no&amp;countryselect=PORTUGAL%7Cpt&amp;stationselect=All+stations%7C**&amp;elementselect=Minimum+temperature%7Ctn&amp;advanced=yes&amp;periodselect=All+available+years%7C**&amp;elevationselect=**&amp;processtext2=Your+query+is+being+processed.+Please+wait...">Custom query in ASCII</a></p>
+<p><a href="https://landsaf.ipma.pt/en/news/news/assessing-frost-exposure-on-vegetation/">Assessing Frost Exposure On Vegetation - News</a></p>
+<p><a href="https://glam.nasaharvest.org/">GLAM</a></p>
+<p><a href="https://drmkc.jrc.ec.europa.eu/Knowledge/Science-for-DRM/Science-for-Disaster-Risk-Management-2020">Science for Disaster Risk Management 2020</a></p>
+<p><a href="https://eurodatacube.com/dashboard">Dashboard | Euro Data Cube</a></p>
+<p><a href="https://catalogue.theia-land.fr/?extend=-102.832031,5.790896893464023,122.16796899999929,77.91566900328445">Theia</a></p>
+<p><a href="https://land.copernicus.eu/global/products/ssm">Surface Soil Moisture | Copernicus Global Land Service</a></p>
+<p><a href="https://climate.esa.int/en/odp/#/dashboard">Open Data Portal</a></p>
+<p><a href="https://www.ospo.noaa.gov/Products/land/index.html">Land Products Main Page - Office of Satellite and Product Operations</a></p>
+<p><a href="https://www.ncdc.noaa.gov/temp-and-precip/drought/nadm/maps/en/202101">North American Drought Monitor | Temperature, Precipitation, and Drought | National Centers for Environmental Information (NCEI)</a></p>
+<p><a href="https://eccc-msc.github.io/open-data/usage/tutorial_WMS_QGIS_en/">Display and animate data in QGIS /Afficher et animer des couches dans QGIS - MSC Open Data / Données ouvertes du SMC</a></p>
+<p><a href="https://climate-change.canada.ca/climate-data/#/regional-deterministic-precipitation-analysis">Climate data extraction tool - Regional Deterministic Precipitation Analysis</a></p>
+<p><a href="https://experience.arcgis.com/experience/61910f1269f14220850ab93a4a60d883/">NADM - The Global Drought Monitor</a></p>
+<p><a href="https://geo.fas.usda.gov/GADAS/index.html">GADAS</a></p>
+<p><a href="https://caspar-data.ca/caspar">CaSPAr</a></p>
+<p><a href="https://view.eumetsat.int/productviewer?v=default">Eumetview</a></p>
+<p><a href="https://www.servirglobal.net/mapresources/iserv/index.html">ISERV Viewer</a></p>
+<p><a href="https://daymet.ornl.gov/">Daymet</a></p>
+<p><a href="https://weather.wsu.edu/?p=88650">Home | AgWeatherNet at Washington State University</a></p>
+<p><a href="https://thredds.daac.ornl.gov/thredds/ncss/grid/ornldaac/1840/daymet_v4_daily_na_prcp_1980.nc/dataset.html">ORNL NetCDF Subset Service for Grids</a></p>
+<p><a href="https://viewer.terrascope.be/?language=en&amp;bbox=-2.4136960878968243,48.280999751124625,11.648803912103176,53.13820360563409&amp;overlay=true&amp;bgLayer=Satellite">TerraScope</a></p>
+<p><a href="https://strimas.com/post/hexagonal-grids/">Fishnets and Honeycomb: Square vs.&nbsp;Hexagonal Spatial Grids | Matt Strimas-Mackey</a></p>
+<p><a href="https://coast.noaa.gov/hurricanes/#map=5.72/16.012/-24.015&amp;search=eyJzZWFyY2hTdHJpbmciOiJDYXAtVmVydCIsInNlYXJjaFR5cGUiOiJnZW9jb2RlZCIsIm9zbUlEIjoiNTM1Nzc0IiwiY2F0ZWdvcmllcyI6WyJINSIsIkg0IiwiSDMiLCJIMiIsIkgxIiwiVFMiLCJURCIsIkVUIl0sInllYXJzIjpbXSwibW9udGhzIjpbXSwiZW5zbyI6W10sInByZXNzdXJlIjp7InJhbmdlIjpbMCwxMTUwXSwiaW5jbHVkZVVua25vd25QcmVzc3VyZSI6dHJ1ZX0sImJ1ZmZlclVuaXQiOlsiTWlsZXMiXSwic29ydFNlbGVjdGlvbiI6eyJ2YWx1ZSI6InllYXJzX25ld2VzdCIsImxhYmVsIjoiWWVhciAoTmV3ZXN0KSJ9LCJhcHBseVRvQU9JIjp0cnVlLCJpc1N0b3JtTGFiZWxzVmlzaWJsZSI6dHJ1ZX0=">NOAA Historical Hurricane Tracks</a></p>
+<p><a href="https://www.eventsforce.net/eumetsat/frontend/reg/tvenue.csp?pageID=10401&amp;eventID=24&amp;traceRedir=2">2021&nbsp;Series of Webinars on Earth Observation&nbsp;in Africa</a></p>
+<p><a href="https://eodashboard.org/">Earth Observing Dashboard</a></p>
+<p><a href="https://eccc-msc.github.io/open-data/msc-data/nwp_hrdps/readme_hrdps-datamart_en/">Readme hrdps datamart en - MSC Open Data / Données ouvertes du SMC</a></p>
+<p><a href="https://wapor.apps.fao.org/home/WAPOR_2/1">FAO Water Productivity</a></p>
+<p><a href="https://www.agr.gc.ca/eng/agriculture-and-the-environment/drought-watch/related-links/?id=1463575565688">Related Links - Agriculture and Agri-Food Canada (AAFC)</a></p>
+<p><a href="https://swclimatehub.info/rma/rma-data-viewer.html">AgRisk | Southwest Climate Hub</a></p>
+<p><a href="https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:CVM00008589/detail">Daily Summaries Station Details: PRAIA, CV, GHCND:CVM00008589 | Climate Data Online (CDO) | National Climatic Data Center (NCDC)</a></p>
+<p><a href="https://www.wateraccounting.org/">Water Accounting</a></p>
+<p><a href="https://www.oneearth.org/bioregions-2020/">Bioregions 2020 | One Earth</a></p>
+<p><a href="https://earthobservatory.nasa.gov/images/148314/soil-data-aids-prediction-of-locust-swarms">Soil Data Aids Prediction of Locust Swarms</a></p>
+<p><a href="https://landsaf.ipma.pt/en/applications/agrometeorology/">Eumetsat LSA SAF</a></p>
+<p><a href="https://archive.eumetsat.int/usc/UserServicesClient.html#sp:;id=EO:EUM:DAT:MSG:HRSEVIRI;delm=O;noti=1;udsp=OPE;qqov=ALL;seev=0">EUMETSAT Product Ordering Application</a></p>
+<p><a href="https://stacindex.org/catalogs">Catalogs - STAC Index</a></p>
+<p><a href="https://eurodatacube.com/">Euro Data Cube</a></p>
+<p><a href="https://psd.cube.eumetsat.int/thredds/catalog.html">TdsStaticCatalog http://psd.cube.eumetsat.int/thredds/catalog.html</a></p>
+<p><a href="https://psd.cube.eumetsat.int/thredds/ncss/LSASAF_CDR_LST_H/2015/NETCDF4_LSASAF_MSG_LST_MSG-Disk_201512312300_lst_psdc.nc/dataset.html">EUMETSAT NetCDF Subset Service for Grids</a></p>
+<p><a href="https://pypi.org/project/agera5tools/">agera5tools · PyPI</a></p>
+<p><a href="https://www.ceresimaging.net/solutions#tab-4">Irrigation solutions powered by aerial imagery and analytics</a></p>
+<p><a href="https://app.gro-intelligence.com/login">Gro</a></p>
+<p><a href="https://app.climateengine.org/climateEngine">https://app.climateengine.org/climateEngine</a></p>
+<p><a href="https://meteologix.com/pt">Weather for Portugal | Swiss Quality Weather Forecasting - Meteologix.com</a></p>
+<p><a href="https://sites.google.com/view/srs-export">Satellite Weather Data Extractor</a></p>
+<p><a href="https://gportal.jaxa.jp/gpr/information/download">JAXA G-Portal</a></p>
+<p><a href="https://spaceinafrica.com/portal/">Portal – Space in Africa</a></p>
+<p><a href="https://rangelands.app/">Rangeland Analysis Platform</a></p>
+<p><a href="https://www.carbon4finance.com/publication-food-and-beverage-2022">2020 report on the food &amp; beverage sector | Carbone 4</a></p>
+<p><a href="https://agroobserver.com/">Agro Observer</a></p>
+<p><a href="https://unleash-shiny.rinterface.com/">Welcome | Outstanding User Interfaces with Shiny</a></p>
+<p><a href="https://medium.com/nerd-for-tech/soil-and-agronomy-data-cube-for-africa-at-30-m-spatial-resolution-591e04bfc372">Soil and Agronomy Data Cube for Africa at 30-m spatial resolution | by OpenGeoHub | Nerd For Tech | Medium</a></p>
+<p><a href="https://streamyard.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=3-branded&amp;utm_content=119379464307&amp;utm_term=streamyard&amp;gclid=Cj0KCQiAmpyRBhC-ARIsABs2EAqoRQr8AfqfuBdFxSZuztrc3IWm8tYbSVUO3KUUzu3kzYJPHxPkg1EaAmtDEALw_wcB">StreamYard</a></p>
+<p><a href="https://nimbo.earth/">Nimbo | Earth observation reinvented</a></p>
+<p><a href="https://meteologix.com/pt/model-charts/french-hd">Model charts for Portugal (Temperature) | AROME (2 days)</a></p>
+<p><a href="https://openetdata.org/">Home - OpenET</a></p>
+<p><a href="https://thetricontinental.org/institutes/">Institutes &amp; Partners</a></p>
+<p><a href="https://www.google.com/maps/place/S%C3%B3brio+Olhar/@41.1563076,-8.6464613,15z/data=!4m5!3m4!1s0xd24657656f41149:0xf399081d2ca047ad!8m2!3d41.1541842!4d-8.6459335">Sóbrio Olhar - Google Maps</a></p>
+<p><a href="https://earthquake.usgs.gov/earthquakes/map/?extent=6.95914,-10.49194&amp;extent=17.93693,-0.06592&amp;range=search&amp;baseLayer=terrain&amp;timeZone=utc&amp;search=%7B%22name%22:%22Search%20Results%22,%22params%22:%7B%22endtime%22:%222022-05-11T21:57:44.343Z%22,%22latitude%22:6.9894,%22longitude%22:126.9322,%22maxradiuskm%22:250,%22minmagnitude%22:3,%22starttime%22:%222022-03-30T21:57:44.343Z%22%7D%7D">USGS ShakeMaps</a></p>
+<p><a href="https://www.speedwellweather.com/Pages/Others/DataInventory.aspx">Speedwell Weather - Weather Data Inventory Tool</a></p>
+<p><a href="https://www.meteomatics.com/en/weather-api/">Weather API | Meteomatics</a></p>
+<p><a href="https://meteocentre.com/numerical-weather-prediction/map-animation.php?mod=gfs&amp;run=06&amp;stn=TT2m&amp;mode=archives&amp;map=fr&amp;lang=en">NCEP-GFS / Animations / France &amp; UK | MeteoCentre.com</a></p>
+<p><a href="https://www.weatheronline.co.uk/cgi-bin/expertcharts?LANG=en&amp;MENU=0000000000&amp;CONT=frfr&amp;MODELL=gfs&amp;MODELLTYP=1&amp;BASE=-&amp;VAR=tmax&amp;HH=384&amp;ZOOM=1&amp;WMO=&amp;ARCHIV=0&amp;RES=0">weather model gfs model - france - temperature high (2m) [base + 384] - zoom | weatheronline</a></p>
+<p><a href="https://www.geospatialworld.net/">GWPrime : The First Subscription based Geospatial Media Platform</a></p>
+<p><a href="https://www.catnat.net/veille-catastrophes-naturelles/catnat-analytics/tableau-de-bord-de-l-annee-en-cours">CATastrophes NATurelles .net - + Tableau de bord de l’année en cours</a></p>
+<p><a href="https://linuxiac.com/">Linuxiac - Linux News, Tutorials, Tips &amp; Tricks, and More</a></p>
+<p><a href="https://www.eurisy.eu/stories/">Testimonials on operational satellite applications - Success stories -Eurisy</a></p>
+<p><a href="https://www.geoportal.org/?m:activeLayerTileId=osm&amp;f:dataSource=dab">Welcome - GEOSS</a></p>
+<p><a href="https://samapriya.github.io/awesome-gee-community-datasets/">awesome-gee-community-datasets</a></p>
+<p><a href="https://community.rstudio.com/c/table-gallery/64">Latest Table Gallery topics - RStudio Community</a></p>
+<p><a href="https://apps.sentinel-hub.com/eo-browser/?zoom=16&amp;lat=46.77824&amp;lng=33.36756&amp;themeId=DEFAULT-THEME&amp;visualizationUrl=https%3A%2F%2Fservices.sentinel-hub.com%2Fogc%2Fwms%2Fbd86bcc0-f318-402b-a145-015f85b9427e&amp;datasetId=S2L2A&amp;fromTime=2022-10-31T00%3A00%3A00.000Z&amp;toTime=2022-10-31T23%3A59%3A59.999Z&amp;layerId=1_TRUE_COLOR&amp;demSource3D=%22MAPZEN%22">Sentinel Hub EO Browser</a></p>
+<p><a href="https://apps.sentinel-hub.com/dashboard/#/account/billing/payment">Dashboard</a></p>
+<p><a href="https://fossilfueltracker.org/app/ffnpt/?utm_medium=email&amp;utm_source=newsletter&amp;utm_campaign=rshiny-weekly-newsletter">Fossil Fuel Non-Proliferation Tracker</a></p>
+<p><a href="https://explorer.dte-hydro.adamplatform.eu/">ADAM</a></p>
+<p><a href="https://flickr.com/photos/sentinelhub/albums">Sentinel Hub’s albums | Flickr</a></p>
+<p><a href="https://apps.sentinel-hub.com/requests-builder/">Requests Builder</a></p>
+<p><a href="https://www.n2yo.com/?s=54110">LIVE REAL TIME SATELLITE TRACKING AND PREDICTIONS: COSMOS 2562</a></p>
+<p><a href="https://energygraph.info/d/q7IpAJHVz/overview?orgId=1&amp;refresh=30m">Overview - France Nuclear - Dashboards - Grafana</a></p>
+<p><a href="https://dec.usaid.gov/dec/content/AdvancedSearch.aspx?ctID=ODVhZjk4NWQtM2YyMi00YjRmLTkxNjktZTcxMjM2NDBmY2Uy">Development Experience Clearinghouse (DEC) - Advanced Search: Documents</a></p>
+<p><a href="https://www.visualcapitalist.com/cp/3d-mapping-the-worlds-largest-population-densities/">3D Map: The World’s Largest Population Density Centers</a></p>
+<p><a href="https://liveuamap.com/en/2023/25-january-russian-army-shelled-zaporizhzhia-rescue-services">Ukraine Interactive map - Ukraine Latest news on live map - liveuamap.com</a></p>
+<p><a href="https://www.usgs.gov/apps/croplands/app/map?lat=0&amp;lng=0&amp;zoom=2">Global Croplands</a></p>
+<p><a href="https://earthmap.org/?map=%7B%22center%22%3A%7B%22lat%22%3A0%2C%22lng%22%3A0%7D%2C%22zoom%22%3A3%2C%22mapType%22%3A%22terrain%22%7D">Earth Map</a></p>
+<p><a href="https://www.ecmwf.int/en/about/media-centre/news/2019/ecmwf-holds-webinars-june-upgrade-its-forecasting-system">ECMWF holds webinars on June upgrade of its forecasting system | ECMWF</a></p>
+<p><a href="http://gis1.servirglobal.net:8080/geonetwork/srv/eng/catalog.search;jsessionid=4D9DC62FC21332D3516E971709B0F8A4#/home">SERVIR Global Data Catalog - My organization</a></p>
+<p><a href="https://www.ers.usda.gov/data-products/international-agricultural-productivity/">USDA ERS - International Agricultural Productivity</a></p>
+<p><a href="http://earthdatascience.org/">Earth * Data * Science - Earth Lab</a></p>
+<p><a href="https://www.terrapop.org/">Terra Populus</a></p>
+<p><a href="http://maps.elie.ucl.ac.be/CCI/viewer/download.php">ESA/CCI viewer</a></p>
+<p><a href="http://freegisdata.rtwilson.com/">Free GIS Datasets - Categorised List</a></p>
+<p><a href="https://sankey.theshiftproject.org/">Sankey GHG</a></p>
+<p><a href="https://esa-worldcereal.org/en/about/worldcereal-products">WorldCereal products | WorldCereal</a></p>
+<p><a href="https://www.nass.usda.gov/Research_and_Science/Crop-Sequence-Boundaries/Viewer/index.php">USDA - National Agricultural Statistics Service - Data Visualization - Crop Sequence Boundaries (CSB) Viewer</a></p>
+<p><a href="https://www.aeaweb.org/research/are-colonial-era-borders-holding-africa-back">American Economic Association</a></p>
+<p><a href="https://www.wri.org/applications/aqueduct/water-risk-atlas/#/?advanced=false&amp;basemap=hydro&amp;indicator=w_awr_def_tot_cat&amp;lat=30&amp;lng=-80&amp;mapMode=view&amp;month=1&amp;opacity=0.5&amp;ponderation=DEF&amp;predefined=false&amp;projection=absolute&amp;scenario=optimistic&amp;scope=baseline&amp;threshold&amp;timeScale=annual&amp;year=baseline&amp;zoom=3">Aqueduct Water Risk Atlas</a></p>
+<p><a href="https://mst.agroinformatics.org/overview">Malawi Segmentation Tool | UMN</a></p>
+<p><a href="https://openaerialmap.org/">OpenAerialMap</a></p>
+<p><a href="https://topoexport.fr/">TopoExport</a></p>
+<p><a href="https://data.apps.fao.org/wapor/?lang=en">FAO WaPOR</a></p>
+<p><a href="https://data.apps.fao.org/catalog/">FAO Data Catalog (CKAN)</a></p>
+<p><a href="https://www.opencellid.org/#zoom=16&amp;lat=37.77889&amp;lon=-122.41942">OpenCelliD - Largest Open Database of Cell Towers &amp; Geolocation - by Unwired Labs</a></p>
+<p><a href="https://eccc-msc.github.io/open-data/readme_en/">MSC Open Data</a></p>
+<p><a href="https://hpfx.collab.science.gc.ca/">MSC Datamart (high)</a></p>
+<p><a href="https://www.wekeo.eu/">Copernicus and Sentinel data at your fingertips | WEkEO</a></p>
+<p><a href="https://www.meteoblue.com/weather/maps/manaus_brazil_3663517#coords=4/-3.1/-60.02&amp;map=temperatureAnomaly~monthly~auto~sfc~none">Meteoblue | Live Satellite &amp; Weather Radar</a></p>
+<p><a href="https://www.geoportail-urbanisme.gouv.fr/map/#tile=1&amp;lon=0.7992549459999999&amp;lat=47.41211102099999&amp;zoom=13&amp;mlon=0.799255&amp;mlat=47.412111">Cartographie - Géoportail de l’Urbanisme</a></p>
+<p><a href="https://www.geoportail-urbanisme.gouv.fr/">Accueil - Géoportail de l’Urbanisme</a></p>
+<p><a href="https://maps.digitalearth.africa/">Terria Map</a></p>
+<p><a href="https://doaj.org/">Directory of Open Access Journals – DOAJ</a></p>
+<p><a href="https://www.intertidal.app/">Global Intertidal Change</a></p>
+<p><a href="https://bjornburrnyberg.users.earthengine.app/view/waterchange">WaterChange</a></p>
+<p><a href="https://agricultural-production-hotspots.ec.europa.eu/">EU ASAP Agriculture</a></p>
+<p><a href="http://guetcrop.oss-online.org/">Crop Monitoring and Early Warning in North-Africa</a></p>
+<p><a href="http://oss-online.org/">Home | Welcome at Sahara and Sahel Observatory</a></p>
+<p><a href="https://agriculturehotspots.icpac.net/">ICPAC - Warning Explorer</a></p>
+<p><a href="https://www.cropmonitor.org/">GEOGLAM Crop Monitor</a></p>
+<p><a href="https://agricultural-production-hotspots.ec.europa.eu/seasonal_forecast.php?sfreg=africa">ASAP - Seasonal Forecast</a></p>
+<p><a href="https://www.gafs.info/home/">Global Food and Nutrition Security Dashboard | Data on food crisis</a></p>
+<p><a href="https://energy-charts.info/charts/power/chart.htm?l=en&amp;c=DE&amp;interval=month">Electricity Production | Energy-Charts</a></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><a href="https://cgiar.sharepoint.com/sites/IWMIHelmsleyWorkgroup/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FIWMIHelmsleyWorkgroup%2FShared%20Documents%2FWater%20Accounting%2FUSAID%20Communicating%20Water%20Accounting%20results%2FMaterials%20for%20consultancy&amp;p=true&amp;originalPath=aHR0cHM6Ly9jZ2lhci5zaGFyZXBvaW50LmNvbS86Zjovcy9JV01JSGVsbXNsZXlXb3JrZ3JvdXAvRW52Wm9WUS1CS0ZOdnRueTliSjZIbjhCMl9MYV9rZHdkbjgtaVN1UDRaRURtZz9ydGltZT1fbDliOGpwRzJVZw">WASA project (IWMI) - Materials for consultancy - All Documents</a></p>
+<p><a href="http://www.uxforthemasses.com/resources/example-ux-docs/">Example UX docs and deliverables - UXM</a></p>
+<p><a href="https://cgiar.sharepoint.com/sites/IWMIHelmsleyWorkgroup/Shared%20Documents/Forms/AllItems.aspx?originalPath=aHR0cHM6Ly9jZ2lhci5zaGFyZXBvaW50LmNvbS86Zjovcy9JV01JSGVsbXNsZXlXb3JrZ3JvdXAvRW52Wm9WUS1CS0ZOdnRueTliSjZIbjhCMl9MYV9rZHdkbjgtaVN1UDRaRURtZz9ydGltZT1pNVhhcmNCVjJVZw&amp;viewid=dc1295bd%2D50ba%2D4410%2D99cb%2Dae07de55883b&amp;id=%2Fsites%2FIWMIHelmsleyWorkgroup%2FShared%20Documents%2FWater%20Accounting%2FUSAID%20Communicating%20Water%20Accounting%20results%2FMaterials%20for%20consultancy%2Fadmin">WASA project (IWMI) - admin - All Documents</a></p>
+<p><a href="https://www.iwmi.cgiar.org/news/campaigns/world-water-week/2021-august/#tuesday">World Water Week 2021 :: IWMI</a></p>
+<p><a href="https://dribbble.com/search/icons">Browse thousands of Icons images for design inspiration | Dribbble</a></p>
+<p><a href="https://eahazardswatch.icpac.net/map/ea/?map=eyJkYXRhc2V0cyI6W3siZGF0YXNldCI6ImVhX2JvdW5kYXJpZXMiLCJsYXllcnMiOlsiZWFfYm91bmRhcmllcyJdLCJvcGFjaXR5IjoxLCJ2aXNpYmlsaXR5Ijp0cnVlfSx7ImRhdGFzZXQiOiJlYV93YXRlcl9ib2RpZXMiLCJsYXllcnMiOlsiZWFfd2F0ZXJfYm9kaWVzIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsiZGF0YXNldCI6ImUzYjBjMGE4LTlkZTAtNDY4Mi1hOTU4LTg4YWUzMDM3MDhmNyIsImxheWVycyI6WyIxNjhiYjI4Yi0yNzYyLTRmZWItYWEyMS0zZTYwZTZiN2JhMzgiLCIzYzUzODBmOS1mMzczLTQ1NmUtYTY1OS1mYjk2NTYyMGU3MGQiLCJiYjU4N2E5Ni0zMTM2LTRjZWUtYThhNy0yYTIwMzhmMDEwMWIiLCIzYzUzODBmOS1mMzczLTQ1NmUtYTY1OS1mYjk2NTYyMGU3MGQiLCJiYjU4N2E5Ni0zMTM2LTRjZWUtYThhNy0yYTIwMzhmMDEwMWIiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX1dfQ%3D%3D&amp;mapPrompts=eyJzdGVwc0tleSI6Im1hcFRvdXIiLCJmb3JjZSI6dHJ1ZX0%3D">East Africa Hazards Watch | EAHW</a></p>
+<p><a href="https://irrisat-cloud.appspot.com/">IrriSAT - Weather based irrigation scheduling</a></p>
+<p><a href="https://uxdesign.cc/">UX Collective</a></p>
+<p><a href="https://webflow.com/dashboard?r=1">Webflow</a></p>
+<p><a href="https://grace.jpl.nasa.gov/applications/groundwater/">Groundwater | Applications – GRACE Tellus</a></p>
+<p><a href="https://grace.jpl.nasa.gov/data-analysis-tool/#b=ESRI_World_Imagery&amp;l=TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06_V2_LAND(1),OSMCoastlines(1)&amp;vm=2D&amp;ve=-90,-49.4296875,90,49.4296875&amp;pl=false&amp;pb=false&amp;tr=false&amp;d=2021-06-15&amp;tlr=months">GRACE | Data Analysis Tool</a></p>
+<p><a href="https://www.datawheel.us/">Datawheel</a></p>
+<p><a href="https://trafficonese.github.io/leaflet.extras2/">Extra Functionality for leaflet Package • leaflet.extras2</a></p>
+<p><a href="https://hess.copernicus.org/articles/23/2939/2019/">HESS - Using R in hydrology: a review of recent developments and future directions</a></p>
+<p><a href="https://d3plus.org/">D3plus</a></p>
+<p><a href="https://appsilon.com/shiny-templates-available/">R Shiny Templates From Appsilon Are Now Available - Appsilon | End­ to­ End Data Science Solutions</a></p>
+<p><a href="https://visualise-madagascar.shinyapps.io/visualise-madagascar/">IIASA Visualise</a></p>
+<p><a href="https://www.hydrosheds.org/page/hydroatlas">HydroSHEDS</a></p>
+<p><a href="https://designingforanalytics.com/resources/">Free Resources | Designing for Analytics (Brian T. O’Neill)</a></p>
+<p><a href="https://2021.foss4g.org/schedule/outline.html">General Schedule | FOSS4G 2021 Buenos Aires | The International GeoSpatial Conference</a></p>
+<p><a href="https://storymaps.arcgis.com/stories/3004c4ffd8fa4d11870863106b024d6b">FAO-EOSTAT: EO data for Official Agricultural Statistics</a></p>
+<p><a href="https://blogs.worldbank.org/water">The Water Blog | World Bank Blogs</a></p>
+<p><a href="https://waterpip.un-ihe.org/welcome-waterpip">Welcome to WaterPIP | Water Productivity Improvement in Practice</a></p>
+<p><a href="https://unleash-shiny.rinterface.com/going-further-webdev.html">Outstanding User Interfaces with Shiny</a></p>
+<p><a href="https://designingforanalytics.com/brian-t-oneill-product-designer-for-analytics-machine-learning-ai/">Designing for Analytics (Brian T. O’Neill)</a></p>
+<p><a href="https://www.anychart.com/blog/2021/10/01/impressive-visual-data-stories/">Four Impressive Visual Data Stories To Check Out | DataViz Weekly</a></p>
+<p><a href="https://www.drawdown.org/solutions">Solutions | Project Drawdown</a></p>
+<p><a href="https://comet-farm.com/">COMET-Farm</a></p>
+<p><a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">Greenhouse Gas Equivalencies Calculator | US EPA</a></p>
+<p><a href="https://www.rgs.org/geography/advocacy-and-impact/impact/nsra-review-drmevent/">Royal Geographical Society - Geography</a></p>
+<p><a href="https://datascience-enthusiast.com/R/R_shiny_Tableau_treemap.html">Interactive visualization with R-Shiny versus with Tableau: Treemaps</a></p>
+<p><a href="https://github.com/civisanalytics/d3_tutorial/blob/master/Part%203/index.html">d3_tutorial/index.html at master · civisanalytics/d3_tutorial</a></p>
+<p><a href="https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/">Live Free or Dichotomize - Custom JavaScript visualizations in RMarkdown</a></p>
+<p><a href="https://www.aliciaschep.com/blog/js-rmarkdown/">Hello JS in R Markdown</a></p>
+<p><a href="https://github.com/d3/d3-selection#modifying-elements">d3/d3-selection: Transform the DOM by selecting elements and joining to data.</a></p>
+<p><a href="https://www.tutorialsteacher.com/d3js/setup-d3js-development-environment">Setup Development Environment</a></p>
+<p><a href="http://didawiki.di.unipi.it/lib/exe/fetch.php/magistraleinformaticaeconomia/va/2020/va_lesson14_geography.pdf">va_lesson14_geography.pdf</a></p>
+<p><a href="https://observablehq.com/@d3/general-update-pattern">General Update Pattern / D3 / Observable</a></p>
+<p><a href="https://techblog.geekyants.com/recreating-real-world-terrain-with-react-threejs-and-webgl-shaders-1">Recreating Real-World Terrain With React, Three.js &amp; WebGL Shaders</a></p>
+<p><a href="https://book.javascript-for-r.com/intro-overview.html">JavaScript for R</a></p>
+<p><a href="https://www.r-bloggers.com/2019/10/a-3d-tour-over-lake-geneva-with-rayshader/">A 3D tour over Lake Geneva with rayshader | R-bloggers</a></p>
+<p><a href="https://observablehq.com/@sw1227/flood-depth-map-on-3d-terrain?collection=@sw1227/geo">Flood depth map on 3D terrain / sw1227 / Observable</a></p>
+<p><a href="https://www.tylermw.com/adding-open-street-map-data-to-rayshader-maps-in-r/">Tutorial: Adding Open Street Map Data to Rayshader Maps in R – Rayverse Blog</a></p>
+<p><a href="https://distill.pub/guide/">How to Create a Distill Article</a></p>
+<p><a href="https://threejs.org/editor/">three.js editor</a></p>
+<p><a href="https://medium.com/vis-gl/deck-gl-v8-6-now-available-with-deeper-google-maps-support-b734719076a7">deck.gl v8.6 now available with deeper Google Maps support | by Alberto Asuero | vis.gl | Oct, 2021 | Medium</a></p>
+<p><a href="https://bin.re/blog/templating-in-d3js/">Templating in d3js</a></p>
+<p><a href="https://medium.com/@8451marketing/dockerizing-shiny-apps-a1d81f6cfb9e">Dockerizing Shiny Apps. David Schappler, Data Scientist | by 84.51° | Medium</a></p>
+<p><a href="https://github.com/visgl/deck.gl/blob/8.6-release/docs/api-reference/geo-layers/terrain-layer.md">deck.gl/terrain-layer.md at 8.6-release · visgl/deck.gl</a></p>
+<p><a href="https://github.com/visgl/deck.gl/tree/8.6-release/examples/website/terrain">deck.gl/examples/website/terrain at 8.6-release · visgl/deck.gl</a></p>
+<p><a href="https://www.r-bloggers.com/2021/06/tutorial-build-a-full-shiny-dashboard-with-shiny-fluent/">Tutorial: Build a Full Shiny Dashboard With shiny.fluent | R-bloggers</a></p>
+<p><a href="https://deck.gl/examples/contour-layer/">deck.gl | ContourLayer Example</a></p>
+<p><a href="https://www.procedural.eu/">Home - Documentation</a></p>
+<p><a href="https://cesium.com/learn/">Learning Center – Cesium</a></p>
+<p><a href="https://github.com/AlexandraKapp/30daymapchallenge/blob/main/R/day3.R">30daymapchallenge/day3.R at main · AlexandraKapp/30daymapchallenge</a></p>
+<p><a href="https://www.civisanalytics.com/blog/d3-for-data-scientists-part-i-a-re-usable-template-for-combining-r-and-d3-to-build-interactive-visualizations/">D3 for Data Scientists, Part I: A re-usable template for combining R and D3 to build interactive visualizations – Civis Analytics</a></p>
+<p><a href="https://aws.amazon.com/blogs/architecture/scaling-rstudio-shiny-using-serverless-architecture-and-aws-fargate/">Scaling RStudio/Shiny using Serverless Architecture and AWS Fargate | AWS Architecture Blog</a></p>
+<p><a href="https://worldwater.earth/">WorldWater – Surface water dynamics from space</a></p>
+<p><a href="https://imageau.eu/solutions/coastal-aquifers-management/?lang=en">Coastal aquifers management – imaGeau</a></p>
+<p><a href="https://unleash-shiny.rinterface.com/going-further-reactr">Chapter 27 Shiny and React with {reactR} | Outstanding User Interfaces with Shiny</a></p>
+<p><a href="https://www.giters.com/joaoleopoldoesilva/Awesome-Geospatial">joaoleopoldoesilva/Awesome-Geospatial - Giters</a></p>
+<p><a href="https://africa-knowledge-platform.ec.europa.eu/">Africa Platform</a></p>
+<p><a href="https://wrd-iwmi.users.earthengine.app/view/global-cropland-monitoring-tool">Global Cropland Monitoring Tool</a></p>
+<p><a href="https://datawookie.dev/blog/2021/06/shiny-on-ecs/">Shiny on ECS</a></p>
+<p><a href="https://blog.sellorm.com/2021/04/25/shiny-app-in-docker/">Running a shiny app in a docker container | sellorm</a></p>
+<p><a href="https://isarm2021.org/recordings/">Recordings – ISARM2021</a></p>
+<p><a href="https://us02web.zoom.us/rec/play/NTEqeaUVii8F0Wbok3A_uu_tICE9YHgu0ATH3hHAqH9BzU5offWeDBYMo8gEZyFjf2MCEKf3LQo0HH9v.u9PvXlLy702u_UDb?continueMode=true&amp;_x_zm_rtaid=i6wKW87UQfSiZ-9X4LZjhw.1641685236343.56899eb224477a279b4a1898b46cedc0&amp;_x_zm_rhtaid=668">HYPOS - Hydropower Management from Space - Zoom</a></p>
+<p><a href="https://www.visualcinnamon.com/">Data made insightful, effective &amp; beautiful through visualization | Visual Cinnamon</a></p>
+<p><a href="https://climate.esa.int/en/projects/soil-moisture/">ESA Soil Moisture project</a></p>
+<p><a href="http://samsv2.iwmi.org/user_management/login.php#">SAMS - Systematic Asset Management Software</a></p>
+<p><a href="https://eoafrica.itc.utwente.nl/course/view.php?id=2#section-0">Course: Earth Observation for Drought Assessment and Monitoring</a></p>
+<p><a href="https://globalhydrology.nl/research/models/pcr-globwb-2-0/">Global Hydrology | PCR-GLOBWB 2.0</a></p>
+<p><a href="https://www.atlas-h2020.eu/">ATLAS - AGRICULTURAL INTEROPERABILITY AND ANALYSIS SYSTEM</a></p>
+<p><a href="https://river-runner-global.samlearner.com/">River Runner Global</a></p>
+<p><a href="http://editor.highcharts.com/full.html">Highcharts Editor - full</a></p>
+<p><a href="https://samapriya.github.io/awesome-gee-community-datasets/projects/osm_water/">OSM Water Layer Surface Waters in OpenStreetMap - awesome-gee-community-datasets</a></p>
+<p><a href="https://iwa-network.org/projects/earth-observation-for-water-management-community-of-practice/">‘Earth observation for water management’ Community of Practice - International Water Association</a></p>
+<p><a href="https://designingforanalytics.com/">Designing for Analytics - Design / UX / UI for AI, ML, Data Products</a></p>
+<p><a href="https://book.javascript-for-r.com/">JavaScript for R</a></p>
+<p><a href="https://helgasoft.github.io/echarty/gallery.html">Gallery | echarty</a></p>
+<p><a href="https://hydra.org.uk/projects">Melanie’s Projects</a></p>
+<p><a href="https://digitalsynopsis.com/design/beautiful-color-gradient-palettes/">32 Beautiful Color Palettes With Their Corresponding Gradient Palettes</a></p>
+<p><a href="https://aws.amazon.com/blogs/architecture/field-notes-accelerating-data-science-with-rstudio-and-shiny-server-on-aws-fargate/">Field Notes: Accelerating Data Science with RStudio and Shiny Server on AWS Fargate | AWS Architecture Blog</a></p>
+<p><a href="https://themer.dev/">themer</a></p>
+<p><a href="https://projects.susielu.com/viz-palette">Viz Palette</a></p>
+<p><a href="https://gka.github.io/palettes/#/9%7Cd%7C00429d,96ffea,ffffe0%7Cffffe0,ff005e,93003a%7C1%7C1">chroma.js palette helper</a></p>
+<p><a href="https://unleash-shiny.rinterface.com/welcome.html">Welcome | Outstanding User Interfaces with Shiny</a></p>
+<p><a href="https://observablehq.com/">Viz</a></p>
+<p><a href="https://www.iwmi.cgiar.org/news/iwmi-and-partners-map-the-state-of-water-across-africa/">IWMI and partners map the state of water across Africa :: IWMI</a></p>
+<p><a href="https://iwmi.africageoportal.com/">IWMI</a></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><a href="https://www.sovietmaps.com/">Soviet Military Maps of the World | Soviet Mapping of the Cold War era</a></p>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p><a href="https://rviews.rstudio.com/2021/02/15/r-interface-for-minizinc/">R Interface for MiniZinc · R Views</a></p>
+<p><a href="https://online.stat.psu.edu/stat510/lesson/2">Lesson 2: MA Models, Partial Autocorrelation, Notational Conventions | STAT 510</a></p>
+<p><a href="https://online.stat.psu.edu/stat510/lesson/3">Lesson 3: Identifying and Estimating ARIMA models; Using ARIMA models to forecast future values | STAT 510</a></p>
+<p><a href="https://www.machinelearningplus.com/time-series/time-series-analysis-python/">detrend</a></p>
+<p><a href="https://www.rmetrics.org/">Rmetrics</a></p>
+<p><a href="https://mc-stan.org/users/documentation/case-studies/losscurves_casestudy.html">Modelling Loss Curves in Insurance with RStan</a></p>
+<p><a href="https://zia207.github.io/geospatial-r-github.io/spatial-interpolation.html">Spatial Interpolation in R</a></p>
+<p><a href="https://bookdown.org/max/FES/">Feature Engineering and Selection: A Practical Approach for Predictive Models</a></p>
+<p><a href="https://tidyverts.github.io/tidy-forecasting-principles/">Tidy time series forecasting with fable</a></p>
+<p><a href="https://www.econometrics-with-r.org/1-1-a-very-short-introduction-to-r-and-rstudio.html">Introduction to Econometrics with R</a></p>
+<p><a href="https://becarioprecario.bitbucket.io/spde-gitbook/">Advanced Spatial Modeling with Stochastic Partial Differential Equations Using R and INLA</a></p>
+<p><a href="https://deanattali.com/blog/advanced-shiny-tips/">Shiny tips &amp; tricks for improving your apps and solving common problems</a></p>
+<p><a href="http://oscarperpinan.github.io/spacetime-vis/">Displaying time series, spatial and space-time data with R</a></p>
+<p><a href="https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html">srvyr compared to the survey package</a></p>
+<p><a href="http://www.spatial-analyst.net/book/">A Practical Guide to Geostatistical Mapping | by Tomislav Hengl | 291 p.&nbsp;| ISBN 978-90-9024981-0</a></p>
+<p><a href="https://geostat-course.org/">GEOSTAT course | Master spatial analysis using FOSS4G</a></p>
+<p><a href="http://rstudio-pubs-static.s3.amazonaws.com/5578_4da95fcdbc2742d8a0701066fe02813e.html">Chapter 9: Spatial Models</a></p>
+<p><a href="https://www.r-statistics.com/2015/08/dendextend-a-package-for-visualizing-adjusting-and-comparing-dendrograms-from-the-journal-bioinformatics/">dendextend: a package for visualizing, adjusting, and comparing dendrograms (based on a paper from “bioinformatics”) | R-statistics blog</a></p>
+<p><a href="http://www.rsgislib.org/">The Remote Sensing and GIS Software Library (RSGISLib) — RSGISLib</a></p>
+<p><a href="http://www.win-vector.com/blog/2017/02/evolving-r-tools-and-practices/">Evolving R Tools and Practices – Win-Vector Blog</a></p>
+<p><a href="http://www.econ.uiuc.edu/~econ472/e-Tutorial.html">Applied Econometrics at the University of Illinois: e-Tutorial</a></p>
+<p><a href="https://rpubs.com/daniballari/geovisualizacion">RPubs - Visualizacion geoinformación</a></p>
+<p><a href="https://plot.ly/ggplot2/maps/">ggplot2 Maps | Tutorial | plotly</a></p>
+<p><a href="http://stackoverflow.com/questions/19339296/plotting-contours-on-an-irregular-grid">r - Plotting contours on an irregular grid - Stack Overflow</a></p>
+<p><a href="https://purr.purdue.edu/dmp">PURR - Data Management Plan (DMP)</a></p>
+<p><a href="https://nyhackr.org/presentations.html">Presentations</a></p>
+<p><a href="https://bookdown.org/david_carslaw/openair/sec-worldmet.html">Section 4 Access meteorological data | The openair book</a></p>
+<p><a href="https://bookdown.org/david_carslaw/openair/sec-calendarPlot.html">Section 14 Calendar plots | The openair book</a></p>
+<p><a href="https://www.itrcweb.org/gsmc-1/Default.htm#GW%20Stats/5%20Methods%20in%20indiv%20Topics/5%205%20Trend%20Tests.htm#5.5_Trend_Tests%3FTocPath%3D5.%2520Statistical%2520Tests%2520and%2520Methods%7C5.5%2520Trend%2520Tests%7C_____0">ITRC GSMC-1 - 5.5 Trend Tests</a></p>
+<p><a href="https://www.jumpingrivers.com/case-studies/financial-institution-r-markdown/">Financial Institution: Bespoke Report Generation using R Markdown</a></p>
+<p><a href="https://sites.lsa.umich.edu/eva2015/program/">Program | Extreme Value Analysis</a></p>
+<p><a href="https://bookdown.org/david_carslaw/openair/sec-polarAnnulus.html">Section 9 Polar annulus | The openair book</a></p>
+<p><a href="http://www.zalafilms.com/secrets/">SECRETS OF THE SURFACE | The Mathematical Vision of Maryam Mirzakhani</a></p>
+<p><a href="https://bookdown.org/rdpeng/timeseriesbook/maximum-likelihood-estimation.html">Chapter 6 Maximum Likelihood Estimation | A Very Short Course on Time Series Analysis</a></p>
+<p><a href="https://bookdown.org/rdpeng/timeseriesbook/the-structure-of-temporal-data.html">Chapter 2 The Structure of Temporal Data | A Very Short Course on Time Series Analysis</a></p>
+<p><a href="https://www.conftool.org/user2021/sessions.php">useR! 2021 - ConfTool Pro - BrowseSessions</a></p>
+<p><a href="https://blog.rstudio.com/2021/07/22/three-shiny-best-practices-seen-in-the-shiny-contest/">Top 3 Coding Best Practices from the Shiny Contest | RStudio Blog</a></p>
+<p><a href="https://www.rstudio.com/resources/webinars/practical-advice-for-r-in-production-1-why/">Practical Advice for R in Production, Part 1: Why? - RStudio</a></p>
+<p><a href="https://cran.r-project.org/web/packages/tidyquant/vignettes/TQ02-quant-integrations-in-tidyquant.html#example-4-use-ttr-macd-to-visualize-moving-average-convergence-divergence">R Quantitative Analysis Package Integrations in tidyquant</a></p>
+<p><a href="https://cfs.climate.esa.int/index.html#/stories?tags=sea-surface-temperature&amp;globe=SI-1.84I32.38I18523626.33I360.00I-89.85I0.00I0.00I0.00II">ESA - Climate from Space</a></p>
+<p><a href="https://datascienceplus.com/">An online community for showcasing R &amp; Python tutorials | DataScience+</a></p>
+<p><a href="https://gitlab.com/walware/de.walware.rj-server.gr/-/issues?scope=all&amp;state=all">Issues · Stephan Wahlbrink / RJSrv for GNU R · GitLab</a></p>
+<p><a href="https://geocompr.robinlovelace.net/">Welcome | Geocomputation with R</a></p>
+<p><a href="https://vlyubchich.github.io/tsar/l07_trendtest.html">Time Series Analysis - 7&nbsp; Trend Detection</a></p>
+<p><a href="https://vlyubchich.github.io/tsar/l07_trendtest.html#conclusion">Time Series Analysis - 7&nbsp; Trend Detection</a></p>
+<p><a href="https://www.agroninfo.com/perform-pca-in-r/">Step-by-Step Guide to Perform Principal Component Analysis (PCA) in R - AGRON INFO TECH</a></p>
+<p><a href="https://www.econometrics-with-r.org/1-introduction.html">1 Introduction | Introduction to Econometrics with R</a></p>
+<p><a href="https://www.rayrender.net/">Build and Raytrace 3D Scenes • rayrender</a></p>
+<p><a href="https://www.rdocumentation.org/packages/bfastSpatial/versions/0.6.2">bfastSpatial package - RDocumentation</a></p>
+<p><a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/derived-utci-historical?tab=overview">Thermal comfort indices derived from ERA5 reanalysis</a></p>
+<p><a href="https://fast.wistia.net/embed/iframe/92gp0z61r8">Time Series - New Tools in R</a></p>
+<p><a href="https://quarto.org/docs/interactive/ojs/libraries.html">Quarto - Libraries</a></p>
+<p><a href="http://hbiostat.org/rflow/">R Workflow</a></p>
+<p><a href="https://aigeolabs.com/courses/course-4/module-1/">Module 1. Modeling Forest Canopy Height using Earth Observation (EO) Data and Earth Engine – AI.Geolabs</a></p>
+<p><a href="https://quarto.org/docs/authoring/article-layout.html">Quarto - Article Layout</a></p>
+<p><a href="https://mc-stan.org/users/documentation/case-studies/losscurves_casestudy.html">Modelling Loss Curves in Insurance with RStan</a></p>
+<p><a href="https://zia207.github.io/geospatial-r-github.io/spatial-interpolation.html">Spatial Interpolation in R</a></p>
+<p><a href="https://developer.ibm.com/recipes/tutorials/weather-data-meets-ibm-cloud-part-3-transformation-and-aggregation-of-weather-data/?_lrsc=70fd54ac-912a-4f59-8b07-1a80270463e6">Weather Data meets IBM Cloud. Part 3 - Transformation and Aggregation of Weather Data - developerWorks Recipes</a></p>
+<p><a href="https://towardsdatascience.com/implementing-git-in-data-science-11528f0fb4a7">Implementing Git in Data Science – Towards Data Science</a></p>
+<p><a href="https://bookdown.org/max/FES/">Feature Engineering and Selection: A Practical Approach for Predictive Models</a></p>
+<p><a href="https://tidyverts.github.io/tidy-forecasting-principles/">Tidy time series forecasting with fable</a></p>
+<p><a href="https://www.econometrics-with-r.org/1-1-a-very-short-introduction-to-r-and-rstudio.html">Introduction to Econometrics with R</a></p>
+<p><a href="https://becarioprecario.bitbucket.io/spde-gitbook/">Advanced Spatial Modeling with Stochastic Partial Differential Equations Using R and INLA</a></p>
+<p><a href="https://deanattali.com/blog/advanced-shiny-tips/">Shiny tips &amp; tricks for improving your apps and solving common problems</a></p>
+<p><a href="http://oscarperpinan.github.io/spacetime-vis/">Displaying time series, spatial and space-time data with R</a></p>
+<p><a href="https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html">srvyr compared to the survey package</a></p>
+<p><a href="http://www.spatial-analyst.net/book/">A Practical Guide to Geostatistical Mapping | by Tomislav Hengl | 291 p.&nbsp;| ISBN 978-90-9024981-0</a></p>
+<p><a href="https://geostat-course.org/">GEOSTAT course | Master spatial analysis using FOSS4G</a></p>
+<p><a href="https://www.r-statistics.com/2015/08/dendextend-a-package-for-visualizing-adjusting-and-comparing-dendrograms-from-the-journal-bioinformatics/">dendextend: a package for visualizing, adjusting, and comparing dendrograms (based on a paper from “bioinformatics”) | R-statistics blog</a></p>
+<p><a href="http://rstudio-pubs-static.s3.amazonaws.com/5578_4da95fcdbc2742d8a0701066fe02813e.html">Chapter 9: Spatial Models</a></p>
+<p><a href="https://climate.copernicus.eu/seasonal-forecasts">Seasonal forecasts | Copernicus Climate Change Service</a></p>
+<p><a href="http://www.win-vector.com/blog/2017/02/evolving-r-tools-and-practices/">Evolving R Tools and Practices – Win-Vector Blog</a></p>
+<p><a href="http://www.rsgislib.org/">The Remote Sensing and GIS Software Library (RSGISLib) — RSGISLib</a></p>
+<p><a href="http://www.econ.uiuc.edu/~econ472/e-Tutorial.html">Applied Econometrics at the University of Illinois: e-Tutorial</a></p>
+<p><a href="https://rpubs.com/daniballari/geovisualizacion">RPubs - Visualizacion geoinformación</a></p>
+<p><a href="https://plot.ly/ggplot2/maps/">ggplot2 Maps | Tutorial | plotly</a></p>
+<p><a href="http://stackoverflow.com/questions/19339296/plotting-contours-on-an-irregular-grid">r - Plotting contours on an irregular grid - Stack Overflow</a></p>
+<p><a href="https://www.datasciencewithmarco.com/blog/all-about-n-hits-the-latest-breakthrough-in-time-series-forecasting">All About N-HiTS: The Latest Breakthrough in Time Series Forecasting</a></p>
+<p><a href="https://posit.co/blog/geospatial-distributed-processing-with-furrr/">Geospatial distributed processing with furrr - Posit</a></p>
+<p><a href="https://unleash-shiny.rinterface.com/web-intro.html#be-a-dj">Chapter 1 Shiny and the Web | Outstanding User Interfaces with Shiny</a></p>
+<p><a href="https://dailies.rstudio.com/">RStudio Latest Builds</a></p>
+<p><a href="https://dailies.rstudio.com/rstudio/desert-sunflower/server/jammy-amd64/">Ubuntu 22</a></p>
+<p><a href="https://hypebright.nl/index.php/en/2023/07/25/building-serverless-shiny-apps-with-webr-a-step-by-step-guide/">Building Serverless Shiny Apps with webR: A Step-by-Step Guide - Hypebright</a></p>
+<p><a href="https://ivelasq.github.io/rladies-video-feed/">R-Ladies YouTube Video Feed</a></p>
+<p><a href="https://chrkoenig.io/post/2022-02-01-building_a_personal_website_with_hugo/">That escalated quickly: from building a personal website to running a dockerized virtual private server (part 1)-Data thoughts</a></p>
+<p><a href="https://www.statlearning.com/">An Introduction to Statistical Learning</a></p>
+<p><a href="https://57.mchs.gov.ru/">Main Directorate of the Ministry of Emergency Situations of Russia for the Oryol Region</a></p>
+<p><a href="https://blog.djnavarro.net/posts/2023-03-13_shattered-landscapes/">Notes from a data witch</a></p>
+<p><a href="https://gems.umn.edu/news/agri-food-market-intelligence-tool-malawi">An Agri-Food Market Intelligence Tool for Malawi | GEMS</a></p>
+<p><a href="https://www.htmlwidgets.org/showcase_leaflet.html">htmlwidgets: leaflet</a></p>
+<p><a href="https://discord.com/channels/878051191374876683/918573864412409897/1146049954650013696">(10) Discord | #events-and-resources | geocompx</a></p>
+<p><a href="https://r.geocompx.org/">Geocomputation with R</a></p>
+<p><a href="https://interviewprep.org/shiny-r-interview-questions/">Top 25 Shiny (R) Interview Questions and Answers - InterviewPrep</a></p>
+<p><a href="https://www.aaronland.info/weblog/2023/08/21/quiet/">[this is aaronland] saying the quiet part out loud</a></p>
+<p><a href="https://tech.marksblogg.com/">Tech Blog</a></p>
+<p><a href="https://e-sensing.github.io/sitsbook/">Preface | sits: Satellite Image Time Series Analysis on Earth Observation Data Cubes</a></p>
+<p><a href="https://e-sensing.github.io/sitsbook/index.html">sits | Satellite Image Time Series Analysis on Earth Observation Data Cubes</a></p>
+<p><a href="https://r-universe.dev/search/">R-universe: personal package repositories for R!</a></p>
+<p><a href="http://adv-r.had.co.nz/Functional-programming.html">Functional programming · Advanced R.</a></p>
+<p><a href="https://21994127.fs1.hubspotusercontent-na1.net/hubfs/21994127/Webinar%20recordings%20ED%20Agro/November%202023/November%202023_Full.mp4?submissionGuid=4380f03e-72f2-4ba8-a720-238f22d36fb3">21994127.fs1.hubspotusercontent-na1.net/hubfs/21994127/Webinar recordings ED Agro/November 2023/November 2023_Full.mp4?submissionGuid=4380f03e-72f2-4ba8-a720-238f22d36fb3</a></p>
+<p><a href="https://www.mltut.com/statistics-with-r-online-courses/">8 Statistics with R Online Courses You Must Know in 2024</a></p>
+<p><a href="https://chat.openai.com/">ChatGPT</a></p>
+<p><a href="https://www.bing.com/images/create">Image Creator from Microsoft Designer</a></p>
+<p><a href="https://firefly.adobe.com/upload/inpaint">Adobe Firefly</a></p>
+<p><a href="https://journal.r-project.org/articles/RJ-2023-068/">R Bayesian Inference for Multivariate Spatial Models with INLA</a></p>
+<p><a href="https://www.appsilon.com/post/object-oriented-programming-in-r-part-1?utm_source=social&amp;utm_medium=linkedin&amp;utm_campaign=blog&amp;utm_term=appsilon-account&amp;utm_content=oop1-11-04-24">Object-Oriented Programming in R (Part 1): An Introduction</a></p>
+<p><a href="https://vlyubchich.github.io/tsar/">Time Series Analysis with R</a></p>
+<p><a href="https://deafrica-prod-af-eks-user-auth.auth.us-west-2.amazoncognito.com/confirmForgotPassword?response_type=code&amp;redirect_uri=https%3A%2F%2Fsandbox.digitalearth.africa%2Foauth_callback&amp;client_id=6vpn6tvdk35gn8b70gnjmt25od&amp;state=eyJzdGF0ZV9pZCI6ICJmZmQ0NGYyZGVjMzQ0ODhiOGZkOGQ5ZmM5M2E5NDQ2OSJ9">DigitalEarth Africa Sandbox</a></p>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p><a href="https://www.corelogic.com/solutions/risk-management-and-monitoring-solutions.aspx">Risk Management and Monitoring - CoreLogic</a></p>
+<p><a href="https://www.cropprophet.com/">Crop Yield Forecasting Tool + Data Feed | CropProphet</a></p>
+<p><a href="https://droughtcatalogue.com/">Home :: Drought Catalogue</a></p>
+<p><a href="https://www.unpri.org/climate-change/climate-scenario-analysis/3606.article">Climate scenario analysis | Other | PRI</a></p>
+<p><a href="https://www.worldclimateservice.com/">Home - World Climate Service</a></p>
+<p><a href="https://www.reinsurancene.ws/howden-expands-in-spain-with-artai-takeover/">Howden expands in Spain with ARTAI takeover - Reinsurance News</a></p>
+<p><a href="https://www.speedwellweather.com/Pages/Others/Marketing/WeatherStationInstallation.aspx">Speedwell Weather - Weather Station Installation</a></p>
+<p><a href="https://agromonitoring.com/dashboard">Agriculture API Dashboard - OpenWeather</a></p>
+<p><a href="https://mars.jrc.ec.europa.eu/asap/">ASAP - EC</a></p>
+<p><a href="https://gateway.on24.com/wcc/experience/eliteAonCorporation2/2330318/3073271/impact-forecasting-revealed-2021">Impact Forecasting Revealed 2021</a></p>
+<p><a href="https://parhelion.co.uk/">Parhelion risk insurance for the energy and climate finance sectors</a></p>
+<p><a href="https://www.aberdeenstandard.com/en/luxembourg/institutional/insights-thinking-aloud/article-page/esg-climate-change-active-investing?utm_medium=social&amp;utm_source=linkedin&amp;utm_campaign=esg%7C202105%7Cskills%7Cinstitutional%7Clu%7Cen&amp;utm_content=content%7Cpost%7Cesg&amp;cn=esg%7C202105&amp;li_fat_id=4dcabb34-ded9-4e5b-9af0-8f79e48bf956">Investment impact of different climate scenarios/ASI</a></p>
+<p><a href="https://www.air-worldwide.com/">AIR Worldwide | Catastrophe Modeling and Risk Assessment</a></p>
+<p><a href="https://spaghettimodels.com/">Mike’s Weather Page… powered by Firman Power Equipment!</a></p>
+<p><a href="https://www.flycom.si/en/homepage/">Flycom Technologies d.o.o. – Geospatial solutions of tomorrow</a></p>
+<p><a href="https://www.ngfs.net/ngfs-scenarios-portal/">NGFS Scenarios Portal</a></p>
+<p><a href="https://data.ene.iiasa.ac.at/ngfs/#/extra/API">NGFS Scenario API</a></p>
+<p><a href="https://climateanalytics.org/tools/">Tools / Climate Analytics</a></p>
+<p><a href="https://app.livestorm.co/vandersat">VanderSat events | Livestorm</a></p>
+<p><a href="https://ceresinsurancegroup.com.au/about-us/">About Ceres Insurance Group | Risk and Insurance Brokerage Australia</a></p>
+<p><a href="https://irff.undp.org/">UNDP Insurance &amp; Risk Finance Facility</a></p>
+<p><a href="https://www.financialprotectionforum.org/knowledge-series-strengthening-financial-resilience-in-agriculture?mc_cid=70afb67004&amp;mc_eid=81c3cf3a67">Knowledge Series - Strengthening Financial Resilience in Agriculture | Financial Protection Forum</a></p>
+<p><a href="https://agrograph.com/about#contact">Agrograph - About Us</a></p>
+<p><a href="https://remotesensing.vito.be/applications/agriculture">agriculture | VITO Remote Sensing</a></p>
+<p><a href="http://farmcover.tg/">FARMCOVER</a></p>
+<p><a href="http://149.28.228.221/apps/Tool1/">Financial Risk Assessment Tool</a></p>
+<p><a href="http://149.28.228.221/apps/Tool2/">World Bank Financial Response Design Tool</a></p>
+<p><a href="https://startnetwork.org/news-and-blogs/new-start-ready-disaster-risk-financing-course">New Start Ready Disaster Risk Financing Course | Start Network</a></p>
+<p><a href="https://www.globalparametrics.com/news/ardis-entering-its-5th-year-reflections-successes-and-its-future/">ARDIS Entering its 5th Year: Reflections, Successes and its Future - Global Parametrics</a></p>
+<p><a href="https://www.ncei.noaa.gov/access/billions/mapping">Disaster and Risk Mapping | Billion-Dollar Weather and Climate Disasters | National Centers for Environmental Information (NCEI)</a></p>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<p><a href="https://cesium.com/">Cesium: The Platform for 3D Geospatial</a></p>
+<p><a href="https://cesium.com/blog/">Cesium Blog – Cesium</a></p>
+<p><a href="https://www.greenbelly.co/pages/map-colors">Map Colors: The Ultimate Guide [6 Essential Colors] – Greenbelly Meals</a></p>
+<p><a href="https://blog.datawrapper.de/data-vis-dispatch-january-30-2024/">Data Vis Dispatch, January 30 - Datawrapper Blog</a></p>
+<p><a href="https://www.greynoise.io/blog/decoding-mass-exploitation-in-2023-a-greynoise-perspective">Decoding Mass Exploitation in 2023: A GreyNoise Perspective| GreyNoise Blog</a></p>
+<p><a href="https://johnmacfarlane.net/papers.html">John MacFarlane - Papers</a></p>
+<p><a href="https://vercel.com/templates/next.js">Next.js Starter Templates &amp; Themes | Vercel – Vercel</a></p>
+<p><a href="https://blog.datawrapper.de/">Datawrapper Blog</a></p>
+<p><a href="https://www.appsilon.com/post/rshiny-vs-powerbi-vs-spotfire?utm_source=social&amp;utm_medium=linkedin&amp;utm_campaign=blog&amp;utm_term=appsilon-account&amp;utm_content=data-visualization">Choosing the Right Data Visualization Tool: R Shiny, PowerBI, or Spotfire</a></p>
+<p><a href="https://nextgis.com/blog/sandbox/?utm_source=nextgis-unisender&amp;utm_medium=email&amp;utm_campaign=news-03-24&amp;utm_content=en">Sandbox: Try NextGIS Web functionality for your projects</a></p>
+<p><a href="https://r-graph-gallery.com/color-palette-finder">R Color palette finder | Browse 2000+ palettes 🔥</a></p>
+<p><a href="https://leaflet-extras.github.io/leaflet-providers/preview/">Leaflet Provider Demo</a></p>
+<p><a href="https://www.narrowdesign.com/">Nick Jones - Interface Prototyper / Designer</a></p>
+<p><a href="https://somethingaboutmaps.wordpress.com/">somethingaboutmaps</a></p>
+<p><a href="https://geotribu.fr/articles/2024/2024-06-18_carte-relief-ombre-avec-blender-partie-2-modelisation-reglages-cartographie/">Geotribu</a></p>
+<p><a href="https://somethingaboutmaps.com/">somethingaboutmaps</a></p>
+</div>
+</div>
+</div>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bacou2024,
+  author = {BACOU, Melanie},
+  title = {Data, {Resources,} and {Tools}},
+  date = {2024-07-16},
+  url = {https://mbacou.com/posts/tools/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bacou2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+BACOU, Melanie. 2024. <span>“Data, Resources, and Tools.”</span> July
+16, 2024. <a href="https://mbacou.com/posts/tools/">https://mbacou.com/posts/tools/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/mbacou\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><strong>BACOU, Melanie © 2024</strong> / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<p>All views here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/mbacou/mb-labs/edit/quarto/posts/tools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mbacou/mb-labs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Quarto<sup>®</sup></p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

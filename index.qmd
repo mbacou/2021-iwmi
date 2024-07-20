@@ -1,43 +1,105 @@
 ---
 page-layout: full
 toc: false
+sidebar: false
+grid:
+  body-width: 900px
+  margin-width: 360px
+  
 listing:
-  id: lst-home
-  contents: posts
-  categories: false
-  feed: true
-  filter-ui: false
-  sort-ui: false
-  sort: "date desc"
-  type: grid
-  max-items: 9
-  fields: [title, description, image, date, author, categories]
+  - id: lst-posts
+    contents: posts
+    categories: false
+    feed: true
+    filter-ui: true
+    sort-ui: false
+    sort: date desc
+    type: grid
+    max-items: 9
+    image-height: 132px    
+    fields: [title, description, image, date, author, categories]
+    exclude: 
+      category: [skip*]
+  - id: lst-featured
+    contents: portfolio
+    categories: false
+    feed: false
+    filter-ui: false
+    sort-ui: false
+    sort: date desc
+    type: grid
+    grid-columns: 2
+    max-items: 2
+    image-height: 88px
+    fields: [title, description, image]
 ---
 
-# Econometric and Geospatial Analysis {.title}
+::: {.column-screen style="min-height: 25vh; background: url(/www/banner/nile-valley.jpg) 0 -200px fixed;"}
+::: {.column-page-left}
 
-To inform robust and equitable public policy.
+# People, Space, and Statistics {.title .text-light .pt-md-2}
 
-----------
-
-<div class="parallax-container"><div class="parallax-image-container"></div></div>
-
-A personal Blog largely centered around R programming and statistical analysis for **agricultural economic research** -- but you'll also find book and article reviews, and the occasional opinion piece. Check out my [full Bio](./about/index.qmd) for details.
-
-This is a line of content before the listing[^1].
-
-
-Quarto provides a default layout for HTML pages that should work well for many documents. However, if the default layout isn’t working for your content, you can adjust it.
-
-On this page, learn about:
-
-The three high level layout options for your pages in Page Layout.
-
-How to adjust the width of the individual layout components (sidebar, body, margins, and gutter) to fit your content in Grid Customization.
-
-
-::: {#lst-home}
+::: {.lead .quoted .text-light .d-block .mt-3 .mt-md-0 .mb-md-3 .animate__animated .animate__slideInLeft}
+Informed citizens make better policy choices; better policies save <span class="text-warning">lives</span> and <span class="text-warning">resources</span>.
 :::
 
+:::
 
-  
+::: {.column-margin .shaded .shadow-inset .text-body .px-3 .mt-md-3 .animate__animated .animate__slideInDown style="background:linear-gradient(0deg, var(--bs-light) 70%, transparent 80%);"}
+
+![](posts/resume/_fig/profile.jpg){.img-rounded .d-block .mx-auto width="9em"}
+
+A personal blog where I dabble on **econometrics**, **spatial statistics**, **remote sensing**, and **scientific visualization** -- with code samples in **R**, **Python**, **JS** and **D3.js**.
+
+Topics range from **sustainable agriculture** and **food security**, to policies for equitable **growth and development**, to the **geopolitics of natural resources**.
+
+You'll also find book and article reviews, and the occasional opinion pieces. Check out my [full Bio](./posts/resume/index.qmd) for contact details.
+
+::: {.border .striped .px-2 .pt-2 .mb-2}
+
+```{=html}
+
+<script type="text/javascript">
+var listID = 'PLMEI8z_d3EZGRnn8nGh3f6A7zwT4wDmVU';
+var numberOfVideos = 200;
+var randomizer = Math.floor(Math.random() * numberOfVideos + 1);
+
+document.writeln('<iframe id="yt-video" class="quarto-video" src="//www.youtube.com/embed?listType=playlist&list=' + listID + '&index=' + randomizer + '&autoplay=1&loop=0&controls=1&showinfo=0" frameborder=0 height="44" width="100%"></iframe><figcaption><em>Play and support my favorite artists...</em></figcaption>');
+
+</script>
+```
+
+:::
+:::
+:::
+
+::: {.column-screen .shaded .z-0}
+::: {.column-page-left}
+
+::: {.separator}
+:::
+
+### Featured Projects
+
+The work I deliver for public agencies is to be found in [code repositories](https://github.com/mbacou/) on Github. Other (restricted or confidential) projects are outlined in the [portfolio](./portfolio.qmd) section of this website.
+
+::: {#lst-featured .mt-3}
+:::
+
+:::
+:::
+
+::: {.column-page}
+
+::: {.separator}
+:::
+
+### Articles and Notebooks
+
+Code notebooks and articles that do not find a home elsewhere. Everyone is welcome to clone, comment, and raise issues.
+
+::: {#lst-posts}
+:::
+
+** Photo: Nile River basin by Aswan, Southern Egypt, 2009. Credits: author.
+:::

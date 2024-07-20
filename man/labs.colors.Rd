@@ -2,15 +2,19 @@
 % Please edit documentation in R/theme.R
 \name{labs.colors}
 \alias{labs.colors}
-\title{Color ramp based on \code{mblabs} theme colors}
+\title{MBLABS color ramp}
 \usage{
-labs.colors(x, colors = unname(pal), ...)
+labs.colors(x, colors = unname(pal[names(pal) != "black"]), alpha = 0.9, ...)
 }
 \arguments{
 \item{x}{number of colors to interpolate}
 
 \item{colors}{colors to interpolate; must be a valid argument to
     \code{\link[grDevices]{col2rgb}()}.}
+
+\item{alpha}{logical: should alpha channel (opacity) values be
+    returned?   It is an error to give a true value if
+    \code{space} is specified.}
 
 \item{...}{
   Arguments passed on to \code{\link[grDevices:colorRamp]{grDevices::colorRamp}}
@@ -20,9 +24,6 @@ labs.colors(x, colors = unname(pal), ...)
     \item{\code{space}}{a character string; interpolation in RGB or CIE Lab
     color spaces.}
     \item{\code{interpolate}}{use spline or linear interpolation.}
-    \item{\code{alpha}}{logical: should alpha channel (opacity) values be
-    returned?   It is an error to give a true value if
-    \code{space} is specified.}
   }}
 }
 \value{
@@ -34,6 +35,6 @@ Default qualitative color ramp derived from \code{mblabs} Bootstrap theme.
 \examples{
 x <- rchisq(100, df=4)
 hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(20), border="white")
-hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(8), border="white")
+hist(x, freq=FALSE, ylim=c(0, 0.2), col=labs.colors(8, alpha=.5), border="white")
 
 }

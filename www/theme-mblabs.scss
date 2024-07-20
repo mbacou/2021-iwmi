@@ -5,24 +5,25 @@
 
 /*-- scss:defaults --*/
 
-$white:     #ffffff;
-$black:     #000000;
+$theme: "mblabs" !default;
 
-$cyan:      #789494;
-$teal:      #445e64;
-$dark:      #222e32;
-$pink:      #aea39a;
-$purple:    #98796f;
-$indigo:    #9b59b6;
-$blue:      #3daee9;
-$green:     #27ae60;
-$yellow:    #edcd37;
-$orange:    #f67400;
-$red:       #da4453;
-$light:     #eff0f1;
-$gray:      #505050;
+$white:     #ffffff !default;
+$black:     #000000 !default;
+$cyan:      #789494 !default;
+$teal:      #445e64 !default;
+$dark:      #222e32 !default;
+$pink:      #aea39a !default;
+$purple:    #98796f !default;
+$indigo:    #9b59b6 !default;
+$blue:      #3daee9 !default;
+$green:     #27ae60 !default;
+$yellow:    #edcd37 !default;
+$orange:    #f67400 !default;
+$red:       #da4453 !default;
+$light:     #eff0f1 !default;
+$gray:      #505050 !default;
 
-$darkgray:  darken($gray, 4%);
+$darkgray:  darken($gray, 4%)  !default;
 $gray-100:  tint-color($gray, 90%);
 $gray-200:  tint-color($gray, 80%);
 $gray-300:  tint-color($gray, 70%);
@@ -35,8 +36,9 @@ $gray-900:  tint-color($gray, 10%);
 
 $primary:   $purple;
 $secondary: $cyan;
+$success: $teal;
 
-$spacer: 22px;
+$spacer: 22px  !default;
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -46,18 +48,32 @@ $spacers: (
   5: $spacer * 2,
 );
 
+$line-height-base: 1.375;
+$headings-line-height: 1.375;
+$list-inline-padding: .5* $spacer;
+
+$font-size-base: 1rem;
+$h1-font-size:  $font-size-base * 2.000 !default;
+$h2-font-size:  $font-size-base * 1.500 !default;
+$h3-font-size:  $font-size-base * 1.750 !default;
+$h4-font-size:  $font-size-base * 1.375 !default;
+$h5-font-size:  $font-size-base * 1.250 !default;
+$h6-font-size:  $font-size-base;
+
 $body-color: $gray;
 $body-bg: $white;
-$shaded: lighten($light, 4%);
+$bg-opacity: 0.1;
 $link-color: $gray-700;
+$shaded: tint-color($light, 50%);
 $text-muted: rgba($body-color, 70%);
 $secondary-color: $text-muted;
 $code-color: $text-muted;
+$enable-negative-margins: true;
 
-$blockquote-font-size:  1.5rem;
-$blockquote-margin-y: .5* $spacer;
-$blockquote-color: $darkgray;
-$blockquote-small-color: $text-muted;
+$blockquote-font-size: 1rem;
+$blockquote-font-color: $gray-300;
+$blockquote-margin-y: 1* $spacer;
+$blockquote-small-color: $darkgray;
 
 $border-color: rgba($gray-300, 75%);
 $border-radius-sm: 0;
@@ -65,7 +81,7 @@ $border-radius: 0;
 $border-radius-lg: 0.50rem;
 $enable-rounded: true;
 $hr-border-color: $body-color;
-$hr-opacity: 1;
+$hr-opacity: .75;
 
 $table-cell-padding: 0 .5em;
 $table-cell-padding-sm: 0 .25em;
@@ -78,7 +94,7 @@ $thumbnail-border-color: $border-color;
 
 $input-color: $text-muted;
 $input-bg: $shaded;
-$input-btn-padding-y: 0;
+$input-btn-padding-y: .25* $spacer;
 $input-placeholder-color: $input-color;
 $input-border-color: $border-color;
 $input-disabled-bg: darken($input-bg, 4%);
@@ -103,11 +119,11 @@ $pagination-disabled-bg: $input-disabled-bg;
 $pagination-hover-color: $link-color;
 $progress-bg: $input-bg;
 
-$card-bg: transparent;
+$card-bg: $white;
 $card-cap-bg: rgba($border-color, 10%);
 $card-spacer-x: .5* $spacer;
-$card-spacer-y: .25* $spacer;
-$card-border-width: 1px;
+$card-spacer-y: .5* $spacer;
+$card-border-width: 0;
 $card-border-color: $border-color;
 $card-border-radius: $border-radius;
 
@@ -118,18 +134,18 @@ $font-monospace: "Roboto Mono";
 $headings-font-color: $darkgray;
 $headings-font-weight: 400;
 $font-weight-bold: 500;
-$small-font-size: .875rem;
+$small-font-size: .9375rem;
 
-$line-height-base: 1.375;
-$headings-line-height: 1.375;
-$list-inline-padding: .5* $spacer;
-
-$navbar-hover-color: $darkgray;
+$navbar-hover-color: $primary;
+$navbar-active-color: $body-color;
 $nav-link-font-family: $font-family-base;
-$nav-link-font-weight: 400;
+$nav-link-font-weight: 500;
 $nav-link-font-size: 1rem;
 $nav-link-padding-x: 0.25rem;
 $nav-link-padding-y: 0;
+$nav-link-color: $body-color;
+$nav-link-hover-color: $primary;
+
 
 /*-- scss:rules --*/
 
@@ -141,40 +157,43 @@ b, strong {
 p, div {
   line-height: $spacer;
 }
-p {
+p, {
   margin-bottom: .5* $spacer;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-weight: $headings-font-weight;
   margin-top: 1* $spacer;
   margin-bottom: .5* $spacer;
-}
-h2, .h2, {
-  color: $gray-400;
-  font-style: italic;
+  padding: 0;
 }
 h4, .h4, h5, .h5 {
   font-weight: 500;
 }
+h2, .h2, {
+  color: $gray-500;
+  font-style: italic;
+  border-bottom: solid 1px $border-color;
+}
 hr {
-  border-top: double 5.5px $border-color;
-  margin: .5* $spacer 0;
+  border-top: dashed 1px $hr-border-color;
+  margin: 0 0 .5* $spacer 0;
 }
 ol, ul, dl {
   margin-bottom: .5* $spacer;
 }
-blockquote, blockquote p {
-  padding: .25* $spacer 1rem;
-  font-size: 1.5rem;
+.blockquote, blockquote p {
+  font-size: 1rem;
   line-height: 1.5* $spacer;
   font-style: italic;
+  color: $gray-800;
   border: none;
 }
 blockquote small, blockquote .small {
   font-family: $font-sans-serif;
+  color: $headings-font-color;
   font-size: 1rem;
   font-style: normal;
-  color: $headings-font-color;
+  font-weight: 500;
 }
 .quarto-title-banner h1, .quarto-title-banner .h1,
 .quarto-title-banner h2, .quarto-title-banner .h2 {
@@ -186,19 +205,9 @@ blockquote small, blockquote .small {
   font-weight: 400;
   font-size: 2.25rem;
   line-height: 2* $spacer;
-  margin-top: $spacer;
-}
-h5.card-title {
-  font-family: $font-family-base;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: $headings-font-color;
-}
-h2 {
-  border-bottom: solid 1px $border-color;
+  margin-top: 1* $spacer;
 }
 p.subtitle {
-  margin: .5*$spacer 0 1*$spacer 0;
 }
 .lead {
   font-family: $font-family-base;
@@ -208,12 +217,15 @@ p.subtitle {
   font-size: 1.5rem;
   line-height: 1.5* $spacer;
 }
+.lead p {
+  line-height: unset;
+}
 .description {
   font-family: $font-sans-serif;
-  padding: .75* $spacer 2em;
-  font-weight: 400;
   color: rgba($body-color, 85%);
+  font-weight: 400;
   font-size: 1.15rem;
+  padding: .75* $spacer 2em 0;
   border: solid 1px $border-color;
 }
 #title-block-header.quarto-title-block.default .description>p:first-child {
@@ -237,17 +249,21 @@ p.subtitle {
 #title-block-header.quarto-title-block.default .quarto-title-authors p,
 #title-block-header.quarto-title-block.default .quarto-title-affiliations p,
 #title-block-header.quarto-title-block.default .abstract p {
-  font-size: .9rem;
+  font-size: $small-font-size;
   color: $text-muted;
   margin-bottom: .5* $spacer;
 }
 #title-block-header.quarto-title-block.default .keywords>p:last-of-type,
 #title-block-header.quarto-title-block.default .description>p:last-of-type,
 #title-block-header.quarto-title-block.default .abstract>p:last-of-type {
-  margin-bottom: .5* $spacer;
+  margin-bottom: 1* $spacer;
 }
 #quarto-appendix.default {
   background: none;
+}
+
+.card {
+  border-bottom: solid 1px $border-color;
 }
 div.quarto-post .metadata {
   font-size: 1rem;
@@ -263,6 +279,12 @@ div.quarto-post .metadata {
   color: $text-muted;
   font-weight: 400;
 }
+h5.card-title {
+  font-family: $headings-font-family;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $headings-font-color;
+}
 h5.quarto-listing-category-title, #quarto-margin-sidebar h5,
 #quarto-margin-sidebar .quarto-listing-category-title,
 .column-margin h5, #toc-title {
@@ -273,23 +295,24 @@ h5.quarto-listing-category-title, #quarto-margin-sidebar h5,
   font-style: italic;
   cursor: unset;
 }
-.card {
-  border-bottom: solid $border-color 1px;
+.card:hover {
+  transition: all .4s ease-in-out;
+  transform: translateZ(0) scale(1.06);
 }
 .card-img-top {
-  background-color: $gray-100;
+  background-color: $shaded;
   border-radius: $border-radius;
+  overflow: clip;
 }
 .quarto-grid-item .card-text {
   font-size: unset;
-  margin: .5*$spacer 0 $spacer 0;
+  margin: 0 0 .5* $spacer;
 }
 .quarto-grid-item .card-text-small {
   font-size: $small-font-size;
 }
 .quarto-grid-item .card-title {
-  margin-top: 1* $spacer;
-  margin-bottom: .5* $spacer;
+  margin: .25* $spacer 0 .5* $spacer;
 }
 .quarto-grid-item .card-attribution {
   padding: .5* $spacer 0 0;
@@ -307,6 +330,9 @@ h5.quarto-listing-category-title, #quarto-margin-sidebar h5,
   font-family: $font-sans-serif;
   font-size: $small-font-size;
   color: $headings-font-color;
+}
+.quarto-listing-sort {
+  margin: 0 0 .5* $spacer auto;
 }
 
 pre code {
@@ -348,17 +374,15 @@ div.sourceCode, pre.sourceCode {
 .quarto-grid-item .listing-categories .listing-category,
 div.quarto-post .listing-categories .listing-category {
   font-family: $font-sans-serif;
-  color: rgba($body-color, 94%);
+  color: $gray-700;
   font-size: .825rem;
   font-weight: 400;
   text-transform: uppercase;
   border: none;
   background: $shaded;
   padding: 0 .75em;
+  margin-bottom: .5* $spacer;
   opacity: 1;
-}
-.figure-img {
-  margin: 0;
 }
 
 thead, tbody, tfoot, tr, td, th {
@@ -393,12 +417,19 @@ figcaption, .column-margin figcaption, .margin-caption, div.aside, aside, .colum
   font-family: $font-sans-serif;
   font-size: $small-font-size;
   color: $text-muted;
-}
-caption, .table-caption {
-  padding: 0;
-  margin: .25*$spacer 0;
   text-align: left;
+  padding: 0;
+  margin-top: .25* $spacer;
+  margin-bottom: .5* $spacer;
 }
+figcaption, .column-margin figcaption, {
+  text-align: center;
+  margin-top: 0;
+}
+.figure-img {
+  margin: 0;
+}
+
 .callout.callout-style-default, .callout.callout-style-simple {
   border: none;
   border-left: 3px solid $primary;
@@ -474,12 +505,29 @@ nav.sidebar .nav-link {
   padding-bottom: .125* $spacer;
 }
 
+.panel-tabset > .nav-tabs, .panel-tabset > .tab-content {
+  border: none;
+}
+
+
 // Utilities
+div.separator {
+  height: .25* $spacer;
+  width: 5em;
+  background: $gray-200;
+  margin: 1 * $spacer 0 -.75* $spacer 0;
+  padding: 0;
+}
 .shaded {
-  background-color: $shaded;
+  background-color: rgba($shaded, 90%);
+  backdrop-filter: blur(2px);
+}
+.blurred {
+  background-color: rgba($dark, 65%);
+  backdrop-filter: blur(3px);
 }
 .striped {
-  background-image: linear-gradient(45deg,
+  background-image: linear-gradient(-45deg,
   $shaded 25%, transparent 25%, transparent 50%,
   $shaded 50%, $shaded 75%, transparent 75%, transparent);
   background-size: 1rem 1rem;
@@ -494,17 +542,9 @@ nav.sidebar .nav-link {
 .img-rounded {
   border-radius: 6rem;
 }
-.parallax-container {
-  position: relative;
-}
-.parallax-image-container {
-  background-image: url(./www/banner/cr-map.png);
-  height: 33vh;
-  opacity: 1;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.quarto-video {
+  margin-bottom: .25* $spacer;
+  opacity: .70;
 }
 
 // Quarto layout fixes
@@ -512,61 +552,96 @@ nav.sidebar .nav-link {
   padding-top: 0;
   margin-top: 0;
 }
+.page-columns .column-screen-inset-shaded {
+  padding: 1em 2em;
+  background: $shaded;
+}
 #quarto-header>nav {
   padding: 0;
 }
-.headroom {
-  padding: 0 .5* $spacer 0 0;
-  background: 0 0 / 100% no-repeat url(./www/banner/ru-map-top.jpg);
-}
 #quarto-announcement {
-  background: none;
+  font-family: $font-sans-serif;
+  font-size: 1.25rem;
   border: none;
-  height: 2* $spacer;
+  background: $dark;
+  justify-content: center;
 }
-.navbar {
-  background: linear-gradient(190deg, transparent, rgba($white, 96%) 60%);
+.navbar, .panel-tabset>.nav-tabs {
+  margin-top: .5*$spacer;
   border-bottom: solid 1px $border-color;
+  backdrop-filter: blur(2px);
+}
+.panel-tabset>.nav-tabs {
+  background: $shaded;
 }
 .quarto-title-banner {
-  padding: 0;
-  margin: 0  0 1* $spacer;
+  padding: .5* $spacer 0;
+  margin: 0 0 .5* $spacer;
 }
-.navbar .nav-item:not(.compact) .nav-link {
+.navbar .me-auto {
+  margin-left: auto !important;
+}
+nav .nav-item .nav-link {
   line-height: 1.5* $spacer;
-  margin-top: .5* $spacer;
-  margin-left: .5em;
-  margin-bottom: -3px;
+}
+.navbar .nav-item:not(.compact) .nav-link,
+.nav-tabs .nav-item .nav-link {
+  margin-right: .25em;
+  border: none;
+  border-top: solid 3px transparent;
   border-bottom: solid 3px transparent;
 }
-.navbar .nav-item:not(.compact) .nav-link:hover {
-  background: $shaded;
+.navbar .nav-item:not(.compact) .nav-link:hover,
+.nav-tabs .nav-item .nav-link:hover {
+  color: $body-color;
   border-bottom: solid 3px $primary;
 }
-.navbar .nav-item:not(.compact) .nav-link.active {
+.navbar .nav-item:not(.compact) .nav-link.active,
+.nav-tabs .nav-item .nav-link.active {
+  color: $body-color;
   border-bottom: solid 3px $primary;
+}
+.navbar-collapse .nav-link {
+  line-height: $spacer;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 .navbar-brand {
   font-family: $headings-font-family;
-  font-weight: 500;
-  color: $darkgray;
-  margin-left: 1em;
-  margin-right: 2.5em;
   font-size: 1.5rem;
+  font-weight: 400;
+  color: $light;
+  background: $dark;
+  margin: auto 2.5em -0.5* $spacer 0;
+  padding: .5* $spacer .75em .5* $spacer .5em;
+}
+#title-block-header {
+  margin-block-end: unset;
+  margin-top: unset;
+}
+footer.footer {
+  padding-top: .75* $spacer;
+  background-image: linear-gradient(-45deg,
+  $shaded 25%, transparent 25%, transparent 50%,
+  $shaded 50%, $shaded 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
 }
 footer.footer .nav-footer {
   margin: 0;
   padding: .5* $spacer 2em $spacer;
-  border-top: solid 1px $border-color;
 }
 .nav-footer .nav-footer-left,
 .nav-footer .nav-footer-right,
 .nav-footer .nav-footer-center {
-  font-family: $font-family-base;
+  font-family: $font-sans-serif;
   font-size: $small-font-size;
 }
+.nav-footer-center {
+  display: none;
+}
 .sidebar-navigation {
-  padding-left: 0;
+  padding-left: unset;
 }
 .column-margin.column-container p {
   margin-bottom: .5* $spacer;

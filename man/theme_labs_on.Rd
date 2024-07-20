@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme.R
 \name{theme_labs_on}
 \alias{theme_labs_on}
-\title{Apply graphic color palettes}
+\title{Thematic consistent color palettes}
 \usage{
 theme_labs_on(
   bg = "transparent",
@@ -10,7 +10,7 @@ theme_labs_on(
   accent = pal[[1]],
   font = "Roboto Condensed",
   sequential = sequential_gradient(fg_weight = 0.5, bg_weight = 0.5, fg_low = FALSE),
-  qualitative = alpha(labs.colors(12), 0.9),
+  qualitative = labs.colors(12),
   ...
 )
 }
@@ -43,8 +43,8 @@ levels exceeds the max allowed colors). Defaults to \code{\link[thematic:okabe_i
 A global graphic theme
 }
 \description{
-Set \code{mblabs} default values to \code{thematic::thematic_on()}, and modify
-\code{lattice} and \code{ggplot} color palettes and fonts.
+Sets default values to \code{thematic::thematic_on()}, and modify
+\code{lattice} and \code{ggplot} color palettes and fonts to match \code{mblabs} theme.
 }
 \examples{
 theme_labs_on()

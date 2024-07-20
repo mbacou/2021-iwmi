@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.1">
+<meta name="generator" content="quarto-1.6.2">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,8 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-lst-home .list');
+    const listingTargetEl = window.document.querySelector('#listing-lst-posts .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -87,7 +86,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-lst-home'] = new List('listing-lst-home', options);
+    window['quarto-listings']['listing-lst-posts'] = new List('listing-lst-posts', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lst-featured .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lst-featured'] = new List('listing-lst-featured', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -138,25 +165,24 @@ window.Quarto = {
 </script>
 
 <link rel="alternate" type="application/rss+xml" title="Mel's Labs" href="index.xml" data-external="1"><meta property="og:title" content="Mel’s Labs">
-<meta property="og:description" content="Playground for consulting and data science projects">
 <meta property="og:image" content="https://mbacou.com/www/favicon.png">
 <meta property="og:site_name" content="Mel's Labs">
 <meta property="og:image:height" content="100">
 <meta property="og:image:width" content="100">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <div id="quarto-announcement" data-announcement-id="ba170f3cc34883091ca95e471c83a9ce" class="alert alert-light hidden"><div class="quarto-announcement-content">
-<p><strong>New</strong> - this is an announcementt</p>
-</div></div>
+    <div id="quarto-announcement" data-announcement-id="8ed67a3dd1b8fcb038c68509120c9059" class="alert alert-dark hidden"><div class="quarto-announcement-content">
+<p><i class="bi-warning " style="" role="img" aria-hidden="true"></i> This blog is being migrating to <a href="https://quarto.org">Quarto</a>, expect quirks and dead links!</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><i class="fa-regular fa-compass-drafting" aria-label="compass-drafting"></i> &nbsp;<em>Mel’s</em> Labs</span>
+    <span class="navbar-title"><i class="bi-compass " style="" role="img" aria-hidden="true"></i> &nbsp;Mel’s <strong>Labs</strong></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -166,6 +192,10 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Notebooks</span></a>
   </li>  
@@ -174,8 +204,12 @@ window.Quarto = {
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./posts/tools/index.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts/resume/index.html"> 
+<span class="menu-text">Full Bio</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -205,16 +239,6 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Econometric and Geospatial Analysis</h1>
-        </a>     
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
@@ -222,37 +246,136 @@ window.Quarto = {
   
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full column-body" id="quarto-document-content">
 
 
 
 
-<section id="econometric-and-geospatial-analysis" class="level1 title">
-<h1 class="title d-none d-lg-block">Econometric and Geospatial Analysis</h1>
-<p>To inform robust and equitable public policy.</p>
-<hr>
-<div class="parallax-container">
-<div class="parallax-image-container">
+<div class="column-screen page-columns page-full" style="min-height: 25vh; background: url(/www/banner/nile-valley.jpg) 0 -200px fixed;">
+<section id="people-space-and-statistics" class="level1 title text-light pt-md-2 column-page-left">
+<h1 class="title text-light pt-md-2">People, Space, and Statistics</h1>
+<div class="lead quoted text-light d-block mt-3 mt-md-0 mb-md-3 animate__animated animate__slideInLeft">
+<p>Informed citizens make better policy choices; better policies save <span class="text-warning">lives</span> and <span class="text-warning">resources</span>.</p>
+</div>
+</section>
+
+<div class="no-row-height column-margin column-container"><div class="shaded shadow-inset text-body px-3 mt-md-3 animate__animated animate__slideInDown" style="background:linear-gradient(0deg, var(--bs-light) 70%, transparent 80%);">
+<p><img src="posts/resume/_fig/profile.jpg" class="img-rounded d-block mx-auto img-fluid" style="width:9em"></p>
+<p>A personal blog where I dabble on <strong>econometrics</strong>, <strong>spatial statistics</strong>, <strong>remote sensing</strong>, and <strong>scientific visualization</strong> – with code samples in <strong>R</strong>, <strong>Python</strong>, <strong>JS</strong> and <strong>D3.js</strong>.</p>
+<p>Topics range from <strong>sustainable agriculture</strong> and <strong>food security</strong>, to policies for equitable <strong>growth and development</strong>, to the <strong>geopolitics of natural resources</strong>.</p>
+<p>You’ll also find book and article reviews, and the occasional opinion pieces. Check out my <a href="./posts/resume/index.html">full Bio</a> for contact details.</p>
+<div class="border striped px-2 pt-2 mb-2">
+
+<script type="text/javascript">
+var listID = 'PLMEI8z_d3EZGRnn8nGh3f6A7zwT4wDmVU';
+var numberOfVideos = 200;
+var randomizer = Math.floor(Math.random() * numberOfVideos + 1);
+
+document.writeln('<iframe id="yt-video" class="quarto-video" src="//www.youtube.com/embed?listType=playlist&list=' + listID + '&index=' + randomizer + '&autoplay=1&loop=0&controls=1&showinfo=0" frameborder=0 height="44" width="100%"></iframe><figcaption><em>Play and support my favorite artists...</em></figcaption>');
+
+</script>
+</div>
+</div></div></div>
+<div class="column-screen shaded z-0 page-columns page-full">
+<div class="column-page-left">
+<div class="separator">
 
 </div>
+<section id="featured-projects" class="level3">
+<h3 class="anchored" data-anchor-id="featured-projects">Featured Projects</h3>
+<p>The work I deliver for public agencies is to be found in <a href="https://github.com/mbacou/">code repositories</a> on Github. Other (restricted or confidential) projects are outlined in the <a href="./portfolio.html">portfolio</a> section of this website.</p>
+<div id="listing-lst-featured" class="mt-3 listing quarto-float quarto-figure quarto-figure-left quarto-listing quarto-listing-container-grid anchored">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="model front-end,R/Shiny" data-listing-date-sort="1706745600000" data-listing-file-modified-sort="1706627114646" data-listing-date-modified-sort="1706627114000" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<a href="./portfolio/app-wadashboard.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/fig/mbacou-app-pricing.png" class="thumbnail-image card-img" style="height: 88px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Interactive Web Applications
+</h5>
+<div class="card-text listing-description">
+<p>Showcase of interactive statistical dashboards and decision-support tools designed for partners and clients.</p>
 </div>
-<p>A personal Blog largely centered around R programming and statistical analysis for <strong>agricultural economic research</strong> – but you’ll also find book and article reviews, and the occasional opinion piece. Check out my <a href="./about/index.html">full Bio</a> for details.</p>
-<p>This is a line of content before the listing[^1].</p>
-<p>Quarto provides a default layout for HTML pages that should work well for many documents. However, if the default layout isn’t working for your content, you can adjust it.</p>
-<p>On this page, learn about:</p>
-<p>The three high level layout options for your pages in Page Layout.</p>
-<p>How to adjust the width of the individual layout components (sidebar, body, margins, and gutter) to fit your content in Grid Customization.</p>
-<div id="listing-lst-home" class="listing quarto-float quarto-figure quarto-figure-left quarto-listing quarto-listing-container-grid anchored">
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="model front-end,R/Shiny" data-listing-date-sort="1706745600000" data-listing-file-modified-sort="1719199635690" data-listing-date-modified-sort="1719199635000" data-listing-reading-time-sort="2" data-listing-word-count-sort="248">
+<a href="./portfolio/app-pricing.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/fig/mbacou-app-pricing.png" class="thumbnail-image card-img" style="height: 88px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Interactive Web Applications
+</h5>
+<div class="card-text listing-description">
+<p>Showcase of interactive statistical dashboards and decision-support tools designed for partners and clients.</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="column-page">
+<div class="separator">
+
+</div>
+<section id="articles-and-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="articles-and-notebooks">Articles and Notebooks</h3>
+<p>Code notebooks and articles that do not find a home elsewhere. Everyone is welcome to clone, comment, and raise issues.</p>
+<div id="listing-lst-posts" class="listing quarto-float quarto-figure quarto-figure-left quarto-listing quarto-listing-container-grid anchored">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="quarto,dataviz" data-listing-date-sort="1696114800000" data-listing-file-modified-sort="1720666542213" data-listing-date-modified-sort="1720666542000" data-listing-reading-time-sort="13" data-listing-word-count-sort="2484">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1721084400000" data-listing-file-modified-sort="1721106371549" data-listing-date-modified-sort="1721106371000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2246">
+<a href="./posts/tools/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 132px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data, Resources, and Tools
+</h5>
+<div class="card-text listing-description">
+A curated list of resources and tools, always in progress.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Melanie BACOU
+</div>
+<div class="listing-date">
+Jul 16, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="quarto,dataviz" data-listing-date-sort="1696114800000" data-listing-file-modified-sort="1721182249868" data-listing-date-modified-sort="1721182249000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2792">
 <a href="./posts/2022-12-01-theme/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/2022-12-01-theme/index_files/figure-html/unnamed-chunk-8-1.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/2022-12-01-theme/index_files/figure-html/unnamed-chunk-8-1.svg" style="height: 132px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title" data-anchor-id="econometric-and-geospatial-analysis">
-Migrating this Blog from <em>Distill</em> to <em>Quarto</em> Publishing Framework
+<h5 class="no-anchor card-title listing-title">
+Time to Migrate this Blog from <em>Distill</em> to <em>Quarto</em>
 </h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
@@ -277,10 +400,10 @@ Oct 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="meteo,risk modeling" data-listing-date-sort="1610755200000" data-listing-file-modified-sort="1719343741337" data-listing-date-modified-sort="1719343741000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1740">
+<div class="g-col-1" data-index="2" data-categories="meteo,risk modeling" data-listing-date-sort="1610755200000" data-listing-file-modified-sort="1719343741337" data-listing-date-modified-sort="1719343741000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1740">
 <a href="./posts/2021-01-16-rfmerge/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/2021-01-16-rfmerge/index_files/figure-html/unnamed-chunk-7-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/2021-01-16-rfmerge/index_files/figure-html/unnamed-chunk-7-1.png" style="height: 132px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Merge Ground and Satellite Observations with RFMerge
@@ -308,10 +431,44 @@ Jan 16, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="meteo,risk modeling" data-listing-date-sort="1606867200000" data-listing-file-modified-sort="1719359154084" data-listing-date-modified-sort="1719359154000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1210">
+<div class="g-col-1" data-index="3" data-categories="dataviz,income,russia" data-listing-date-sort="1606867200000" data-listing-file-modified-sort="1721183863379" data-listing-date-modified-sort="1721183863000" data-listing-reading-time-sort="1" data-listing-word-count-sort="145">
+<a href="./posts/2024-07-13-rus-cartogram/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 132px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Income Distribution Cartograms
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
+dataviz
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('income'); return false;">
+income
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('russia'); return false;">
+russia
+</div>
+</div>
+<div class="card-text listing-description">
+In the middle of reading Daniel Huffman’s excellent and highly-recommended blog<sup>1</sup>, I stumbled on his audacious representation of U.S. median income across states – Stunningly…<sup></sup>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Melanie BACOU
+</div>
+<div class="listing-date">
+Dec 2, 2020
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="meteo,risk modeling" data-listing-date-sort="1606867200000" data-listing-file-modified-sort="1719359154084" data-listing-date-modified-sort="1719359154000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1210">
 <a href="./posts/2020-12-02-era5-ca/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/2020-12-02-era5-ca/index_files/figure-html/unnamed-chunk-1-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/2020-12-02-era5-ca/index_files/figure-html/unnamed-chunk-1-1.png" style="height: 132px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 ERA5-LAND Temperature Validation (California)
@@ -344,10 +501,12 @@ Dec 2, 2020
 No matching items
 </div>
 </div>
-
-
-
+<p>** Photo: Nile River basin by Aswan, Southern Egypt, 2009. Credits: author.</p>
 </section>
+</div>
+
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -779,7 +938,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>BACOU, Melanie © 2024 / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<p><strong>BACOU, Melanie © 2024</strong> / Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
 <p>All views here are strictly my own and do <u>not</u> reflect that of employers, project partners or clients. Refer to each article for citation, code and data reuse.</p>
 </div>   
     <div class="nav-footer-center">
@@ -788,7 +947,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./about/index.html">
+    <a class="nav-link" href="./about.html">
 <p>About</p>
 </a>
   </li>  
@@ -798,14 +957,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./index.xml">
-<p>RSS</p>
+    <a class="nav-link" href="https://quarto.org/">
+<p>Quarto<sup>®</sup></p>
 </a>
   </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://quarto.org">
-<p>Built with Quarto<sup>®</sup></p>
-</a>
+    <li class="nav-item compact">
+    <a class="nav-link" href="./index.xml">
+      <i class="bi bi-rss" role="img">
+</i> 
+    </a>
   </li>  
 </ul>
     </div>

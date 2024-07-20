@@ -1,0 +1,45 @@
+---
+title: Income Distribution Cartograms
+subtitle: A side-by-side view of U.S. and Russian income distributions -- or when best to use cartograms to convey spatial features
+date: 2020-12-02
+date-modified: last-modified
+draft: false
+freeze: true
+categories:
+  - dataviz
+  - income
+  - russia
+---
+
+In the middle of reading Daniel Huffman's excellent and highly-recommended blog[^fig1], I stumbled on his audacious representation of U.S. median income across states -- Stunningly informative! This prompted me to look for comparable statistics for Russia[^fig2].
+
+[^fig1]: Daniel Huffman [SomethingAboutMaps](https://somethingaboutmaps.wordpress.com/)
+
+[^fig2]: WorldMapper [gridded population cartograms](https://worldmapper.org/maps/gridded-population-rus/)
+
+
+::: {layout-ncol=2 .column-screen-inset-shaded .my-3}
+
+![Cartogram: US median household income across states](https://somethingaboutmaps.wordpress.com/wp-content/uploads/2023/03/image-5.png){.lightbox height="200px"}
+
+![Cartogram: Gridded population of Russia](https://worldmapper.org/wp-content/uploads/2018/04/Grid_WPA_rus_2010.png){.lightbox height="200px"}
+
+:::
+
+Quoting directly from Daniel's article about the many virtues of equal-area projections:
+
+> "Here, an area’s color conveys one dataset, and its size conveys a related dataset
+that provides some useful context (what portion of the country’s population lives in
+those various income brackets). Our fallible human brains usually want us to
+interpret some meaning from variations in the size of areas (which is always a
+challenge with choropleths), so cartograms leverage that. We usually laud these
+heavily-distorted choropleths that are most assuredly not equal-area."  
+<small>-- Daniel Huffman</small>
+
+
+
+## See also...
+
+On the topic of population cartograms:
+
+

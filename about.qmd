@@ -1,0 +1,11 @@
+---
+title: About this Blog
+subtitle: Can we justify winter Y2017 corrections to ERA5-LAND temperature grids over central California?
+date: 2024-07-13
+date-modified: last-modified
+draft: false
+freeze: true
+category: skip
+---
+
+I dabble.
