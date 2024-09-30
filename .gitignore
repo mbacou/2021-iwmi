@@ -1,8 +1,8 @@
 .Rproj.user
 .Rhistory
-.RData
 .Ruserdata
-.zip
+*.RData
+*.zip
 _data
 _extensions
 _drafts
