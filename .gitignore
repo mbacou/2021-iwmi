@@ -6,5 +6,6 @@ _data
 _extensions
 _drafts
 .quarto/
+man/
 
 /.quarto/

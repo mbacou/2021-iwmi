@@ -104,11 +104,11 @@ format:
     reference-location: margin
     citation-location: document
 
-    fontsize: 16px
+    fontsize: 17px
     theme:
       light: www/theme-mblabs.scss
     grid:
-      body-width: 900px
+      body-width: 880px
       sidebar-width: 160px
-      margin-width: 240px
+      margin-width: 260px
       gutter-width: 2em

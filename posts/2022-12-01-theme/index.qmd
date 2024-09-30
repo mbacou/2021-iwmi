@@ -35,14 +35,16 @@ leaflet(width="100%", height="17rem", options=leafletOptions(maxZoom=13)) %>%
 ```
 
 ::: {.aside .shaded .p-2 .mt-md-n5 .mb-md-3}
-No reason for this map aside from showcasing Quarto's content layout features, and well, I {{< fa heart size=xs >}} Russian topographic maps. Check out Soviet-era [cartography](https://www.sovietmaps.com/), it's stunning work.
+No reason for this map aside from showcasing Quarto's content layout features, and well, I {{< bi heart size=xs >}} Russian topographic maps. Check out Soviet-era [cartography](https://www.sovietmaps.com/), it's stunning work.
 
-This margin note uses a custom `DIV` with markdown `{.aside .shaded .p-2 .mt-md-n5 .mb-md-3}`. It makes use of Boostrap's new negative margins and grid breakpoints.
+This margin note uses a custom `DIV` with markdown `{.aside .shaded .mt-md-n5}`. It makes use of Boostrap's new negative margins and grid breakpoints.
 :::
 
 With the release of **Quarto 1.4**, markdown-based publishing is gaining popularity, way beyond the scientific community. Multilingual text-based documents (such as **Emacs org-mode**, **Rmarkdown** and **Jupyter** notebooks) that combine executable code chunks with formatted prose greatly simplify the process of drafting, iterating, generating, documenting, sharing and reproducing computable research experiments.
 
-Old-time researchers and engineers have long used **Emacs `Org-Mode`**[^sw] along with its wild hordes of keyboard shortcuts[^kb] to achieve similar results thanks to *Eric Schulte*'s incredible **babel** extension to `Org-Mode` [see @schulte2012] and to *John MacFarlane*'s [Pandoc](https://pandoc.org/) document converter library -- but nowadays Quarto makes use of more efficient parsers and optimized runtime engines (Sass, Deno, V8) as well as **in-browser real-time rendering of documents**.
+Old-time researchers and engineers have long used **Emacs `Org-Mode`** along with its wild hordes of keyboard shortcuts to achieve similar results thanks to *Eric Schulte*'s incredible **babel** extension to `Org-Mode` [see @schulte2012] and to *John MacFarlane*'s [Pandoc](https://pandoc.org/) document converter library -- but nowadays Quarto makes use of more efficient parsers and optimized runtime engines (Sass, Deno, V8) as well as **in-browser real-time rendering of documents**.
+
+As I migrate my old articles and code notebooks to the new Quarto markdown syntax, this post outlines the process of creating a full Bootstrap theme for this revamped website. I am using content on this page to fine tune placement and execution. Feel free to reuse my `www/theme-labs.scss` Sass file and other tidbits[^sw][^kb].
 
 [^sw]: For folks born in this century, to **babel** (elips) or to **sweave** (R) is the process of compiling text documents that include both static markup and compile-time executable scripts.
 
@@ -57,8 +59,6 @@ Old-time researchers and engineers have long used **Emacs `Org-Mode`**[^sw] alon
 [^kb]: Only keyboard, Baby!
 
     ![](real-programmers.png){.lightbox}
-
-As I migrate my old articles and code notebooks to the new Quarto markdown syntax, this post outlines the process of creating a full Bootstrap theme for this revamped website. I am using content on this page to fine tune placement and execution. Feel free to reuse my `www/theme-labs.scss` Sass file and other tidbits.
 
 
 # CSS Grid System

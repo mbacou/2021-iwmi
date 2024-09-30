@@ -16,7 +16,7 @@
 <height>100</height>
 <width>100</width>
 </image>
-<generator>quarto-1.6.2</generator>
+<generator>quarto-1.6.9</generator>
 <lastBuildDate>Mon, 15 Jul 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Data, Resources, and Tools</title>
@@ -614,23 +614,23 @@ lines here.</td>
 
 <div class="cell page-columns page-full" data-classe="mb-4">
 <div class="cell-output-display column-screen">
-<div id="htmlwidget-644935fae410b8784888" style="width:100%;height:17rem;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-644935fae410b8784888">{"x":{"options":{"maxZoom":13,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://proxy.nakarte.me/http/88.99.52.155/tmg/{z}/{x}/{y}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"sovietmap.com"}]},{"method":"addMarkers","args":[41.14426475811268,-8.65406047010657,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"In Porto while &lt;br/&gt;working on migration.&lt;br/&gt; Read on, tips below...",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"1rem","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[41.14426475811268,41.14426475811268],"lng":[-8.65406047010657,-8.65406047010657]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-43e384e618d04835a485" style="width:100%;height:17rem;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43e384e618d04835a485">{"x":{"options":{"maxZoom":13,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://proxy.nakarte.me/http/88.99.52.155/tmg/{z}/{x}/{y}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"sovietmap.com"}]},{"method":"addMarkers","args":[41.14426475811268,-8.65406047010657,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"In Porto while &lt;br/&gt;working on migration.&lt;br/&gt; Read on, tips below...",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"1rem","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[41.14426475811268,41.14426475811268],"lng":[-8.65406047010657,-8.65406047010657]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="shaded p-2 mt-md-n5 mb-md-3 margin-aside">
-<p>No reason for this map aside from showcasing Quarto’s content layout features, and well, I <i class="fa-solid fa-heart fa-xs" aria-label="heart"></i> Russian topographic maps. Check out Soviet-era <a href="https://www.sovietmaps.com/">cartography</a>, it’s stunning work.</p>
-<p>This margin note uses a custom <code>DIV</code> with markdown <code>{.aside .shaded .p-2 .mt-md-n5 .mb-md-3}</code>. It makes use of Boostrap’s new negative margins and grid breakpoints.</p>
+<p>No reason for this map aside from showcasing Quarto’s content layout features, and well, I {{&lt; fa heart xs &gt;}} Russian topographic maps. Check out Soviet-era <a href="https://www.sovietmaps.com/">cartography</a>, it’s stunning work.</p>
+<p>This margin note uses a custom <code>DIV</code> with markdown <code>{.aside .shaded .mt-md-n5}</code>. It makes use of Boostrap’s new negative margins and grid breakpoints.</p>
 </div></div><p>With the release of <strong>Quarto 1.4</strong>, markdown-based publishing is gaining popularity, way beyond the scientific community. Multilingual text-based documents (such as <strong>Emacs org-mode</strong>, <strong>Rmarkdown</strong> and <strong>Jupyter</strong> notebooks) that combine executable code chunks with formatted prose greatly simplify the process of drafting, iterating, generating, documenting, sharing and reproducing computable research experiments.</p>
-<p>Old-time researchers and engineers have long used <strong>Emacs <code>Org-Mode</code></strong><sup>1</sup> along with its wild hordes of keyboard shortcuts<sup>2</sup> to achieve similar results thanks to <em>Eric Schulte</em>’s incredible <strong>babel</strong> extension to <code>Org-Mode</code> <span class="citation" data-cites="schulte2012">(see Schulte et al. 2012)</span> and to <em>John MacFarlane</em>’s <a href="https://pandoc.org/">Pandoc</a> document converter library – but nowadays Quarto makes use of more efficient parsers and optimized runtime engines (Sass, Deno, V8) as well as <strong>in-browser real-time rendering of documents</strong>.</p>
+<p>Old-time researchers and engineers have long used <strong>Emacs <code>Org-Mode</code></strong> along with its wild hordes of keyboard shortcuts to achieve similar results thanks to <em>Eric Schulte</em>’s incredible <strong>babel</strong> extension to <code>Org-Mode</code> <span class="citation" data-cites="schulte2012">(see Schulte et al. 2012)</span> and to <em>John MacFarlane</em>’s <a href="https://pandoc.org/">Pandoc</a> document converter library – but nowadays Quarto makes use of more efficient parsers and optimized runtime engines (Sass, Deno, V8) as well as <strong>in-browser real-time rendering of documents</strong>.</p>
+<p>As I migrate my old articles and code notebooks to the new Quarto markdown syntax, this post outlines the process of creating a full Bootstrap theme for this revamped website. I am using content on this page to fine tune placement and execution. Feel free to reuse my <code>www/theme-labs.scss</code> Sass file and other tidbits<sup>1</sup><sup>2</sup>.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;For folks born in this century, to <strong>babel</strong> (elips) or to <strong>sweave</strong> (R) is the process of compiling text documents that include both static markup and compile-time executable scripts.</p>
 <p><img src="https://mbacou.com/posts/2022-12-01-theme/Donald-Knuth.jpg" class="img-rounded img-fluid" style="width:10em"></p>
 <p>The concept of <strong>Literate programming</strong> was introduced in 1984 by the mathematician <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> and was widely popularized thereafter in the engineering community thanks to <a href="https://orgmode.org/worg/org-contrib/babel/uses.html">org-mode</a> in the Emacs editor.</p>
 <p><img src="https://mbacou.com/posts/2022-12-01-theme/Carsten-Dominik.jpg" class="img-rounded img-fluid" style="width:10em"></p>
 <p>Emacs <strong><code>Org-Mode</code></strong> was created by the astronomer <a href="https://en.wikipedia.org/wiki/Org-mode#:~:text=Org%20Mode%20was%20created%20by,mode%20by%20default%20since%202006">Carsten Dominik</a> in 2003 and remains to this day one of the most used and madly loved note-taking and GTD (Get-Things-Done) tools, with many of its functionality (agenda, tags, etc.) yet to be ported to any markdown engine.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Only keyboard, Baby!</p>
-<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mbacou.com/posts/2022-12-01-theme/real-programmers.png" class="img-fluid"></a></p></div></div><p>As I migrate my old articles and code notebooks to the new Quarto markdown syntax, this post outlines the process of creating a full Bootstrap theme for this revamped website. I am using content on this page to fine tune placement and execution. Feel free to reuse my <code>www/theme-labs.scss</code> Sass file and other tidbits.</p>
-<section id="css-grid-system" class="level1 page-columns page-full">
+<p><a href="real-programmers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mbacou.com/posts/2022-12-01-theme/real-programmers.png" class="img-fluid"></a></p></div></div><section id="css-grid-system" class="level1 page-columns page-full">
 <h1>CSS Grid System</h1>
 <p>One of the many great features of Quarto is that the framework uses the full flexibility of the Bootstrap v5.3 grid system, with a few handy classes to help precisely position content on a page, in particular:</p>
 <ul>
@@ -2788,6 +2788,9 @@ font-style: inherit;">+</span></span>
 <span id="cb23-7">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_labs</span>()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2797,7 +2800,7 @@ font-style: inherit;">theme_labs</span>()</span></code></pre></div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>(mtcars, <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2806,7 +2809,7 @@ background-color: null;
 font-style: inherit;">color=</span>carb)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb24-2">  <span class="fu" style="color: #4758AB;
+<span id="cb25-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2815,7 +2818,7 @@ background-color: null;
 font-style: inherit;">geom_smooth</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb24-3">  <span class="fu" style="color: #4758AB;
+<span id="cb25-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2828,29 +2831,32 @@ background-color: null;
 font-style: inherit;">guide_axis</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb24-4">  <span class="fu" style="color: #4758AB;
+<span id="cb25-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(</span>
-<span id="cb24-5">    <span class="at" style="color: #657422;
+<span id="cb25-5">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My Long and Descriptive Plot Title"</span>, </span>
-<span id="cb24-6">    <span class="at" style="color: #657422;
+<span id="cb25-6">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My very long subtitle with many units"</span>, </span>
-<span id="cb24-7">    <span class="at" style="color: #657422;
+<span id="cb25-7">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">caption=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My very long plot caption with many references."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb24-8">  <span class="fu" style="color: #4758AB;
+<span id="cb25-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_labs</span>()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2861,25 +2867,28 @@ font-style: inherit;">theme_labs</span>()</span></code></pre></div>
 </div>
 <p>Note that the code chunk below produces a PNG instead of SVG file. I also set <code>knitr fig-dpi: 220</code> option globally in <code>_quarto.yml</code> so plots still look decent when printed to paper (though of course it’s not adequate on long pages with many plots).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><span class="in" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```{r}</span></span>
-<span id="cb25-2"><span class="in" style="color: #5E5E5E;
+<span id="cb27-2"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#| fig-format: png</span></span>
-<span id="cb25-3"></span>
-<span id="cb25-4"><span class="in" style="color: #5E5E5E;
+<span id="cb27-3"></span>
+<span id="cb27-4"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">gglabs(faithfuld, aes(waiting, eruptions, z=density)) +</span></span>
-<span id="cb25-5"><span class="in" style="color: #5E5E5E;
+<span id="cb27-5"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">  geom_raster(aes(fill=density)) +</span></span>
-<span id="cb25-6"><span class="in" style="color: #5E5E5E;
+<span id="cb27-6"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">  geom_contour()</span></span>
-<span id="cb25-7"><span class="in" style="color: #5E5E5E;
+<span id="cb27-7"><span class="in" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">```</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2889,7 +2898,7 @@ font-style: inherit;">```</span></span></code></pre></div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gglabs</span>(mtcars, <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2900,7 +2909,7 @@ background-color: null;
 font-style: inherit;">factor</span>(cyl))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb26-2">  <span class="fu" style="color: #4758AB;
+<span id="cb29-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2909,7 +2918,7 @@ background-color: null;
 font-style: inherit;">4</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb26-3">  <span class="fu" style="color: #4758AB;
+<span id="cb29-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2924,6 +2933,9 @@ background-color: null;
 font-style: inherit;">caption=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My plot caption"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2934,11 +2946,14 @@ font-style: inherit;">"My plot caption"</span>)</span></code></pre></div>
 </div>
 <p>Note that <code>thematic_on()</code> also does a little magic with R graphics <code>par()</code> options. This is important as many advanced statistical and spatial libraries in R continue to favor base R <code>graphics</code> library.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1">lattice<span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1">lattice<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">show.settings</span>()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2947,7 +2962,7 @@ font-style: inherit;">show.settings</span>()</span></code></pre></div>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1">x <span class="ot" style="color: #003B4F;
+<div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1">x <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2958,7 +2973,7 @@ background-color: null;
 font-style: inherit;">df=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>)</span>
-<span id="cb28-2"><span class="fu" style="color: #4758AB;
+<span id="cb33-2"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">hist</span>(x, <span class="at" style="color: #657422;
 background-color: null;
@@ -2988,8 +3003,11 @@ font-style: inherit;">12</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">xlab=</span><span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">NA</span>)</span>
-<span id="cb28-3"><span class="fu" style="color: #4758AB;
+font-style: inherit;">NA</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error : The fig.showtext code chunk option must be TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">grid</span>(<span class="cn" style="color: #8f5902;
 background-color: null;
@@ -3000,7 +3018,7 @@ background-color: null;
 font-style: inherit;">col=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>)</span>
-<span id="cb28-4"><span class="fu" style="color: #4758AB;
+<span id="cb35-2"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">curve</span>(<span class="fu" style="color: #4758AB;
 background-color: null;

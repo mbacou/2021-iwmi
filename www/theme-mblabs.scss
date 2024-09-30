@@ -38,7 +38,7 @@ $primary:   $purple;
 $secondary: $cyan;
 $success: $teal;
 
-$spacer: 22px  !default;
+$spacer: 24px  !default;
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -48,8 +48,8 @@ $spacers: (
   5: $spacer * 2,
 );
 
-$line-height-base: 1.375;
-$headings-line-height: 1.375;
+$line-height-base: 1.6;
+$headings-line-height: 1.6;
 $list-inline-padding: .5* $spacer;
 
 $font-size-base: 1rem;
@@ -157,7 +157,7 @@ b, strong {
 p, div {
   line-height: $spacer;
 }
-p, {
+p {
   margin-bottom: .5* $spacer;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
@@ -169,13 +169,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h4, .h4, h5, .h5 {
   font-weight: 500;
 }
-h2, .h2, {
+h2, .h2 {
   color: $gray-500;
   font-style: italic;
   border-bottom: solid 1px $border-color;
 }
 hr {
-  border-top: dashed 1px $hr-border-color;
+  border-top: dashed 1px $border-color;
   margin: 0 0 .5* $spacer 0;
 }
 ol, ul, dl {
@@ -206,8 +206,6 @@ blockquote small, blockquote .small {
   font-size: 2.25rem;
   line-height: 2* $spacer;
   margin-top: 1* $spacer;
-}
-p.subtitle {
 }
 .lead {
   font-family: $font-family-base;
@@ -422,7 +420,7 @@ figcaption, .column-margin figcaption, .margin-caption, div.aside, aside, .colum
   margin-top: .25* $spacer;
   margin-bottom: .5* $spacer;
 }
-figcaption, .column-margin figcaption, {
+figcaption, .column-margin figcaption {
   text-align: center;
   margin-top: 0;
 }
@@ -557,6 +555,7 @@ div.separator {
   background: $shaded;
 }
 #quarto-header>nav {
+  margin-top: .25* $spacer;
   padding: 0;
 }
 #quarto-announcement {
@@ -567,7 +566,6 @@ div.separator {
   justify-content: center;
 }
 .navbar, .panel-tabset>.nav-tabs {
-  margin-top: .5*$spacer;
   border-bottom: solid 1px $border-color;
   backdrop-filter: blur(2px);
 }
@@ -581,7 +579,7 @@ div.separator {
 .navbar .me-auto {
   margin-left: auto !important;
 }
-nav .nav-item .nav-link {
+.navbar .nav-item:not(.compact) .nav-link {
   line-height: 1.5* $spacer;
 }
 .navbar .nav-item:not(.compact) .nav-link,
@@ -613,8 +611,8 @@ nav .nav-item .nav-link {
   font-weight: 400;
   color: $light;
   background: $dark;
-  margin: auto 2.5em -0.5* $spacer 0;
-  padding: .5* $spacer .75em .5* $spacer .5em;
+  margin: auto 2.5em -.5* $spacer 0;
+  padding: .5* $spacer 1em .5* $spacer .75em;
 }
 #title-block-header {
   margin-block-end: unset;

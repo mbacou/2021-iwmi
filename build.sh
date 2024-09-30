@@ -12,5 +12,4 @@ set -e
 R -e 'roxygen2::roxygenize()'
 R -e 'devtools::install()'
 
-
 quarto preview .

@@ -34,7 +34,7 @@ listing:
     fields: [title, description, image]
 ---
 
-::: {.column-screen style="min-height: 25vh; background: url(/www/banner/nile-valley.jpg) 0 -200px fixed;"}
+::: {.column-screen style="min-height: 25vh; background: url(/www/banner/nile-valley.jpg) 0 -280px fixed;"}
 ::: {.column-page-left}
 
 # People, Space, and Statistics {.title .text-light .pt-md-2}
